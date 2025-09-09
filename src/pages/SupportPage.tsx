@@ -1,76 +1,72 @@
-import DiagonalSlice from "../components/DiagonalSlice";
+import { useEffect, useState } from "react";
+import { ArrowRight, Atom, Microscope, Cpu } from "lucide-react";
 
-export default function SupportPage(){
+const heroImg = "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2000&auto=format&fit=crop";
+
+export default function HomePage() {
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setY(window.scrollY || 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      {/* Angled soft band header — clean and spacious */}
-      <section className="slice slice--soft slice--diag-bottom">
-        <div className="container" style={{maxWidth: 900}}>
-          <h1 className="section-title" style={{marginBottom: 8}}>Support us</h1>
-          <h2 className="subhead" style={{marginTop: 0}}>Donate to Stemsphere</h2>
+      <header className="hero hero-cut" style={{ ["--scrollY" as any]: `${y}px` }}>
+        <div className="hero-media" style={{ backgroundImage: `url(${heroImg})` }} />
+        <div className="container hero-inner">
+          <h1 className="display">Who we are</h1>
+          <p className="lead mt-24">
+            Hands-on STEM for every learner—open resources, real projects, and a global community.
+          </p>
+          <div className="mt-32" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <a className="btn" href="/about">Our mission <ArrowRight size={18} /></a>
+            <a className="btn btn-ghost" href="/involve">Get Involved</a>
+          </div>
+        </div>
+      </header>
+
+      <section className="slice slice--blue slice--diag-top slice--diag-bottom">
+        <div className="grid cols-3">
+          {[{
+            title: "Robotics lab kits",
+            icon: <Cpu />,
+            img: "https://picsum.photos/seed/robot/800/500",
+            copy: "Starter activities for sensors, control, and autonomy."
+          }, {
+            title: "Microbiology at home",
+            icon: <Microscope />,
+            img: "https://picsum.photos/seed/micro/800/500",
+            copy: "Low-cost experiments and safety-first guides."
+          }, {
+            title: "Atomic modeling",
+            icon: <Atom />,
+            img: "https://picsum.photos/seed/atom/800/500",
+            copy: "Materials + worksheets to visualize the unseen."
+          }].map((c, i) => (
+            <article className="card card-elevated" key={i}>
+              <div className="card-hero" style={{ backgroundImage: `url(${c.img})` }} />
+              <h3 className="subhead" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ display: "inline-flex", width: 28 }}>{c.icon}</span>{c.title}
+              </h3>
+              <p className="mt-16">{c.copy}</p>
+              <a className="btn mt-24" href="#">View resources</a>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Explanatory copy on white, like the reference */}
-      <section className="slice" style={{paddingTop: 96}}>
-        <div className="container" style={{maxWidth: 1000}}>
-          <div style={{display:"grid", gap:28, gridTemplateColumns:"1fr"}}>
-            <h3 className="subhead" style={{margin:0}}>
-              As an independent, non-subsidized organization, we welcome your support.
-              Every donation, large or small, goes towards our activities.
-            </h3>
-            <div style={{color:"var(--ink)", maxWidth:900}}>
-              <p>
-                Your donation helps us carry out our mission. We design and run open STEM
-                programs and publish free learning resources. Our aim is to help young
-                people explore real-world challenges with curiosity and care, while
-                supporting educators with practical, field-tested materials.
-              </p>
-              <p>
-                If you feel strongly about what we do, there are several ways you can support us.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ways to support (image cards) */}
-      <DiagonalSlice tone="soft" top>
-        <div className="container slice-inner" style={{maxWidth: 1100}}>
-          <h3 className="subhead" style={{marginBottom: 16}}>Ways in which you can support us</h3>
-          <div className="grid cols-3">
-            {[
-              {
-                t:"One-time donation",
-                d:"Make a single, impactful contribution to fund workshops and open resources.",
-                img:"https://picsum.photos/seed/support1/800/500"
-              },
-              {
-                t:"Monthly giving",
-                d:"Provide stable, predictable funding so we can plan long-term programs.",
-                img:"https://picsum.photos/seed/support2/800/500"
-              },
-              {
-                t:"Corporate partnership",
-                d:"Sponsor equipment, grants, or content to scale impact in your region.",
-                img:"https://picsum.photos/seed/support3/800/500"
-              }
-            ].map((c,i)=>(
-              <article key={i} className="card card-elevated">
-                <div className="card-hero" style={{backgroundImage:`url(${c.img})`, height:160}} />
-                <h4 style={{margin:"10px 0 6px", fontSize:20, fontWeight:900}}>{c.t}</h4>
-                <p>{c.d}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </DiagonalSlice>
-
-      {/* Gentle CTA to the actual Donate page */}
       <section className="slice">
-        <div className="container center" style={{maxWidth: 900}}>
-          <p className="subhead" style={{marginBottom: 16}}>Ready to make a gift?</p>
-          <a className="btn" href="/donate">Go to Donate</a>
+        <h2 className="section-title center mb-32">Our Impact</h2>
+        <div className="grid cols-3">
+          {[{ n: "50k+", t: "Learners Engaged" }, { n: "120+", t: "Events Hosted" }, { n: "30+", t: "Countries Reached" }].map((k, i) => (
+            <div className="card center" key={i}>
+              <div style={{ fontSize: 44, fontWeight: 900, color: "var(--accent-blue)" }}>{k.n}</div>
+              <div style={{ fontWeight: 700 }}>{k.t}</div>
+            </div>
+          ))}
         </div>
       </section>
     </>
