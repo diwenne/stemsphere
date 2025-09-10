@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import SupportPage from "./pages/SupportPage";
 import DonatePage from "./pages/DonatePage"; // NEW
 import InvolvePage from "./pages/InvolvePage";
 
