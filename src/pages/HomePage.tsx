@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"; // MODIFIED: Imported useRef
+import { useEffect, useState, useRef } from "react"; // MODIFIED: Imported useRef
 import { ArrowRight, MapPin } from "lucide-react";
 import heroImg from '../assets/hero.png';
 import DiagonalSlice from "../components/DiagonalSlice";
