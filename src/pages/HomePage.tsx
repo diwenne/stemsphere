@@ -1,23 +1,49 @@
-import { useEffect, useState } from "react";
-import { ArrowRight, Atom, Microscope, Cpu } from "lucide-react";
+import React, { useEffect, useState, useRef } from "react"; // MODIFIED: Imported useRef
+import { ArrowRight, MapPin } from "lucide-react";
+import heroImg from '../assets/hero.png';
 import DiagonalSlice from "../components/DiagonalSlice";
-
-/* STEM-y hero image */
-const heroImg = "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2000&auto=format&fit=crop";
 
 export default function HomePage(){
   const [y, setY] = useState(0);
+  const heroRef = useRef<HTMLElement>(null); // NEW: Create a reference for the hero element
+
   useEffect(()=>{
     const onScroll = () => setY(window.scrollY || 0);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive:true });
-    return ()=> window.removeEventListener("scroll", onScroll);
-  },[]);
+
+    // NEW: Use an observer to only run parallax when the hero is visible
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // If hero is visible, add the scroll listener
+          onScroll(); // Run once on entry
+          window.addEventListener("scroll", onScroll, { passive: true });
+        } else {
+          // If hero is not visible, remove the listener to save resources
+          window.removeEventListener("scroll", onScroll);
+        }
+      },
+      { threshold: 0 } // The threshold determines how much of the element needs to be visible
+    );
+
+    const currentHeroRef = heroRef.current;
+    if (currentHeroRef) {
+      observer.observe(currentHeroRef);
+    }
+
+    // Cleanup function to disconnect the observer and remove the listener
+    return () => {
+      if (currentHeroRef) {
+        observer.unobserve(currentHeroRef);
+      }
+      window.removeEventListener("scroll", onScroll);
+    };
+  },[]); // This effect runs only once on mount
 
   return (
     <>
       {/* HERO with diagonal cut onto blue slice */}
       <header
+        ref={heroRef} // MODIFIED: Attach the ref to the header element
         className="hero hero-cut"
         style={{ ["--scrollY" as any]: `${y}px`, ["--next-bg" as any]: "var(--slice-blue)" }}
       >
@@ -36,22 +62,17 @@ export default function HomePage(){
 
       {/* FIRST SLICE (blue) */}
       <DiagonalSlice tone="blue" top bottom>
-        <div className="grid cols-3">
+        <div className="grid cols-2">
           {[{
-            title:"Robotics lab kits",
-            icon:<Cpu />,
-            img:"https://picsum.photos/seed/robot/800/500",
-            copy:"Starter activities for sensors, control, and autonomy."
+            title:"Coquitlam Branch",
+            icon:<MapPin />,
+            img:"https://picsum.photos/seed/coquitlam/800/500",
+            copy:"Visit our main campus in Coquitlam for workshops and events."
           },{
-            title:"Microbiology at home",
-            icon:<Microscope />,
-            img:"https://picsum.photos/seed/micro/800/500",
-            copy:"Low-cost experiments and safety-first guides."
-          },{
-            title:"Atomic modeling",
-            icon:<Atom />,
-            img:"https://picsum.photos/seed/atom/800/500",
-            copy:"Materials + worksheets to visualize the unseen."
+            title:"Maple Ridge Branch",
+            icon:<MapPin />,
+            img:"https://picsum.photos/seed/mapleridge/800/500",
+            copy:"Explore our satellite location in Maple Ridge, now open."
           }].map((c,i)=>(
             <article className="card card-elevated" key={i}>
               <div className="card-hero" style={{backgroundImage:`url(${c.img})`}}/>
@@ -59,7 +80,7 @@ export default function HomePage(){
                 <span style={{display:"inline-flex", width:28}}>{c.icon}</span>{c.title}
               </h3>
               <p className="mt-16">{c.copy}</p>
-              <a className="btn mt-24" href="#">View resources</a>
+              <a className="btn mt-24" href="#">Learn more</a>
             </article>
           ))}
         </div>
@@ -75,7 +96,7 @@ export default function HomePage(){
             {n:"30+", t:"countries"},
           ].map((k,i)=>(
             <div className="card center" key={i}>
-              <div style={{fontSize:44, fontWeight:900, color:"var(--accent)"}}>{k.n}</div>
+              <div style={{fontSize:44, fontWeight:900, color:"var(--accent-dark)"}}>{k.n}</div>
               <div style={{fontWeight:700}}>{k.t}</div>
             </div>
           ))}
