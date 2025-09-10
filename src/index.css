@@ -9,6 +9,9 @@
 
   --nav: #17181a;
   --nav-ink: #f3f4f6;
+  --nav-control-bg: #3a3a3a;
+  --nav-control-border: #111;
+
 
   --slice-soft: #f3f4f6;
   --slice-blue: #d8e7f3;
@@ -83,8 +86,12 @@ button {
   z-index: 50;
   background: var(--nav);
   color: var(--nav-ink);
-  border-bottom: 1px solid rgba(255, 255, 255, .06);
   backdrop-filter: saturate(1.1) blur(6px);
+}
+
+.nav .container {
+  max-width: none;
+  padding-inline: 0;
 }
 
 .nav-row {
@@ -99,6 +106,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-left: var(--pad); /* Add padding back to the brand */
 }
 
 .brand img {
@@ -186,19 +194,20 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 72px;
   height: 72px;
-  padding: 0 20px;
-  background: transparent;
+  padding: 0;
+  background: var(--nav-control-bg);
   border: none;
-  border-left: 1px solid rgba(255,255,255,.1);
+  border-left: 1px solid var(--nav-control-border);
   color: var(--nav-ink);
   font-weight: 700;
   cursor: pointer;
-  transition: color .2s;
+  transition: background-color .2s;
 }
 
 .lang-switcher:hover, .search-btn:hover {
-  color: var(--accent);
+  background-color: #4f4f4f;
 }
 
 .burger {
@@ -208,9 +217,14 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 900px) {
-  .nav-links { display: none !important; }
-  .nav-controls .lang-switcher { display: none; }
-  .nav-controls .search-btn { display: none; }
+  .nav .container {
+    padding-inline: 0;
+  }
+  .nav-links,
+  .lang-switcher,
+  .search-btn {
+    display: none !important;
+  }
   .burger {
     display: inline-flex !important;
     align-items: center;
@@ -303,7 +317,7 @@ button {
 .mobile-list {
   display: flex;
   flex-direction: column;
-  padding: 24px var(--pad);
+  padding: 24px 32px 24px 48px;
   gap: 16px;
 }
 
