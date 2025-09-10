@@ -9,7 +9,7 @@ export default function Footer(){
           <div>
             <div style={{display:"flex", alignItems:"center", gap:12, marginBottom:12}}>
               <img src={logo} width={32} height={32} alt="" style={{borderRadius:8, background:"#ccc"}}/>
-              <strong>stemsphere</strong>
+              <strong>Stemsphere Foundation</strong>
             </div>
             <p>Accessible STEM programs, resources, and community.</p>
           </div>
@@ -27,7 +27,7 @@ export default function Footer(){
             <p className="mono">+1 (555) 555-0133</p>
           </div>
         </div>
-        <div className="footer-foot">&copy; {new Date().getFullYear()} Stemsphere.</div>
+        <div className="footer-foot">&copy; {new Date().getFullYear()} Stemsphere Foundation.</div>
       </div>
     </footer>
   );
