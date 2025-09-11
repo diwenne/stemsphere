@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import TeamPage from "./pages/TeamPage";
 import DonatePage from "./pages/DonatePage"; // NEW
 import InvolvePage from "./pages/InvolvePage";
 
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
           <Route path="/involve" element={<InvolvePage />} />
           <Route path="/donate" element={<DonatePage />} />
         </Routes>

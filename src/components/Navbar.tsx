@@ -44,6 +44,12 @@ export default function Navbar() {
               About
             </NavLink>
             <NavLink
+              to="/team"
+              className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            >
+              The Team
+            </NavLink>
+            <NavLink
               to="/involve"
               className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
             >
@@ -86,6 +92,7 @@ export default function Navbar() {
         <div className="mobile-list">
             <NavLink to="/" className="mobile-link" onClick={() => setOpen(false)}>Home</NavLink>
             <NavLink to="/about" className="mobile-link" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/team" className="mobile-link" onClick={() => setOpen(false)}>About</NavLink>
             <NavLink to="/involve" className="mobile-link" onClick={() => setOpen(false)}>Get Involved</NavLink>
             <NavLink to="/donate" className="mobile-link" onClick={() => setOpen(false)}>Donate</NavLink>
         </div>
