@@ -1,4 +1,3 @@
-import React from "react";
 import diwen from "../assets/team/diwen.jpg";
 import drishya from "../assets/team/drishya.jpg";
 import tristan from "../assets/team/tristan.png";
