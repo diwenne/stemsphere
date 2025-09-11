@@ -4,27 +4,23 @@
   --ink-dim: #4b5563;
   --muted: #6b7280;
 
-  --accent: #3b82f6;         /* MODIFIED: Brighter accent blue */
-  --accent-light: #60a5fa;   /* NEW: Lighter accent for gradients/highlights */
-  --accent-dark: #2563eb;    /* NEW: Darker accent for buttons/strong contrast */
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-dark: #2563eb;
   --accent-ink: #fff;
 
-  --nav: #1a1a1c; /* Slightly darker nav for better contrast */
+  --nav: #1a1a1c;
   --nav-ink: #f3f4f6;
   --nav-control-bg: #3a3a3a;
   --nav-control-border: #111;
 
-
-  --slice-soft: #f1f5f9; /* Slightly lighter soft slice */
-  --slice-blue: #dbeafe; /* MODIFIED: Lighter, more vibrant blue slice */
+  --slice-soft: #f1f5f9; /* Re-enabled specific slice colors */
+  --slice-blue: #dbeafe; /* Re-enabled specific slice colors */
 
   --maxw: 1200px;
   --radius: 14px;
-
-  /* container padding token so we can cancel it precisely */
   --pad: clamp(16px, 2vw, 32px);
 
-  /* NEW: Background gradient colors */
   --bg-gradient-start: #f8fafc;
   --bg-gradient-end: #e2e8f0;
 }
@@ -47,7 +43,7 @@ body {
     Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.55;
   color: var(--ink);
-  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)); /* NEW: Subtle background gradient */
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)); /* Restored gradient */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -112,7 +108,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-left: var(--pad); /* Add padding back to the brand */
+  padding-left: var(--pad);
 }
 
 .brand img {
@@ -129,16 +125,14 @@ button {
   letter-spacing: .2px;
 }
 
-/* ---- Desktop links row ---- */
 .nav-links {
   display: flex;
   align-items: center;
   height: 72px;
   gap: 0;
-  margin-left: auto; /* Push nav links to the left of controls */
+  margin-left: auto;
 }
 
-/* Base link boxes (links + donate unified) */
 .nav-link,
 .nav-cta {
   display: flex;
@@ -157,7 +151,6 @@ button {
   color: var(--nav-ink);
 }
 
-/* Hover must ALWAYS work (even after a click) */
 .nav .nav-links .nav-link:hover:not(.active),
 .nav .nav-links .nav-cta:hover:not(.active) {
   background: var(--accent) !important;
@@ -165,7 +158,6 @@ button {
   opacity: 1;
 }
 
-/* Active = underline only (never filled) */
 .nav .nav-links .nav-link.active,
 .nav .nav-links .nav-cta.active {
   background: transparent !important;
@@ -190,7 +182,6 @@ button {
   border-radius: 0;
 }
 
-/* ---- Right side controls ---- */
 .nav-controls {
   display: flex;
   align-items: center;
@@ -217,11 +208,9 @@ button {
 }
 
 .burger {
-  display: none; /* Hide by default */
+  display: none;
 }
 
-
-/* Mobile Styles */
 @media (max-width: 900px) {
   .nav .container {
     padding-inline: 0;
@@ -343,16 +332,15 @@ button {
   color: var(--accent);
 }
 
-
 /* ================= Editorial type ================= */
-.display{ font-weight:900; letter-spacing:-1px; line-height:.95; font-size:clamp(48px,8vw,104px); color:var(--accent); text-shadow: 1px 1px 6px rgba(0,0,0,0.4), 0 0 5px rgba(255,255,255,0.4); /* MODIFIED: Reduced text glow */ }
+.display{ font-weight:900; letter-spacing:-1px; line-height:.95; font-size:clamp(48px,8vw,104px); color:var(--accent); text-shadow: 1px 1px 6px rgba(0,0,0,0.4), 0 0 5px rgba(255,255,255,0.4); }
 .section-title{ font-weight:900; letter-spacing:-.5px; font-size:clamp(40px,6vw,88px); color:var(--accent-dark); text-shadow: 1px 1px 4px rgba(0,0,0,0.2); }
 .subhead{ font-weight:800; font-size:clamp(20px,2.3vw,26px); color:var(--ink); }
 .lead{ font-size:clamp(18px,2.2vw,20px); color:var(--ink-dim); line-height:1.7; }
 
 /* ================= HERO with TRUE diagonal cut ================= */
 .hero{
-  --next-bg:#fff;
+  --next-bg:#fff; /* Dynamic variable for the next slice background */
   position:relative;
   color:#fff;
   display:flex;
@@ -361,6 +349,7 @@ button {
   min-height:80dvh;
   padding-block:120px;
   overflow:hidden;
+  /* Removed border-bottom as diagonal handles the cut */
 }
 .hero-media{
   position:absolute;
@@ -368,7 +357,6 @@ button {
   z-index:-2;
   background:#333 center/cover no-repeat;
   transform:translateY(calc(var(--scrollY, 0px) * .3)) scale(1.06);
-  /* MODIFIED: Removed transition for instant parallax */
   filter:grayscale(.15) contrast(.95) brightness(.78);
 }
 .hero::before{
@@ -378,15 +366,15 @@ button {
   z-index:-1;
   background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
 }
-.hero-cut::after{
+.hero-cut::after{ /* This creates the diagonal cut for the hero */
   content:"";
   position:absolute;
   left:-2vw;
   right:-2vw;
   bottom:-1px;
-  height: 380px;
+  height: 380px; /* Height of the diagonal band */
   background:var(--next-bg);
-  transform: skewY(-7deg);
+  transform: skewY(-7deg); /* Adjust angle if needed */
   transform-origin:100% 0;
   z-index:0;
   pointer-events:none;
@@ -396,27 +384,33 @@ button {
   z-index:1;
   max-width:900px;
   margin-top: auto;
-  margin-bottom: -110px;
+  margin-bottom: -110px; /* Pushes content down into the diagonal visually */
+  text-align: center;
 }
 
 .hero .display {
     font-size: clamp(60px, 10vw, 140px);
 }
 
-
-/* ================= Slices ================= */
+/* ================= Slices (with diagonal cuts) ================= */
 .slice{ position:relative; padding-block:56px; }
 .slice--soft{ background:var(--slice-soft); }
 .slice--blue{ background:var(--slice-blue); }
+
+/* Diagonal top cut for a slice */
 .slice--diag-top::before{
   content:""; position:absolute; left:-2vw; right:-2vw; top:-1px; height:110px;
   background:inherit; transform:skewY(-4deg); transform-origin:0 100%;
+  z-index:0; /* Ensure it's behind content but above previous slice */
 }
+/* Diagonal bottom cut for a slice */
 .slice--diag-bottom::after{
   content:""; position:absolute; left:-2vw; right:-2vw; bottom:-1px; height:110px;
   background:inherit; transform:skewY(-4deg); transform-origin:100% 0;
+  z-index:0;
 }
 .slice-inner{ position:relative; z-index:1; padding-block: clamp(40px, 6vw, 90px); }
+/* Removed border-bottom from slice */
 
 /* ================= Cards / panels ================= */
 .grid{ display:grid; gap:24px; }
@@ -462,93 +456,17 @@ button {
 /* ensures content clears the angled overhang */
 .pad-top-diag { padding-top: 140px; }
 
-
-/* =========================================================
-   Executive / Team page
-   Sharp portraits, no card chrome, stacked horizontally,
-   fully responsive.
-   ========================================================= */
-
-/* Grid */
-.people-grid {
-  display: grid;
-  gap: 48px 40px;                /* roomy vertical rhythm like your ref */
-  grid-template-columns: 1fr;    /* 1-up on mobile */
-}
-
-/* 2 columns on tablets, 3 on wide screens */
-@media (min-width: 720px) {
-  .people-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
-}
-@media (min-width: 1100px) {
-  .people-grid { grid-template-columns: repeat(3, minmax(280px, 1fr)); }
-}
-
-/* Person card (but visually flat) */
-.person {
-  background: transparent;       /* no visible card */
-}
-
-/* === Smaller executive portraits === */
-
-/* Constrain width and center */
-.person-portrait img {
-  width: 100%;
-  max-width: 280px;        /* limit the size */
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;      /* centers within grid cell */
-}
-
-/* Center text under narrower portraits */
-.person-name,
-.person-role,
-.person-bio {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 40ch;         /* keeps bios from running too wide */
-}
-
-.person-role {
-  margin-top: 2px;
-  font-weight: 800;              /* bold subheader */
-  color: var(--fg, #0b0f17);
-}
-
-.person-bio {
-  margin-top: 10px;
-  color: var(--fg-muted, #5b6579);
-  line-height: 1.6;
-  max-width: 60ch;
-}
-
-/* Tighten spacing on very small phones */
-@media (max-width: 360px) {
-  .people-grid { gap: 36px 24px; }
-  .person-bio { font-size: 0.95rem; }
-}
-
-/* ===================== Team page intro ===================== */
-.team-intro .slice-inner { padding-top: clamp(48px, 6vw, 96px); }
-
+/* ================= Team Page ================= */
 .hq-intro {
   text-align: center;
   max-width: 950px;
   margin-inline: auto;
 }
-
-.hq-title {
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: .92;
-  font-size: clamp(48px, 8vw, 104px);
-  margin: 0 0 18px 0;
+.hq-title-small {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  margin: 0 0 16px;
 }
-
 .accent-inner {
   background: linear-gradient(
     180deg,
@@ -563,35 +481,32 @@ button {
     0 1px 0 rgba(255,255,255,.35),
     0 -1px 0 rgba(0,0,0,.18);
 }
-
 .hq-copy {
-  margin: 10px auto 36px;
+  margin: 10px auto 28px;
   max-width: 70ch;
-  font-size: clamp(18px, 2.2vw, 20px);
+  font-size: clamp(16px, 2vw, 18px);
   color: var(--ink-dim);
-  line-height: 1.8;
+  line-height: 1.7;
 }
-
 .hq-subtitle {
-  margin: 10px 0 26px 0;
+  margin: 14px 0 26px;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
 }
-
-/* ===================== Team grid ===================== */
 .people-grid {
   display: grid;
   gap: 48px 40px;
   grid-template-columns: 1fr;
 }
-
 @media (min-width: 720px) {
   .people-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
 }
 @media (min-width: 1100px) {
   .people-grid { grid-template-columns: repeat(3, minmax(280px, 1fr)); }
 }
-
-.person { background: transparent; }
-
+.person {
+  background: transparent;
+}
 .person-portrait img {
   width: 100%;
   max-width: 280px;
@@ -601,7 +516,6 @@ button {
   margin: 0 auto;
   display: block;
 }
-
 .person-name {
   margin-top: 14px;
   font-weight: 800;
@@ -610,14 +524,12 @@ button {
   color: var(--accent);
   text-align: center;
 }
-
 .person-role {
   margin-top: 2px;
   font-weight: 800;
   color: var(--ink);
   text-align: center;
 }
-
 .person-bio {
   margin-top: 10px;
   color: var(--ink-dim);
@@ -627,54 +539,7 @@ button {
   margin-right: auto;
   text-align: center;
 }
-
 @media (max-width: 360px) {
   .people-grid { gap: 36px 24px; }
   .person-bio { font-size: 0.95rem; }
 }
-
-/* Ensure only the hero "Our Team" is huge */
-.hero-title {
-  font-size: clamp(56px, 8vw, 110px);
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: left; /* keeps position inside diagonal */
-}
-
-/* Smaller HQ section heading with gradient shine */
-.hq-title-small {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
-  margin: 0 0 16px;
-}
-
-.accent-inner {
-  background: linear-gradient(
-    180deg,
-    var(--accent-light) 0%,
-    var(--accent) 55%,
-    var(--accent-dark) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow:
-    0 1px 0 rgba(255,255,255,.35),
-    0 -1px 0 rgba(0,0,0,.18);
-}
-
-.hq-copy {
-  margin: 10px auto 28px;
-  max-width: 70ch;
-  font-size: clamp(16px, 2vw, 18px);
-  color: var(--ink-dim);
-  line-height: 1.7;
-}
-
-.hq-subtitle {
-  margin: 14px 0 26px;
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 700;
-}
-

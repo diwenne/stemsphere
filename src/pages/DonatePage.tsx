@@ -28,8 +28,8 @@ export default function DonatePage() {
     <>
       <header
         ref={heroRef}
-        className="hero hero-cut"
-        style={{ ["--scrollY" as any]: `${y}px`, ["--next-bg" as any]: "var(--slice-soft)" }}
+        className="hero hero-cut" /* Added hero-cut */
+        style={{ ["--scrollY" as any]: `${y}px`, ["--next-bg" as any]: "var(--slice-soft)" }} /* next-bg for diagonal */
       >
         <div className="hero-media" style={{backgroundImage:`url(${heroImg})`}} />
         <div className="container hero-inner">
@@ -48,7 +48,7 @@ export default function DonatePage() {
         </div>
       </header>
 
-      <section className="slice slice--soft pad-top-diag">
+      <section className="slice slice--soft pad-top-diag"> {/* Restored slice classes and pad-top-diag */}
         <div className="slice-inner container" style={{ maxWidth: 900 }}>
             <h2 className="section-title center">Your Impact</h2>
             <p className="lead center">Every donation, no matter the size, directly supports our ability to create and deliver high-quality STEM experiences.</p>
@@ -69,7 +69,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      <section className="slice">
+      <section className="slice"> {/* Restored slice class */}
         <div className="slice-inner container" style={{ maxWidth: 900 }}>
           <h3 className="subhead">Ways to Give</h3>
           <p>
@@ -107,4 +107,4 @@ BIC: EXAMNL2A`}</pre>
       </section>
     </>
   );
-}
+} 

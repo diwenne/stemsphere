@@ -28,8 +28,8 @@ export default function InvolvePage() {
     <>
       <header
         ref={heroRef}
-        className="hero hero-cut"
-        style={{ ["--scrollY" as any]: `${y}px`, ["--next-bg" as any]: "var(--slice-soft)" }}
+        className="hero hero-cut" /* Added hero-cut */
+        style={{ ["--scrollY" as any]: `${y}px`, ["--next-bg" as any]: "var(--slice-soft)" }} /* next-bg for diagonal */
       >
         <div className="hero-media" style={{backgroundImage:`url(${heroImg})`}} />
         <div className="container hero-inner">
@@ -40,7 +40,7 @@ export default function InvolvePage() {
         </div>
       </header>
 
-      <section className="slice slice--soft pad-top-diag slice--diag-bottom">
+      <section className="slice slice--soft pad-top-diag slice--diag-bottom"> {/* Restored slice classes and pad-top-diag */}
         <div className="slice-inner container" style={{ maxWidth: 1000 }}>
           <div className="grid cols-3">
             {[
@@ -70,7 +70,7 @@ export default function InvolvePage() {
         </div>
       </section>
       
-      <section className="slice">
+      <section className="slice"> {/* Restored slice class */}
         <div className="slice-inner container center" style={{ maxWidth: 800 }}>
           <h2 className="section-title">Ready to take the next step?</h2>
           <p className="lead">

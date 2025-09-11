@@ -50,22 +50,23 @@ function PersonCard({ name, role, photo, bio }: Member) {
 export default function TeamPage() {
   return (
     <main id="main">
-      {/* Diagonal hero: ONLY big "Our Team" */}
       <section
-        className="hero hero-cut"
-        style={{ ["--next-bg" as any]: "var(--slice-soft)" }}
+        className="hero hero-cut" /* Added hero-cut */
+        style={{ ["--next-bg" as any]: "var(--slice-soft)" }} /* next-bg for diagonal */
       >
         <div
           className="hero-media"
           style={{ backgroundImage: "url(/assets/hero/team-hero.jpg)" }}
         />
         <div className="container hero-inner">
-          <h1 className="display hero-title">Our Team</h1>
+            <h1 className="display">Our Team</h1>
+            <p className="lead mt-24">
+                Meet the passionate leaders and volunteers dedicated to guiding our mission and supporting learners worldwide.
+            </p>
         </div>
       </section>
 
-      {/* Intro block below diagonal */}
-      <section className="slice slice--soft slice--diag-top team-intro">
+      <section className="slice slice--soft slice--diag-top team-intro pad-top-diag"> {/* Restored slice classes and pad-top-diag */}
         <div className="container slice-inner">
           <div className="hq-intro">
             <h2 className="hq-title-small">
