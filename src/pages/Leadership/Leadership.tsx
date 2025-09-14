@@ -9,15 +9,15 @@ import tristan from '../../assets/tristan.png';
 const leaders = [
   {
     name: 'Diwen Huang',
-    title: 'Founder & Executive Director',
-    affiliation: 'MIT Computer Science',
+    title: 'President',
+    affiliation: '',
     bio: 'Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.',
     avatarUrl: diwen,
     tags: ['AI Research @ Stanford', 'Code for Good Lead', 'Robotics Captain'],
   },
   {
     name: 'Wilson Huang',
-    title: 'Director of Programs',
+    title: 'Vice President',
     affiliation: 'UC Berkeley Bioengineering',
     bio: 'Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.',
     avatarUrl: wilson,
@@ -25,7 +25,7 @@ const leaders = [
   },
   {
     name: 'Drishya Sharma',
-    title: 'Director of Outreach',
+    title: 'Director of Programs',
     affiliation: 'Georgia Tech Industrial Design',
     bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
     avatarUrl: drishya,
