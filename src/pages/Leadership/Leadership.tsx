@@ -42,7 +42,7 @@ const leaders = [
     bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
     avatarUrl: tristan,
     tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
-    linkedinUrl: '', // No LinkedIn provided, so the icon will not be shown
+    linkedinUrl: 'https://linkedin.com/in/tristan-du-329595384',
   },
   {
     name: 'Zoe Zhu',
