@@ -3,7 +3,8 @@ import './Donate.css';
 
 const Donate = () => {
   return (
-    <Section className="donate-section">
+    // THE FIX: Added the required 'id' prop
+    <Section id="donate" className="donate-section">
       <h1 className="donate-title">Support Our Work</h1>
       <p className="donate-description">
         Your contribution directly funds our workshops, provides resources to underserved students, and helps us expand our reach. Every dollar makes a difference.

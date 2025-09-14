@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
+
 :root {
   --accent-green: #10B981; /* A nice, modern green */
   --background-color: #fcfdff;

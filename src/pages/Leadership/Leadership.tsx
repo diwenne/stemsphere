@@ -35,7 +35,7 @@ const leaders = [
 
 const Leadership = () => {
   return (
-    <Section>
+    <Section id="leadership">
       <div className="leadership-header">
         <span className="header-subtitle">Chapter Leadership</span>
         <h1 className="header-title">Meet Our Team</h1>

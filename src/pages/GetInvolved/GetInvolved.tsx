@@ -4,7 +4,7 @@ import './GetInvolved.css';
 
 const GetInvolved = () => {
   return (
-    <Section className="get-involved-section">
+    <Section className="get-involved-section" id="get-involved">
       <h1 className="get-involved-title">Join Our Mission</h1>
       <p className="get-involved-description">
         Whether you want to start a program, volunteer your time, or partner with us, there are many ways to contribute to the future of STEM.
