@@ -21,7 +21,7 @@ const Donate = () => {
       </Section>
 
       {/* --- "Where Your Donation Goes" Section --- */}
-      <Section id="impact-details" className="impact-section">
+      <Section id="impact-details">
         <h2 className="section-title">Where Your Donation Goes</h2>
         <div className="impact-grid">
           

@@ -80,6 +80,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
         ))}
         <NavLink to="/leadership" className="nav-link" onClick={closeMobileMenu}>Leadership</NavLink>
         <NavLink to="/get-involved" className="nav-link" onClick={closeMobileMenu}>Get Involved</NavLink>
+
+        <NavLink to="/donate" className="nav-link mobile-donate" onClick={closeMobileMenu}>Donate Now</NavLink>
       </div>
     </header>
   );
