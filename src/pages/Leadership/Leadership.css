@@ -1,0 +1,32 @@
+.leadership-header {
+  margin-bottom: 60px;
+}
+
+.header-subtitle {
+  display: inline-block;
+  background-color: #e0f2f1;
+  color: var(--accent-green);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.header-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
