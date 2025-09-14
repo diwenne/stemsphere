@@ -6,12 +6,32 @@
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative; /* Required for absolute positioning of the icon */
 }
 
 .leadership-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
+
+/* --- New Styles for LinkedIn Icon --- */
+.card-linkedin-link {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.card-linkedin-link:hover {
+  color: var(--accent-green);
+}
+
+.card-linkedin-link svg {
+  width: 24px;
+  height: 24px;
+}
+/* --- End of New Styles --- */
 
 .card-avatar {
   width: 60px;
