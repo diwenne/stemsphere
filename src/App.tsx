@@ -38,12 +38,11 @@ const AppContent = () => {
             path="/" 
             element={<Home setActiveSection={setActiveSection} />} 
           />
-          <Route path="/" element={<Home />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/donate" element={<Donate />} />
-          <Route path="/terms-of-service" element={<PrivacyPolicy />} />
-          <Route path="/privacy-policy" element={<TermsOfService />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />
