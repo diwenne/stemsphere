@@ -5,7 +5,7 @@ import diwen from '../../assets/diwen.jpg'; // Make sure you have these images
 import wilson from '../../assets/wilson.png';
 import drishya from '../../assets/drishya.jpg';
 import tristan from '../../assets/tristan.png';
-import zoe from '../../assets/zoe.jpg';
+import zoe from '../../assets/zoe.JPG';
 
 const leaders = [
   {
