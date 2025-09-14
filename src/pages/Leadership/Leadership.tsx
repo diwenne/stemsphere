@@ -5,12 +5,13 @@ import diwen from '../../assets/diwen.jpg'; // Make sure you have these images
 import wilson from '../../assets/wilson.png';
 import drishya from '../../assets/drishya.jpg';
 import tristan from '../../assets/tristan.png';
+import zoe from '../../assets/zoe.jpg';
 
 const leaders = [
   {
     name: 'Diwen Huang',
     title: 'President',
-    affiliation: '',
+    affiliation: 'Coquitlam, BC',
     bio: 'Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.',
     avatarUrl: diwen,
     tags: ['AI Research @ Stanford', 'Code for Good Lead', 'Robotics Captain'],
@@ -18,7 +19,7 @@ const leaders = [
   {
     name: 'Wilson Huang',
     title: 'Vice President',
-    affiliation: 'UC Berkeley Bioengineering',
+    affiliation: 'Maple Ridge, BC',
     bio: 'Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.',
     avatarUrl: wilson,
     tags: ['iGEM Gold Medalist', 'Biotech Startup Intern', 'STEM Tutor'],
@@ -26,7 +27,7 @@ const leaders = [
   {
     name: 'Drishya Sharma',
     title: 'Director of Programs',
-    affiliation: 'Georgia Tech Industrial Design',
+    affiliation: 'Port Moody, BC',
     bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
     avatarUrl: drishya,
     tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
@@ -34,9 +35,17 @@ const leaders = [
   {
     name: 'Tristan Du',
     title: 'Director of Outreach',
-    affiliation: 'Georgia Tech Industrial Design',
+    affiliation: 'Coquitlam, BC',
     bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
     avatarUrl: tristan,
+    tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
+  },
+  {
+    name: 'Zoe Zhu',
+    title: 'Director of Operations',
+    affiliation: 'Coquitlam, BC',
+    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
+    avatarUrl: zoe,
     tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
   },
 ];
