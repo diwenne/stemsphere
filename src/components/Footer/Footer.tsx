@@ -18,9 +18,7 @@ const Footer = () => {
         <div className="footer-social">
           <h4>Follow Us</h4>
           {/* Add actual links */}
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+          <a href="https://www.instagram.com/stemspherefoundation?igsh=bm9obDliMm90Ym04&utm_source=qr">Instagram</a>
         </div>
       </div>
       <div className="footer-bottom">
