@@ -4,4 +4,5 @@
   margin: 0 auto;
   padding: 80px 20px;
   text-align: center;
+  background-color: transparent; /* This is the one line that fixes the issue */
 }

@@ -32,7 +32,7 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
     }
   }, [location.hash]);
 
-  // THE FIX: Updated scroll-spy logic
+  // Effect for scroll-spy logic
   useEffect(() => {
     // We now observe the 'home' section as well
     const sectionsToObserve = ['home', 'benefits', 'impact'];
@@ -88,6 +88,7 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
         </div>
       </Section>
 
+      {/* The extra className has been removed as it's no longer needed */}
       <Section id="benefits">
         <h2 className="section-title">Why Join Stemsphere?</h2>
         <p className="section-subtitle">Discover the exclusive advantages and opportunities we provide.</p>
@@ -98,7 +99,7 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
         </div>
       </Section>
 
-      <Section id="impact" className="impact-section">
+      <Section id="impact">
         <h2 className="section-title">Our Impact</h2>
         <p className="section-subtitle">Fueling curiosity and creating future leaders in STEM.</p>
         <div className="impact-stats-container">

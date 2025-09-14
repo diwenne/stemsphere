@@ -30,6 +30,27 @@
   line-height: 1.6;
 }
 
+.footer-contact-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-contact-icons a {
+  color: var(--text-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-contact-icons a:hover {
+  color: var(--accent-green);
+  transform: scale(1.1);
+}
+
+.footer-contact-icons svg {
+  width: 24px;
+  height: 24px;
+}
+
 .footer-links h4, .footer-social h4 {
   font-size: 1rem;
   font-weight: 600;
@@ -46,9 +67,21 @@
   color: var(--accent-green);
 }
 
+/* --- THE FIX IS HERE --- */
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
+  /* Removed the border-top and padding-top from here */
   font-size: 0.9rem;
 }
+
+/* This new pseudo-element creates the fading divider */
+.footer-bottom::before {
+  content: '';
+  display: block;
+  width: 90%;
+  max-width: 400px; /* Prevents the line from being too long on wide screens */
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color, #e2e8f0), transparent);
+  margin: 0 auto 20px; /* Centers the line and adds space below it */
+}
+/* --- END OF FIX --- */
