@@ -14,7 +14,7 @@ const leaders = [
     affiliation: 'Coquitlam, BC',
     bio: 'Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.',
     avatarUrl: diwen,
-    tags: ['AI Research @ Stanford', 'Code for Good Lead', 'Robotics Captain'],
+    tags: ['Computer Vision Research', 'Bestselling Author', 'iOS Developer'],
     linkedinUrl: 'http://linkedin.com/in/diwenh5',
   },
   {
