@@ -67,21 +67,59 @@
   color: var(--accent-green);
 }
 
-/* --- THE FIX IS HERE --- */
 .footer-bottom {
-  text-align: center;
-  /* Removed the border-top and padding-top from here */
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* This new pseudo-element creates the fading divider */
 .footer-bottom::before {
   content: '';
   display: block;
-  width: 90%;
-  max-width: 400px; /* Prevents the line from being too long on wide screens */
+  width: 100%;
+  max-width: 1200px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border-color, #e2e8f0), transparent);
-  margin: 0 auto 20px; /* Centers the line and adds space below it */
+  margin: 0 auto 20px;
+  flex-basis: 100%;
 }
-/* --- END OF FIX --- */
+
+.footer-legal-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal-links a {
+  transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: var(--accent-green);
+}
+
+/* --- MODIFIED CODE FOR MOBILE --- */
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    /* FIX: Center align the text inside all child elements */
+    text-align: center;
+  }
+
+  .footer-legal-links {
+    /* FIX: Center the flex items (the links) within their container */
+    justify-content: center;
+  }
+  
+  .footer-bottom::before {
+    /* FIX: Ensure the divider appears correctly in a column layout */
+    flex-basis: auto;
+    width: 90%;
+  }
+}

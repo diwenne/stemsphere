@@ -6,6 +6,8 @@ import Home from './pages/Home/Home';
 import Leadership from './pages/Leadership/Leadership';
 import GetInvolved from './pages/GetInvolved/GetInvolved';
 import Donate from './pages/Donate/Donate';
+import PrivacyPolicy from './components/Legal/PrivacyPolicy';
+import TermsOfService from './components/Legal/TermsOfService';
 
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -36,9 +38,12 @@ const AppContent = () => {
             path="/" 
             element={<Home setActiveSection={setActiveSection} />} 
           />
+          <Route path="/" element={<Home />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/terms-of-service" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<TermsOfService />} />
         </Routes>
       </main>
       <Footer />
