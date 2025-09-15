@@ -108,7 +108,7 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
             <span className="impact-label">Hours of Coding Taught</span>
           </div>
           <div className="impact-stat">
-            <span className="impact-number">1+</span>
+            <span className="impact-number">5+</span>
             <span className="impact-label">Projects Built</span>
           </div>
           <div className="impact-stat">
