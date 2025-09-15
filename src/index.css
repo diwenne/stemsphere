@@ -51,3 +51,10 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; /* Reduces the base font size from 16px to 14px */
+  }
+}
