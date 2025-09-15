@@ -2,18 +2,17 @@
   "navbar": {
     "benefits": "Avantages",
     "impact": "Impact",
-    "leadership": "Direction",
+    "about": "À propos",
     "getInvolved": "S'impliquer",
-    "donate": "Faire un don maintenant"
+    "donate": "Faire un don"
   },
   "footer": {
     "mission": "Donner à la prochaine génération d'innovateurs les moyens de réussir grâce à l'éducation STIM.",
     "navigate": "Naviguer",
     "home": "Accueil",
-    "leadership": "Direction",
+    "about": "À propos",
     "getInvolved": "S'impliquer",
     "donate": "Faire un don",
-    "followUs": "Suivez-nous",
     "instagram": "Instagram",
     "copyright": "© {{year}} Stemsphere Foundation. Tous droits réservés.",
     "privacyPolicy": "Politique de confidentialité",
@@ -23,7 +22,7 @@
     "hero": {
       "subtitle": "Autonomiser les étudiants innovateurs",
       "title": "Fondation Stemsphere",
-      "description": "Nous fournissons aux jeunes les compétences, le mentorat et les ressources nécessaires pour exceller à l'intersection de la science, de la technologie, de l'ingénierie et des mathématiques.",
+      "description": "Nous fournissons aux jeunes les compétences, le mentorat et une plateforme pour exceller à l'intersection de la science, de la technologie, de l'ingénierie et des mathématiques.",
       "getInvolvedBtn": "S'impliquer",
       "meetTeamBtn": "Rencontrer l'équipe",
       "stats": {
@@ -52,19 +51,42 @@
       }
     }
   },
-  "leadership": {
-    "subtitle": "Direction du chapitre",
-    "title": "Rencontrez notre équipe",
-    "description": "Rencontrez les étudiants exceptionnels qui dirigent la Fondation Stemsphere, organisent des ateliers, développent des programmes et font avancer notre mission.",
+  "about": {
+    "header": {
+      "title": "À propos de Stemsphere",
+      "subtitle": "Découvrez la mission, les valeurs et les personnes qui animent la prochaine vague d'innovation en STIM."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Un monde où chaque jeune est en mesure de libérer sa créativité dans les STIM, d'innover avec un but et de façonner un avenir meilleur et plus équitable pour tous."
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Fournir une éducation et un mentorat STIM accessibles et pratiques aux jeunes, en les équipant pour devenir la prochaine génération de solutionneurs de problèmes, de leaders et d'innovateurs."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "cards": [
+        { "icon": "🌐", "title": "Accessibilité", "description": "Nous éliminons les barrières pour garantir qu'une éducation STIM de qualité soit accessible à chaque étudiant, quels que soient son origine ou son lieu de résidence." },
+        { "icon": "🤝", "title": "Collaboration", "description": "Nous croyons au pouvoir du travail d'équipe et de la communauté, en favorisant un environnement où les étudiants apprennent, construisent et innovent ensemble." },
+        { "icon": "💡", "title": "Innovation", "description": "Nous encourageons la curiosité et la résolution créative de problèmes, donnant aux étudiants les moyens non seulement d'apprendre les STIM, mais de les faire progresser." },
+        { "icon": "🚀", "title": "Impact", "description": "Nous sommes motivés par l'objectif de créer un changement tangible et positif pour nos étudiants, leurs communautés et le monde." }
+      ]
+    },
+    "team": {
+      "subtitle": "Équipe de direction",
+      "title": "Rencontrez notre équipe",
+      "description": "Rencontrez les étudiants exceptionnels qui dirigent la Fondation Stemsphere, organisent des ateliers, développent des programmes et font avancer notre mission."
+    },
     "leaders": [
       { "name": "Diwen Huang", "title": "Président", "affiliation": "Coquitlam, BC", "bio": "Chercheur en IA et ingénieur logiciel en herbe, passionné par l'accessibilité de l'éducation STIM à tous.", "tags": ["Recherche en vision par ordinateur", "Auteur de best-sellers", "Développeur iOS"], "linkedinUrl": "http://linkedin.com/in/diwenh5" },
-      { "name": "Wilson Huang", "title": "Vice-président", "affiliation": "Maple Ridge, BC", "bio": "Dédié à la création de programmes innovants qui comblent le fossé entre la théorie en classe et l'application dans le monde réel.", "tags": ["Recherche en gestion algorithmique","Auteur de best-sellers","Amoureux des chats"], "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" },
-      { "name": "Drishya Sharma", "title": "Directrice des programmes", "affiliation": "Port Moody, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["Tuteur STIM", "Nerd mais cool"], "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" },
-      { "name": "Tristan Du", "title": "Directeur des partenariats", "affiliation": "Coquitlam, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["Design UX","Meilleur snowboarder"], "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" },
-      { "name": "Zoe Zhu", "title": "Directrice des communications", "affiliation": "Coquitlam, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["Future étudiante en commerce","Nonchalante"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
-      { "name": "Eden Liang", "title": "Directrice des finances", "affiliation": "Coquitlam, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["+1M de vues en marketing","Fana de badminton"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
-      { "name": "Timmy Jin", "title": "Directeur des finances", "affiliation": "Coquitlam, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["Auteur de best-sellers","Bonne mode"], "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" },
-      { "name": "Andy Guo", "title": "Directeur des finances", "affiliation": "Coquitlam, BC", "bio": "Explore l'intersection de la technologie et du design centré sur l'humain pour créer des programmes communautaires percutants.", "tags": ["World Scholars Cup"], "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" }
+      { "name": "Wilson Huang", "title": "Vice-président", "affiliation": "Maple Ridge, BC", "bio": "Dédié à la création de programmes innovants qui comblent le fossé entre la théorie en classe et l'application dans le monde réel.", "tags": ["Recherche algorithmique", "Concepteur de programmes STIM", "Délégué de l'ONU"], "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" },
+      { "name": "Drishya Sharma", "title": "Directrice des programmes", "affiliation": "Port Moody, BC", "bio": "Axée sur la création d'initiatives STIM inclusives qui associent la technologie au design centré sur l'humain pour servir divers apprenants.", "tags": ["Tuteur STIM", "Bâtisseur de communauté"], "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" },
+      { "name": "Tristan Du", "title": "Directeur des partenariats", "affiliation": "Coquitlam, BC", "bio": "Passionné par la création de relations entre les écoles, les organisations et les communautés pour élargir les opportunités d'apprentissage en STIM.", "tags": ["Design UX", "Passionné de plein air"], "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" },
+      { "name": "Zoe Zhu", "title": "Directrice des communications", "affiliation": "Coquitlam, BC", "bio": "Ambitieuse étudiante en STIM et en commerce, déterminée à innover dans les ressources éducatives et à améliorer l'apprentissage fondamental.", "tags": ["Future étudiante en commerce", "Penseuse créative"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
+      { "name": "Eden Liang", "title": "Directrice des finances", "affiliation": "Coquitlam, BC", "bio": "Dédiée à la combinaison de l'ingénierie et de la littératie financière pour soutenir des initiatives STIM durables.", "tags": ["Prix de design Shad", "Expérience en startup", "Programmeuse de robotique"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
+      { "name": "Timmy Jin", "title": "Membre exécutif", "affiliation": "Coquitlam, BC", "bio": "Mêle des intérêts pour la technologie et les affaires pour garantir que les projets de STEMsphere soient financièrement résilients et percutants.", "tags": ["Passionné de STIM", "Esprit design"], "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" },
+      { "name": "Andy Guo", "title": "Membre exécutif", "affiliation": "Coquitlam, BC", "bio": "Combine des compétences analytiques avec une passion pour le travail d'équipe pour gérer les ressources et soutenir les programmes STIM dirigés par des étudiants.", "tags": ["World Scholars Cup", "Esprit d'équipe"], "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" }
     ]
   },
   "getInvolved": {

@@ -2,7 +2,7 @@
   "navbar": {
     "benefits": "Vorteile",
     "impact": "Wirkung",
-    "leadership": "Führung",
+    "about": "Über uns",
     "getInvolved": "Engagieren Sie sich",
     "donate": "Jetzt spenden"
   },
@@ -10,10 +10,9 @@
     "mission": "Die nächste Generation von Innovatoren durch MINT-Bildung befähigen.",
     "navigate": "Navigieren",
     "home": "Startseite",
-    "leadership": "Führung",
+    "about": "Über uns",
     "getInvolved": "Engagieren Sie sich",
     "donate": "Spenden",
-    "followUs": "Folgen Sie uns",
     "instagram": "Instagram",
     "copyright": "© {{year}} Stemsphere Foundation. Alle Rechte vorbehalten.",
     "privacyPolicy": "Datenschutzrichtlinie",
@@ -23,7 +22,7 @@
     "hero": {
       "subtitle": "Studentische Innovatoren befähigen",
       "title": "Stemsphere Stiftung",
-      "description": "Wir vermitteln Jugendlichen die Fähigkeiten, das Mentoring und die Ressourcen, um an der Schnittstelle von Wissenschaft, Technologie, Ingenieurwesen und Mathematik hervorragende Leistungen zu erbringen.",
+      "description": "Wir vermitteln Jugendlichen die Fähigkeiten, das Mentoring und eine Plattform, um an der Schnittstelle von Wissenschaft, Technologie, Ingenieurwesen und Mathematik hervorragende Leistungen zu erbringen.",
       "getInvolvedBtn": "Engagieren Sie sich",
       "meetTeamBtn": "Lernen Sie das Team kennen",
       "stats": {
@@ -52,19 +51,42 @@
       }
     }
   },
-  "leadership": {
-    "subtitle": "Kapitelleitung",
-    "title": "Lernen Sie unser Team kennen",
-    "description": "Lernen Sie die herausragenden Studenten kennen, die die Stemsphere Foundation leiten, Workshops organisieren, Programme entwickeln und unsere Mission vorantreiben.",
+  "about": {
+    "header": {
+      "title": "Über Stemsphere",
+      "subtitle": "Entdecken Sie die Mission, die Werte und die Menschen, die die nächste Welle der MINT-Innovation vorantreiben."
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "description": "Eine Welt, in der jeder junge Mensch befähigt wird, seine Kreativität in MINT zu entfalten, zielgerichtet zu innovieren und eine bessere, gerechtere Zukunft für alle zu gestalten."
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Zugängliche, praxisnahe MINT-Bildung und Mentoring für junge Menschen bereitzustellen, um sie zur nächsten Generation von Problemlösern, Führungskräften und Innovatoren auszubilden."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "cards": [
+        { "icon": "🌐", "title": "Zugänglichkeit", "description": "Wir bauen Barrieren ab, um sicherzustellen, dass hochwertige MINT-Bildung für jeden Schüler verfügbar ist, unabhängig von seinem Hintergrund oder Standort." },
+        { "icon": "🤝", "title": "Zusammenarbeit", "description": "Wir glauben an die Kraft von Teamarbeit und Gemeinschaft und fördern ein Umfeld, in dem Schüler gemeinsam lernen, bauen und innovieren." },
+        { "icon": "💡", "title": "Innovation", "description": "Wir fördern Neugier und kreative Problemlösung und befähigen die Schüler, MINT nicht nur zu lernen, sondern es voranzutreiben." },
+        { "icon": "🚀", "title": "Wirkung", "description": "Unser Ziel ist es, spürbare, positive Veränderungen zu schaffen – für unsere Schüler, ihre Gemeinschaften und die Welt." }
+      ]
+    },
+    "team": {
+      "subtitle": "Führungsteam",
+      "title": "Lernen Sie unser Team kennen",
+      "description": "Lernen Sie die herausragenden Studenten kennen, die die Stemsphere Foundation leiten, Workshops organisieren, Programme entwickeln und unsere Mission vorantreiben."
+    },
     "leaders": [
       { "name": "Diwen Huang", "title": "Präsident", "affiliation": "Coquitlam, BC", "bio": "Angehender KI-Forscher und Software-Ingenieur, der sich leidenschaftlich dafür einsetzt, MINT-Bildung für alle zugänglich zu machen.", "tags": ["Computer Vision Forschung", "Bestsellerautor", "iOS-Entwickler"], "linkedinUrl": "http://linkedin.com/in/diwenh5" },
-      { "name": "Wilson Huang", "title": "Vizepräsident", "affiliation": "Maple Ridge, BC", "bio": "Engagiert sich für die Entwicklung innovativer Lehrpläne, die die Lücke zwischen Klassentheorie und realer Anwendung schließen.", "tags": ["Algorithmische Managementforschung","Bestsellerautor","Katzenliebhaber"], "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" },
-      { "name": "Drishya Sharma", "title": "Programmdirektorin", "affiliation": "Port Moody, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["MINT-Tutorin", "Nerdig, aber cool"], "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" },
-      { "name": "Tristan Du", "title": "Direktor für Partnerschaften", "affiliation": "Coquitlam, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["UX-Design","Bester Snowboarder"], "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" },
-      { "name": "Zoe Zhu", "title": "Kommunikationsdirektorin", "affiliation": "Coquitlam, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["Angehende Betriebswirtin","Lässig"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
-      { "name": "Eden Liang", "title": "Finanzdirektorin", "affiliation": "Coquitlam, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["1M+ Marketing-Aufrufe","Badminton-Nerd"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
-      { "name": "Timmy Jin", "title": "Finanzdirektor", "affiliation": "Coquitlam, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["Bestsellerautor","Gute Mode"], "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" },
-      { "name": "Andy Guo", "title": "Finanzdirektor", "affiliation": "Coquitlam, BC", "bio": "Erkundet die Schnittstelle von Technologie und menschenzentriertem Design, um wirkungsvolle Gemeinschaftsprogramme zu erstellen.", "tags": ["World Scholars Cup"], "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" }
+      { "name": "Wilson Huang", "title": "Vizepräsident", "affiliation": "Maple Ridge, BC", "bio": "Engagiert sich für die Entwicklung innovativer Lehrpläne, die die Lücke zwischen Klassentheorie und realer Anwendung schließen.", "tags": ["Algorithmische Forschung", "MINT-Lehrplangestalter", "UN-Delegierter"], "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" },
+      { "name": "Drishya Sharma", "title": "Programmdirektorin", "affiliation": "Port Moody, BC", "bio": "Konzentriert sich auf den Aufbau inklusiver MINT-Initiativen, die Technologie mit menschenzentriertem Design verbinden, um verschiedene Lernende zu bedienen.", "tags": ["MINT-Tutorin", "Gemeinschaftsbildnerin"], "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" },
+      { "name": "Tristan Du", "title": "Direktor für Partnerschaften", "affiliation": "Coquitlam, BC", "bio": "Leidenschaftlich daran interessiert, Beziehungen zwischen Schulen, Organisationen und Gemeinschaften zu schmieden, um die MINT-Lernmöglichkeiten zu erweitern.", "tags": ["UX-Design", "Outdoor-Enthusiast"], "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" },
+      { "name": "Zoe Zhu", "title": "Kommunikationsdirektorin", "affiliation": "Coquitlam, BC", "bio": "Ehrgeizige MINT- und Wirtschaftsstudentin, die darauf aus ist, Bildungsressourcen zu erneuern und das grundlegende Lernen zu verbessern.", "tags": ["Angehende Betriebswirtin", "Kreative Denkerin"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
+      { "name": "Eden Liang", "title": "Finanzdirektorin", "affiliation": "Coquitlam, BC", "bio": "Engagiert sich für die Kombination von Ingenieurwesen und Finanzwissen, um nachhaltige MINT-Initiativen zu unterstützen.", "tags": ["Shad Design Award", "Startup-Erfahrung", "Robotik-Programmiererin"], "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" },
+      { "name": "Timmy Jin", "title": "Vorstandsmitglied", "affiliation": "Coquitlam, BC", "bio": "Verbindet Interessen in Technologie und Wirtschaft, um sicherzustellen, dass die Projekte von STEMsphere finanziell widerstandsfähig und wirkungsvoll sind.", "tags": ["MINT-Enthusiast", "Designorientiert"], "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" },
+      { "name": "Andy Guo", "title": "Vorstandsmitglied", "affiliation": "Coquitlam, BC", "bio": "Kombiniert analytische Fähigkeiten mit einer Leidenschaft für Teamarbeit, um Ressourcen zu verwalten und von Studenten geleitete MINT-Programme zu unterstützen.", "tags": ["World Scholars Cup", "Teamplayer"], "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" }
     ]
   },
   "getInvolved": {
