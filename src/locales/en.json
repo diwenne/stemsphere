@@ -52,6 +52,11 @@
     }
   },
   "about": {
+    "header": {
+      "title": "About Stemsphere",
+      "subtitle": "Discover the mission, values, and people driving the next wave of STEM innovation."
+    },
+    
     "vision": {
       "title": "Our Vision",
       "description": "A world where every young person is empowered to unleash their creativity in STEM, innovate with purpose, and shape a better, more equitable future for all."

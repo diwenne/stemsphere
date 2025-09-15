@@ -51,9 +51,14 @@ const About = () => {
 
   return (
     <>
+      {/* --- Header and Content are now inside a SINGLE Section --- */}
       <Section id="about">
-        {/* --- New Mission, Vision, Values Section --- */}
-        <div className="about-header">
+        <div className="page-header">
+          <h1 className="page-title">{t('about.header.title')}</h1>
+          <p className="page-subtitle">{t('about.header.subtitle')}</p>
+        </div>
+
+        <div className="about-details">
           <div className="mission-vision-container">
             <div className="vision-box">
               <h2>{t('about.vision.title')}</h2>
@@ -78,7 +83,6 @@ const About = () => {
       </Section>
 
       <Section id="team">
-        {/* --- Existing Team Section --- */}
         <div className="team-header">
           <span className="header-subtitle">{t('about.team.subtitle')}</span>
           <h1 className="header-title">{t('about.team.title')}</h1>
