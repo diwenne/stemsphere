@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
-import Leadership from './pages/Leadership/Leadership';
+import About from './pages/About/About';
 import GetInvolved from './pages/GetInvolved/GetInvolved';
 import Donate from './pages/Donate/Donate';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
@@ -38,7 +38,7 @@ const AppContent = () => {
             path="/" 
             element={<Home setActiveSection={setActiveSection} />} 
           />
-          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/about" element={<About />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />

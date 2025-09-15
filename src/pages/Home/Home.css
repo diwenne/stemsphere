@@ -75,6 +75,7 @@
 .hero-stats {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   color: var(--text-secondary);
   font-weight: 500;

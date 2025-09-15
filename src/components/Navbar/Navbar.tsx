@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
 
         <div className="navbar-links">
           {navItems.map(item => (<NavLink key={item.to} to={`/#${item.to}`} className={() => activeSection === item.to ? 'nav-link active' : 'nav-link'}>{item.label}</NavLink>))}
-          <NavLink to="/leadership" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>{t('navbar.leadership')}</NavLink>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>{t('navbar.about')}</NavLink>
           <NavLink to="/get-involved" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>{t('navbar.getInvolved')}</NavLink>
         </div>
 
@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
       {/* --- MAIN MOBILE MENU --- */}
       <div className={`mobile-nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
         {navItems.map(item => (<NavLink key={item.to} to={`/#${item.to}`} onClick={closeMobileMenu} className={() => activeSection === item.to ? 'nav-link active' : 'nav-link'}>{item.label}</NavLink>))}
-        <NavLink to="/leadership" className="nav-link" onClick={closeMobileMenu}>{t('navbar.leadership')}</NavLink>
+        <NavLink to="/about" className="nav-link" onClick={closeMobileMenu}>{t('navbar.about')}</NavLink>
         <NavLink to="/get-involved" className="nav-link" onClick={closeMobileMenu}>{t('navbar.getInvolved')}</NavLink>
         <NavLink to="/donate" className="nav-link mobile-donate" onClick={closeMobileMenu}>{t('navbar.donate')}</NavLink>
       </div>

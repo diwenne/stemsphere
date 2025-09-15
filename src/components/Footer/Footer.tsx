@@ -44,7 +44,7 @@ const Footer = () => {
         <div className="footer-links">
           <h4>{t('footer.navigate')}</h4>
           <a href="/">{t('footer.home')}</a>
-          <a href="/leadership">{t('footer.leadership')}</a>
+          <a href="/about">{t('footer.about')}</a>
           <a href="/get-involved">{t('footer.getInvolved')}</a>
           <a href="/donate">{t('footer.donate')}</a>
         </div>
