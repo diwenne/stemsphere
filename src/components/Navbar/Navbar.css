@@ -28,6 +28,8 @@
 
 .logo-icon {
   flex-shrink: 0;
+  /* Added height to control the size of the png image */
+  height: 44px; 
 }
 
 .logo-text {
@@ -35,6 +37,8 @@
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.5px;
+  /* Added a subtle shadow to give a lifted, metallic feel */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .logo-stem,
@@ -45,10 +49,12 @@
   padding-bottom: 2px;
 }
 
+/* Turquoise/Green gradient for "Stem" */
 .logo-stem {
   background-image: linear-gradient(60deg, #67e8f9, #2dd4bf, #a7f3d0);
 }
 
+/* A different, darker shade of green for "sphere" */
 .logo-sphere {
   background-image: linear-gradient(60deg, #2dd4bf, #0d9488, #042f2e);
 }
