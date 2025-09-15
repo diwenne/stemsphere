@@ -1,52 +1,45 @@
+import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
 import './GetInvolved.css';
 
 const GetInvolved = () => {
+  const { t } = useTranslation();
+
   return (
     <Section id="get-involved" className="get-involved-page">
       <div className="get-involved-header">
-        <span className="page-pill">Join the Movement</span>
-        <h1 className="page-title">Choose Your Path</h1>
-        <p className="page-subtitle">
-          Whether you're a student eager to lead or a teacher ready to inspire, we have the perfect opportunity for you to make a real impact.
-        </p>
+        <span className="page-pill">{t('getInvolved.pill')}</span>
+        <h1 className="page-title">{t('getInvolved.title')}</h1>
+        <p className="page-subtitle">{t('getInvolved.subtitle')}</p>
       </div>
 
       <div className="paths-container">
-        {/* Path 1: Start a Chapter */}
         <div className="path-card">
           <div className="card-icon-wrapper">
             <span className="card-icon">🌍</span>
           </div>
-          <h2 className="card-title">Start a Chapter</h2>
-          <p className="card-description">
-            Bring Stemsphere to your area by leading a local chapter. You'll gain leadership skills, build a community, and get exclusive access to our network and resources.
-          </p>
+          <h2 className="card-title">{t('getInvolved.chapter.title')}</h2>
+          <p className="card-description">{t('getInvolved.chapter.description')}</p>
           <ul className="card-features">
-            <li>Lead and mentor students in your community</li>
-            <li>Organize workshops, competitions, and events</li>
-            <li>Receive a comprehensive startup kit and ongoing support</li>
-            <li>Develop valuable project management and leadership skills</li>
+            {(t('getInvolved.chapter.features', { returnObjects: true }) as string[]).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
-          <a href="#" className="btn btn-primary card-cta">Apply to Lead</a>
+          <a href="#" className="btn btn-primary card-cta">{t('getInvolved.chapter.cta')}</a>
         </div>
 
-        {/* Path 2: Request a Workshop */}
         <div className="path-card">
           <div className="card-icon-wrapper">
             <span className="card-icon">🏫</span>
           </div>
-          <h2 className="card-title">Request a Workshop</h2>
-          <p className="card-description">
-            Bring our hands-on STEM workshops directly to your classroom or school. Our team provides engaging, curriculum-aligned content for students of all levels.
-          </p>
+          <h2 className="card-title">{t('getInvolved.workshop.title')}</h2>
+          <p className="card-description">{t('getInvolved.workshop.description')}</p>
           <ul className="card-features">
-            <li>Choose from topics like AI, Robotics, and Web Development</li>
-            <li>Workshops are led by our experienced instructors</li>
-            <li>All materials and lesson plans are provided</li>
-            <li>Spark curiosity and inspire the next generation of innovators</li>
+            {(t('getInvolved.workshop.features', { returnObjects: true }) as string[]).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
-          <a href="#" className="btn btn-primary card-cta">Request Now</a>
+          <a href="#" className="btn btn-primary card-cta">{t('getInvolved.workshop.cta')}</a>
         </div>
       </div>
     </Section>

@@ -1,65 +1,53 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Legal.css';
 
 const TermsOfService: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="legal-page-container">
-      <h1>Terms of Service</h1>
-      <p className="last-updated">Last Updated: September 14, 2025</p>
+      <h1>{t('terms.title')}</h1>
+      <p className="last-updated">{t('terms.lastUpdated')}</p>
 
       <section>
-        <h2>1. Agreement to Terms</h2>
-        <p>
-          By accessing or using the Stemsphere Foundation website (the "Site"), you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions, you are not authorized to use the Site.
-        </p>
+        <h2>{t('terms.agreement.title')}</h2>
+        <p>{t('terms.agreement.p1')}</p>
       </section>
       
       <section>
-        <h2>2. Use of the Site</h2>
-        <p>
-          You agree to use the Site only for lawful purposes. You are prohibited from any use of the Site that would constitute a violation of any applicable law or regulation.
-        </p>
+        <h2>{t('terms.useOfSite.title')}</h2>
+        <p>{t('terms.useOfSite.p1')}</p>
       </section>
 
       <section>
-        <h2>3. Intellectual Property</h2>
-        <p>
-          All content on this Site, including text, graphics, logos, and images, is the property of Stemsphere Foundation or its content suppliers and is protected by Canadian and international copyright laws.
-        </p>
+        <h2>{t('terms.intellectualProperty.title')}</h2>
+        <p>{t('terms.intellectualProperty.p1')}</p>
       </section>
 
       <section>
-        <h2>4. Donations</h2>
-        <p>
-          All donations made to Stemsphere Foundation are processed through secure third-party payment processors. Donations are non-refundable.
-        </p>
+        <h2>{t('terms.donations.title')}</h2>
+        <p>{t('terms.donations.p1')}</p>
       </section>
 
       <section>
-        <h2>5. Links to Other Websites</h2>
-        <p>
-          Our Site may contain links to third-party websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites.
-        </p>
+        <h2>{t('terms.links.title')}</h2>
+        <p>{t('terms.links.p1')}</p>
       </section>
       
       <section>
-        <h2>6. Limitation of Liability</h2>
-        <p>
-          In no event shall Stemsphere Foundation be liable for any indirect, incidental, or consequential damages arising out of your use of the Site.
-        </p>
+        <h2>{t('terms.liability.title')}</h2>
+        <p>{t('terms.liability.p1')}</p>
       </section>
 
       <section>
-        <h2>7. Governing Law</h2>
-        <p>
-          These Terms shall be governed by the laws of the province of British Columbia, Canada, without regard to its conflict of law provisions.
-        </p>
+        <h2>{t('terms.law.title')}</h2>
+        <p>{t('terms.law.p1')}</p>
       </section>
       
       <section>
-        <h2>8. Contact Us</h2>
+        <h2>{t('terms.contact.title')}</h2>
         <p>
-          If you have any questions about these Terms, please contact us at: <a href="mailto:hello@stemsf.org">hello@stemsf.org</a>.
+          {t('terms.contact.p1')}<a href="mailto:hello@stemsf.org">hello@stemsf.org</a>.
         </p>
       </section>
     </div>

@@ -18,7 +18,6 @@
   align-items: center;
 }
 
-/* --- MODIFICATION: New Stemsphere Logo Styling --- */
 .stemsphere-logo {
   display: flex;
   align-items: center;
@@ -28,7 +27,6 @@
 
 .logo-icon {
   flex-shrink: 0;
-  /* Added height to control the size of the png image */
   height: 44px; 
 }
 
@@ -37,7 +35,6 @@
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.5px;
-  /* Added a subtle shadow to give a lifted, metallic feel */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -49,20 +46,16 @@
   padding-bottom: 2px;
 }
 
-/* Turquoise/Green gradient for "Stem" */
 .logo-stem {
   background-image: linear-gradient(60deg, #67e8f9, #2dd4bf, #a7f3d0);
 }
 
-/* A different, darker shade of green for "sphere" */
 .logo-sphere {
   background-image: linear-gradient(60deg, #2dd4bf, #0d9488, #042f2e);
 }
-/* --- End of Logo Styling --- */
-
 
 .navbar-links {
-  display: none;
+  display: none; /* Hidden on mobile */
   gap: 30px;
   height: 100%;
 }
@@ -99,7 +92,7 @@
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.2s ease;
-  display: none;
+  display: none; /* Hidden on mobile */
   text-decoration: none;
 }
 
@@ -114,7 +107,7 @@
   color: white;
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1004; /* Highest z-index for controls */
   width: 70px;
   height: 70px;
   display: flex;
@@ -160,29 +153,137 @@
   font-weight: 600;
 }
 
-.mobile-nav-links .mobile-donate:hover {
-  color: #059669;
+/* --- Language Switcher Styles --- */
+
+/* Desktop Dropdown Switcher */
+.language-switcher {
+  display: none;
+  position: relative;
+  margin-right: 12px;
+}
+.current-lang-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.current-lang-btn:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+.dropdown-arrow {
+  font-size: 0.6em;
+}
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 5px;
+  z-index: 1001;
+  min-width: 100%;
+}
+.lang-dropdown button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.lang-dropdown button:hover {
+  background-color: var(--accent-green);
+  color: white;
 }
 
+/* FIXED Mobile Language Button */
+.mobile-lang-button {
+  position: fixed;
+  top: 0;
+  right: 72px; /* Reduced space between buttons (was 80px) */
+  background-color: var(--accent-green); /* Changed back to accent color */
+  color: white; /* Ensure text is visible */
+  border: none; /* Removed border */
+  width: 70px;
+  height: 70px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 1004;
+}
+
+/* Full-Screen Mobile Language Overlay with FADE animation */
+.mobile-lang-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--card-background);
+  z-index: 1003; /* Sits below the control buttons */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  opacity: 0;
+  pointer-events: none; /* Prevents interaction when hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+.mobile-lang-overlay.open {
+  opacity: 1;
+  pointer-events: auto; /* Allows interaction when visible */
+}
+.mobile-lang-overlay button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: color 0.2s ease;
+}
+.mobile-lang-overlay button:hover {
+  color: var(--accent-green);
+}
+.mobile-lang-overlay button.active {
+  color: var(--accent-green);
+}
 
 /* --- Media Queries for Responsiveness --- */
 @media (min-width: 820px) {
   .navbar-links {
     display: flex;
   }
-
   .navbar-cta {
     display: inline-block;
   }
-
   .hamburger-menu {
     display: none;
   }
-
   .mobile-nav-links {
     display: none;
   }
-
+  .language-switcher {
+    display: flex;
+  }
   .nav-link::after {
     content: '';
     position: absolute;
@@ -194,7 +295,6 @@
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
   }
-
   .nav-link:hover::after,
   .nav-link.active::after {
     transform: scaleX(1);

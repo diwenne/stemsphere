@@ -1,15 +1,9 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
 import BenefitCard from '../../components/BenefitCard/BenefitCard';
 import './Home.css';
-
-const benefits = [
-  { icon: '🏆', title: 'Access to Industry Mentors', description: 'Connect with professionals from top tech companies and research institutions for guidance and inspiration.' },
-  { icon: '🧑‍💻', title: 'Collaborative Projects', description: 'Work in teams on real-world challenges, building your portfolio and collaborative skills.' },
-  { icon: '🚀', title: 'Exclusive Workshops & Competitions', description: 'Gain priority access to our hands-on workshops in AI, coding, robotics, and more.' },
-  { icon: '💡', title: 'Leadership Opportunities', description: 'Lead local initiatives, organize events, and make a tangible impact in your community.' }
-];
 
 interface HomeProps {
   setActiveSection: (sectionId: string) => void;
@@ -17,8 +11,10 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
-  // This effect for scrolling to a hash link is correct and does not need changes.
+  const benefits = t('home.benefits.cards', { returnObjects: true }) as { icon: string, title: string, description: string }[];
+
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.substring(1);
@@ -32,16 +28,12 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
     }
   }, [location.hash]);
 
-  // Effect for scroll-spy logic
   useEffect(() => {
-    // We now observe the 'home' section as well
     const sectionsToObserve = ['home', 'benefits', 'impact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // If the 'home' (hero) section is visible, clear the active link.
-            // Otherwise, set the active link to the current section's id.
             if (entry.target.id === 'home') {
               setActiveSection('');
             } else {
@@ -73,25 +65,24 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
     <div className="home-page">
       <Section id="home" className="hero-section">
         <div className="hero-content">
-          <span className="hero-subtitle">Empowering Student Innovators</span>
-          <h1 className="hero-title">Stemsphere Foundation</h1>
-          <p className="hero-description">We provide youth with the skills, mentorship, and resources to excel at the intersection of science, technology, engineering, and mathematics.</p>
+          <span className="hero-subtitle">{t('home.hero.subtitle')}</span>
+          <h1 className="hero-title">{t('home.hero.title')}</h1>
+          <p className="hero-description">{t('home.hero.description')}</p>
           <div className="hero-buttons">
-            <a href="/get-involved" className="btn btn-primary">Get Involved</a>
-            <a href="/leadership" className="btn btn-secondary">Meet The Team</a>
+            <a href="/get-involved" className="btn btn-primary">{t('home.hero.getInvolvedBtn')}</a>
+            <a href="/leadership" className="btn btn-secondary">{t('home.hero.meetTeamBtn')}</a>
           </div>
           <div className="hero-stats">
-            <span>🌍 10+ Students Reached</span>
-            <span>🏫 1+ Workshops Hosted</span>
-            <span>🇨🇦 1+ Countries</span>
+            <span>{t('home.hero.stats.students')}</span>
+            <span>{t('home.hero.stats.workshops')}</span>
+            <span>{t('home.hero.stats.countries')}</span>
           </div>
         </div>
       </Section>
 
-      {/* The extra className has been removed as it's no longer needed */}
       <Section id="benefits">
-        <h2 className="section-title">Why Join Stemsphere?</h2>
-        <p className="section-subtitle">Discover the exclusive advantages and opportunities we provide.</p>
+        <h2 className="section-title">{t('home.benefits.title')}</h2>
+        <p className="section-subtitle">{t('home.benefits.subtitle')}</p>
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <BenefitCard key={index} icon={benefit.icon} title={benefit.title} description={benefit.description} />
@@ -100,20 +91,20 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
       </Section>
 
       <Section id="impact">
-        <h2 className="section-title">Our Impact</h2>
-        <p className="section-subtitle">Fueling curiosity and creating future leaders in STEM.</p>
+        <h2 className="section-title">{t('home.impact.title')}</h2>
+        <p className="section-subtitle">{t('home.impact.subtitle')}</p>
         <div className="impact-stats-container">
           <div className="impact-stat">
             <span className="impact-number">10+</span>
-            <span className="impact-label">Hours of Coding Taught</span>
+            <span className="impact-label">{t('home.impact.stats.hours')}</span>
           </div>
           <div className="impact-stat">
             <span className="impact-number">5+</span>
-            <span className="impact-label">Projects Built</span>
+            <span className="impact-label">{t('home.impact.stats.projects')}</span>
           </div>
           <div className="impact-stat">
             <span className="impact-number">90%</span>
-            <span className="impact-label">Pursue STEM in College</span>
+            <span className="impact-label">{t('home.impact.stats.pursue')}</span>
           </div>
         </div>
       </Section>

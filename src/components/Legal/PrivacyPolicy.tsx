@@ -1,65 +1,49 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Legal.css';
 
 const PrivacyPolicy: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="legal-page-container">
-      <h1>Privacy Policy</h1>
-      <p className="last-updated">Last Updated: September 14, 2025</p>
+      <h1>{t('privacy.title')}</h1>
+      <p className="last-updated">{t('privacy.lastUpdated')}</p>
 
-      <p>
-        Stemsphere Foundation ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
-      </p>
+      <p>{t('privacy.intro')}</p>
 
       <section>
-        <h2>Information We Collect</h2>
-        <p>
-          We may collect personal information that you voluntarily provide to us when you fill out a contact form, sign up for a newsletter, make a donation, or otherwise contact us. This information may include your name, email address, and any other information you choose to provide.
-        </p>
-        <p>
-          Donations made through our website are processed by a third-party payment processor. We do not store or collect your payment card details.
-        </p>
+        <h2>{t('privacy.collect.title')}</h2>
+        <p>{t('privacy.collect.p1')}</p>
+        <p>{t('privacy.collect.p2')}</p>
       </section>
       
       <section>
-        <h2>How We Use Your Information</h2>
-        <p>
-          We use the information we collect to:
-        </p>
+        <h2>{t('privacy.use.title')}</h2>
+        <p>{t('privacy.use.p1')}</p>
         <ul>
-          <li>Respond to your inquiries and fulfill your requests.</li>
-          <li>Send you newsletters, updates, and promotional materials that you have opted into.</li>
-          <li>Process donations and send acknowledgments.</li>
-          <li>Improve our website and services.</li>
-          <li>Comply with applicable Canadian laws and regulations, including the Personal Information Protection and Electronic Documents Act (PIPEDA).</li>
+            {(t('privacy.use.list', { returnObjects: true }) as string[]).map((item, i) => <li key={i}>{item}</li>)}
         </ul>
       </section>
 
       <section>
-        <h2>Data Sharing and Disclosure</h2>
-        <p>
-          We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website or servicing you, so long as those parties agree to keep this information confidential.
-        </p>
+        <h2>{t('privacy.sharing.title')}</h2>
+        <p>{t('privacy.sharing.p1')}</p>
       </section>
 
       <section>
-        <h2>Data Security</h2>
-        <p>
-          We implement a variety of security measures to maintain the safety of your personal information. However, no method of transmission over the Internet or method of electronic storage is 100% secure.
-        </p>
+        <h2>{t('privacy.security.title')}</h2>
+        <p>{t('privacy.security.p1')}</p>
       </section>
 
       <section>
-        <h2>Your Rights</h2>
-        <p>
-          You have the right to access, update, or request deletion of your personal information. If you wish to exercise any of these rights, please contact us.
-        </p>
+        <h2>{t('privacy.rights.title')}</h2>
+        <p>{t('privacy.rights.p1')}</p>
       </section>
 
       <section>
-        <h2>Contact Us</h2>
+        <h2>{t('privacy.contact.title')}</h2>
         <p>
-          If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:hello@stemsf.org">hello@stemsf.org</a>.
+          {t('privacy.contact.p1')}<a href="mailto:hello@stemsf.org">hello@stemsf.org</a>.
         </p>
       </section>
     </div>

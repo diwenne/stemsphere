@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
 import LeadershipCard from '../../components/LeadershipCard/LeadershipCard';
 import './Leadership.css';
@@ -10,90 +11,43 @@ import eden from '../../assets/eden.jpg';
 import timmy from '../../assets/timmy.jpg';
 import andy from '../../assets/andy.jpg';
 
-const leaders = [
-  {
-    name: 'Diwen Huang',
-    title: 'President',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.',
-    avatarUrl: diwen,
-    tags: ['Computer Vision Research', 'Bestselling Author', 'iOS Developer'],
-    linkedinUrl: 'http://linkedin.com/in/diwenh5',
-  },
-  {
-    name: 'Wilson Huang',
-    title: 'Vice President',
-    affiliation: 'Maple Ridge, BC',
-    bio: 'Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.',
-    avatarUrl: wilson,
-    tags: ['Algorithmic Management Research','Bestselling Author','Cat Lover'],
-    linkedinUrl: 'https://www.linkedin.com/in/wilson-bohan-huang/',
-  },
-  {
-    name: 'Drishya Sharma',
-    title: 'Director of Programs',
-    affiliation: 'Port Moody, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: drishya,
-    tags: ['STEM Tutor', 'Nerdy But Cool'],
-    linkedinUrl: 'http://linkedin.com/in/drishya-anonymous-14736a218',
-  },
-  {
-    name: 'Tristan Du',
-    title: 'Director of Partnerships',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: tristan,
-    tags: ['UX Design','Best Snowboarder'],
-    linkedinUrl: 'https://linkedin.com/in/tristan-du-329595384',
-  },
-  {
-    name: 'Zoe Zhu',
-    title: 'Director of Communications',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: zoe,
-    tags: ['Aspiring Business Major','Nonchalant'],
-    linkedinUrl: 'http://linkedin.com/in/zoe-zhu-011551377',
-  },
-  {
-    name: 'Eden Liang',
-    title: 'Director of Finances',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: eden,
-    tags: ['1M+ Marketing Views','Badminton Nerd'],
-    linkedinUrl: 'http://linkedin.com/in/zoe-zhu-011551377',
-  },
-  {
-    name: 'Timmy Jin',
-    title: 'Director of Finances',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: timmy,
-    tags: ['Bestselling Author','Good Fashion'],
-    linkedinUrl: 'https://linkedin.com/in/timmy-jin-24bb51363',
-  },
-  {
-    name: 'Andy Guo',
-    title: 'Director of Finances',
-    affiliation: 'Coquitlam, BC',
-    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
-    avatarUrl: andy,
-    tags: ['World Scholars Cup'],
-    linkedinUrl: 'http://linkedin.com/in/andy-guo-11a699329',
-  },
-];
+interface Leader {
+  name: string;
+  title: string;
+  affiliation: string;
+  bio: string;
+  avatarUrl: string;
+  tags: string[];
+  linkedinUrl: string;
+}
 
 const Leadership = () => {
+  const { t } = useTranslation();
+  
+  const translatedLeaders = t('leadership.leaders', { returnObjects: true }) as Omit<Leader, 'avatarUrl'>[];
+
+  const avatarMap: { [key: string]: string } = {
+    'Diwen Huang': diwen,
+    'Wilson Huang': wilson,
+    'Drishya Sharma': drishya,
+    'Tristan Du': tristan,
+    'Zoe Zhu': zoe,
+    'Eden Liang': eden,
+    'Timmy Jin': timmy,
+    'Andy Guo': andy,
+  };
+
+  const leaders: Leader[] = translatedLeaders.map(leader => ({
+    ...leader,
+    avatarUrl: avatarMap[leader.name] || '',
+  }));
+
   return (
     <Section id="leadership">
       <div className="leadership-header">
-        <span className="header-subtitle">Chapter Leadership</span>
-        <h1 className="header-title">Meet Our Team</h1>
-        <p className="header-description">
-          Meet the outstanding students who lead Stemsphere Foundation, organizing workshops, developing programs, and driving our mission forward.
-        </p>
+        <span className="header-subtitle">{t('leadership.subtitle')}</span>
+        <h1 className="header-title">{t('leadership.title')}</h1>
+        <p className="header-description">{t('leadership.description')}</p>
       </div>
       <div className="leadership-grid">
         {leaders.map((leader, index) => (
