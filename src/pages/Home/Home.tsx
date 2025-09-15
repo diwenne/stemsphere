@@ -9,11 +9,19 @@ interface HomeProps {
   setActiveSection: (sectionId: string) => void;
 }
 
+// Define a type for our stat object
+interface HeroStat {
+  icon: string;
+  text: string;
+}
+
 const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
   const benefits = t('home.benefits.cards', { returnObjects: true }) as { icon: string, title: string, description: string }[];
+  // Load the array of stats from the translation file
+  const heroStats = t('home.hero.stats', { returnObjects: true }) as HeroStat[];
 
   useEffect(() => {
     if (location.hash) {
@@ -29,7 +37,6 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
   }, [location.hash]);
 
   useEffect(() => {
-    // --- Order updated to match the new layout for scroll-spy ---
     const sectionsToObserve = ['home', 'impact', 'benefits'];
     const observer = new IntersectionObserver(
       (entries) => {
@@ -71,18 +78,20 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
           <p className="hero-description">{t('home.hero.description')}</p>
           <div className="hero-buttons">
             <a href="/get-involved" className="btn btn-primary">{t('home.hero.getInvolvedBtn')}</a>
-            {/* --- Link updated to point to the team section on the About page --- */}
             <a href="/about#team" className="btn btn-secondary">{t('home.hero.meetTeamBtn')}</a>
           </div>
+          
           <div className="hero-stats">
-            <span>{t('home.hero.stats.students')}</span>
-            <span>{t('home.hero.stats.workshops')}</span>
-            <span>{t('home.hero.stats.countries')}</span>
+            {heroStats.map((stat, index) => (
+              <div className="hero-stat-item" key={index}>
+                <span className="hero-stat-icon">{stat.icon}</span>
+                <span className="hero-stat-text">{stat.text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
 
-      {/* --- Section Order Swapped: Impact is now before Benefits --- */}
       <Section id="impact">
         <h2 className="section-title">{t('home.impact.title')}</h2>
         <p className="section-subtitle">{t('home.impact.subtitle')}</p>

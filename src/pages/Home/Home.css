@@ -56,17 +56,14 @@
   background-color: var(--accent-green);
   color: white;
 }
-
 .btn-primary:hover {
   background-color: #059669;
 }
-
 .btn-secondary {
   background-color: var(--card-background);
   color: var(--text-primary);
   border-color: var(--border-color);
 }
-
 .btn-secondary:hover {
   background-color: #f8fafc;
   border-color: #ced6e0;
@@ -75,10 +72,31 @@
 .hero-stats {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
-  color: var(--text-secondary);
+  text-align: center;
+  gap: 8px;
+  width: 140px;
+}
+
+.hero-stat-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.hero-stat-text {
+  font-size: 1rem;
   font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 .section-title {
@@ -122,4 +140,21 @@
 .impact-label {
   color: var(--text-secondary);
   font-weight: 500;
+}
+
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem; 
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  /* This is the new rule that stacks the buttons */
+  .hero-buttons {
+    flex-direction: row;
+    padding: 0 20px;
+  }
 }

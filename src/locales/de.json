@@ -24,12 +24,12 @@
       "title": "Stemsphere Stiftung",
       "description": "Wir vermitteln Jugendlichen die Fähigkeiten, das Mentoring und eine Plattform, um an der Schnittstelle von Wissenschaft, Technologie, Ingenieurwesen und Mathematik hervorragende Leistungen zu erbringen.",
       "getInvolvedBtn": "Engagieren Sie sich",
-      "meetTeamBtn": "Lernen Sie das Team kennen",
-      "stats": {
-        "students": "🌍 10+ Studenten erreicht",
-        "workshops": "🏫 1+ Workshops veranstaltet",
-        "countries": "🇨🇦 1+ Länder"
-      }
+      "meetTeamBtn": "Mehr Erfahren",
+      "stats": [
+        { "icon": "🌍", "text": "10+ Studenten erreicht" },
+        { "icon": "🏫", "text": "1+ Workshops veranstaltet" },
+        { "icon": "🏛️", "text": "2+ Kapitel gegründet" }
+      ]
     },
     "benefits": {
       "title": "Warum Stemsphere beitreten?",

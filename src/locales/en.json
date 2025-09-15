@@ -24,12 +24,12 @@
       "title": "Stemsphere Foundation",
       "description": "We provide youth with the skills, mentorship, and a platform to excel at the intersection of science, technology, engineering, and mathematics.",
       "getInvolvedBtn": "Get Involved",
-      "meetTeamBtn": "Meet The Team",
-      "stats": {
-        "students": "🌍 10+ Students Reached",
-        "workshops": "🏫 1+ Workshops Hosted",
-        "countries": "🇨🇦 1+ Countries"
-      }
+      "meetTeamBtn": "Learn More",
+      "stats": [
+        { "icon": "🌍", "text": "10+ Students Reached" },
+        { "icon": "🏫", "text": "1+ Workshops Hosted" },
+        { "icon": "🏛️", "text": "2+ Chapters Founded" }
+      ]
     },
     "benefits": {
       "title": "Why Join Stemsphere?",
@@ -56,7 +56,6 @@
       "title": "About Stemsphere",
       "subtitle": "Discover the mission, values, and people driving the next wave of STEM innovation."
     },
-
     "vision": {
       "title": "Our Vision",
       "description": "A world where every young person is empowered to unleash their creativity in STEM, innovate with purpose, and shape a better, more equitable future for all."
@@ -80,70 +79,70 @@
       "description": "Meet the outstanding students who lead Stemsphere Foundation, organizing workshops, developing programs, and driving our mission forward."
     },
     "leaders": [
-    { 
-        "name": "Diwen Huang", 
-        "title": "President", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.", 
-        "tags": ["Computer Vision Research", "Bestselling Author", "iOS Developer"], 
-        "linkedinUrl": "http://linkedin.com/in/diwenh5" 
-    },
-    { 
-        "name": "Wilson Huang", 
-        "title": "Vice President", 
-        "affiliation": "Maple Ridge, BC", 
-        "bio": "Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.", 
-        "tags": ["Algorithmic Research", "STEM Curriculum Designer", "UN Delegate"], 
-        "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" 
-    },
-    { 
-        "name": "Drishya Sharma", 
-        "title": "Director of Programs", 
-        "affiliation": "Port Moody, BC", 
-        "bio": "Focused on building inclusive STEM initiatives that connect technology with human-centered design to serve diverse learners.", 
-        "tags": ["STEM Tutor", "Community Builder"], 
-        "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" 
-    },
-    { 
-        "name": "Tristan Du", 
-        "title": "Director of Partnerships", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Passionate about forging relationships between schools, organizations, and communities to expand STEM learning opportunities.", 
-        "tags": ["UX Design", "Outdoor Enthusiast"], 
-        "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" 
-    },
-    { 
-        "name": "Zoe Zhu", 
-        "title": "Director of Communications", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Ambitious STEM and business student, driven to innovate educational resources and enhance foundational learning.", 
-        "tags": ["Aspiring Business Major", "Creative Thinker"], 
-        "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" 
-    },
-    { 
-        "name": "Eden Liang", 
-        "title": "Director of Finances", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Dedicated to combining engineering and financial literacy to support sustainable STEM initiatives.", 
-        "tags": ["Shad Design Award", "Startup Experience", "Robotics Programmer"], 
-        "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" 
-    },
-    { 
-        "name": "Timmy Jin", 
-        "title": "Executive Member", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Blending interests in technology and business to ensure STEMsphere’s projects are financially resilient and impactful.", 
-        "tags": ["STEM Enthusiast", "Design-Minded"], 
-        "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" 
-    },
-    { 
-        "name": "Andy Guo", 
-        "title": "Executive Member", 
-        "affiliation": "Coquitlam, BC", 
-        "bio": "Combining analytical skills with a passion for teamwork to manage resources and support student-led STEM programs.", 
-        "tags": ["World Scholars Cup", "Team Player"], 
-        "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" 
-    }
+      { 
+          "name": "Diwen Huang", 
+          "title": "President", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.", 
+          "tags": ["Computer Vision Research", "Bestselling Author", "iOS Developer"], 
+          "linkedinUrl": "http://linkedin.com/in/diwenh5" 
+      },
+      { 
+          "name": "Wilson Huang", 
+          "title": "Vice President", 
+          "affiliation": "Maple Ridge, BC", 
+          "bio": "Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.", 
+          "tags": ["Algorithmic Research", "STEM Curriculum Designer", "UN Delegate"], 
+          "linkedinUrl": "https://www.linkedin.com/in/wilson-bohan-huang/" 
+      },
+      { 
+          "name": "Drishya Sharma", 
+          "title": "Director of Programs", 
+          "affiliation": "Port Moody, BC", 
+          "bio": "Focused on building inclusive STEM initiatives that connect technology with human-centered design to serve diverse learners.", 
+          "tags": ["STEM Tutor", "Community Builder"], 
+          "linkedinUrl": "http://linkedin.com/in/drishya-anonymous-14736a218" 
+      },
+      { 
+          "name": "Tristan Du", 
+          "title": "Director of Partnerships", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Passionate about forging relationships between schools, organizations, and communities to expand STEM learning opportunities.", 
+          "tags": ["UX Design", "Outdoor Enthusiast"], 
+          "linkedinUrl": "https://linkedin.com/in/tristan-du-329595384" 
+      },
+      { 
+          "name": "Zoe Zhu", 
+          "title": "Director of Communications", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Ambitious STEM and business student, driven to innovate educational resources and enhance foundational learning.", 
+          "tags": ["Aspiring Business Major", "Creative Thinker"], 
+          "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" 
+      },
+      { 
+          "name": "Eden Liang", 
+          "title": "Director of Finances", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Dedicated to combining engineering and financial literacy to support sustainable STEM initiatives.", 
+          "tags": ["Shad Design Award", "Startup Experience", "Robotics Programmer"], 
+          "linkedinUrl": "http://linkedin.com/in/zoe-zhu-011551377" 
+      },
+      { 
+          "name": "Timmy Jin", 
+          "title": "Executive Member", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Blending interests in technology and business to ensure STEMsphere’s projects are financially resilient and impactful.", 
+          "tags": ["STEM Enthusiast", "Design-Minded"], 
+          "linkedinUrl": "https://linkedin.com/in/timmy-jin-24bb51363" 
+      },
+      { 
+          "name": "Andy Guo", 
+          "title": "Executive Member", 
+          "affiliation": "Coquitlam, BC", 
+          "bio": "Combining analytical skills with a passion for teamwork to manage resources and support student-led STEM programs.", 
+          "tags": ["World Scholars Cup", "Team Player"], 
+          "linkedinUrl": "http://linkedin.com/in/andy-guo-11a699329" 
+      }
     ]
   },
   "getInvolved": {

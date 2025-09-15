@@ -24,12 +24,12 @@
       "title": "Fondation Stemsphere",
       "description": "Nous fournissons aux jeunes les compétences, le mentorat et une plateforme pour exceller à l'intersection de la science, de la technologie, de l'ingénierie et des mathématiques.",
       "getInvolvedBtn": "S'impliquer",
-      "meetTeamBtn": "Rencontrer l'équipe",
-      "stats": {
-        "students": "🌍 10+ étudiants atteints",
-        "workshops": "🏫 1+ ateliers organisés",
-        "countries": "🇨🇦 1+ pays"
-      }
+      "meetTeamBtn": "En Savoir Plus",
+      "stats": [
+        { "icon": "🌍", "text": "10+ étudiants atteints" },
+        { "icon": "🏫", "text": "1+ ateliers organisés" },
+        { "icon": "🏛️", "text": "2+ chapitres fondés" }
+      ]
     },
     "benefits": {
       "title": "Pourquoi rejoindre Stemsphere ?",

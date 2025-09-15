@@ -8,7 +8,7 @@ import drishya from '../../assets/drishya.jpg';
 import tristan from '../../assets/tristan.png';
 import zoe from '../../assets/zoe.jpg';
 import eden from '../../assets/eden.jpg';
-import timmy from '../../assets/timmy.jpg';
+import timmy from '../../assets/timmy.jpeg';
 import andy from '../../assets/andy.jpg';
 
 interface Leader {
