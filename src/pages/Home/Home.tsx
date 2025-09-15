@@ -81,9 +81,9 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
             <a href="/leadership" className="btn btn-secondary">Meet The Team</a>
           </div>
           <div className="hero-stats">
-            <span>🌍 0+ Students Reached</span>
-            <span>🏫 0+ Workshops Hosted</span>
-            <span>🇨🇦 0+ Countries</span>
+            <span>🌍 10+ Students Reached</span>
+            <span>🏫 1+ Workshops Hosted</span>
+            <span>🇨🇦 1+ Countries</span>
           </div>
         </div>
       </Section>
@@ -104,15 +104,15 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
         <p className="section-subtitle">Fueling curiosity and creating future leaders in STEM.</p>
         <div className="impact-stats-container">
           <div className="impact-stat">
-            <span className="impact-number">0+</span>
+            <span className="impact-number">10+</span>
             <span className="impact-label">Hours of Coding Taught</span>
           </div>
           <div className="impact-stat">
-            <span className="impact-number">0+</span>
+            <span className="impact-number">1+</span>
             <span className="impact-label">Projects Built</span>
           </div>
           <div className="impact-stat">
-            <span className="impact-number">0%</span>
+            <span className="impact-number">90%</span>
             <span className="impact-label">Pursue STEM in College</span>
           </div>
         </div>
