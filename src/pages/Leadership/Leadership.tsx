@@ -7,6 +7,8 @@ import drishya from '../../assets/drishya.jpg';
 import tristan from '../../assets/tristan.png';
 import zoe from '../../assets/zoe.jpg';
 import eden from '../../assets/eden.jpg';
+import timmy from '../../assets/timmy.jpg';
+import andy from '../../assets/andy.jpg';
 
 const leaders = [
   {
@@ -62,6 +64,24 @@ const leaders = [
     avatarUrl: eden,
     tags: ['1M+ Marketing Views','Badminton Nerd'],
     linkedinUrl: 'http://linkedin.com/in/zoe-zhu-011551377',
+  },
+  {
+    name: 'Timmy Jin',
+    title: 'Director of Finances',
+    affiliation: 'Coquitlam, BC',
+    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
+    avatarUrl: timmy,
+    tags: ['Bestselling Author','Good Fashion'],
+    linkedinUrl: 'https://linkedin.com/in/timmy-jin-24bb51363',
+  },
+  {
+    name: 'Andy Guo',
+    title: 'Director of Finances',
+    affiliation: 'Coquitlam, BC',
+    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
+    avatarUrl: andy,
+    tags: ['World Scholars Cup'],
+    linkedinUrl: 'http://linkedin.com/in/andy-guo-11a699329',
   },
 ];
 
