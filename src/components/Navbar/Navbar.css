@@ -18,12 +18,42 @@
   align-items: center;
 }
 
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+/* --- MODIFICATION: New Stemsphere Logo Styling --- */
+.stemsphere-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
   flex-shrink: 0;
 }
+
+.logo-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.logo-stem,
+.logo-sphere {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 2px;
+}
+
+.logo-stem {
+  background-image: linear-gradient(60deg, #67e8f9, #2dd4bf, #a7f3d0);
+}
+
+.logo-sphere {
+  background-image: linear-gradient(60deg, #2dd4bf, #0d9488, #042f2e);
+}
+/* --- End of Logo Styling --- */
+
 
 .navbar-links {
   display: none;
@@ -35,12 +65,13 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: all 0.2s ease; /* Changed to all for background transition */
+  transition: all 0.2s ease;
   cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
+  text-decoration: none;
 }
 
 .nav-link:hover,
@@ -54,19 +85,18 @@
   gap: 16px;
 }
 
-/* MODIFICATION: Restyled to a "ghost" button theme */
 .navbar-cta {
   background-color: transparent;
   color: var(--accent-green);
-  border: 1px solid var(--accent-green); /* Added border */
-  padding: 9px 19px; /* Adjusted padding for border */
+  border: 1px solid var(--accent-green);
+  padding: 9px 19px;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.2s ease;
   display: none;
+  text-decoration: none;
 }
 
-/* MODIFICATION: Invert colors on hover */
 .navbar-cta:hover {
   background-color: var(--accent-green);
   color: white;
@@ -118,15 +148,14 @@
   padding: 12px 0;
 }
 
-/* MODIFICATION: Style the mobile donate link as text */
 .mobile-nav-links .mobile-donate {
   margin-top: 20px;
   color: var(--accent-green);
-  font-weight: 600; /* Make it bolder */
+  font-weight: 600;
 }
 
 .mobile-nav-links .mobile-donate:hover {
-  color: #059669; /* Darker green on hover */
+  color: #059669;
 }
 
 
