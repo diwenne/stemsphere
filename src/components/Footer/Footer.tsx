@@ -1,11 +1,20 @@
 import './Footer.css';
+import stemsphereLogo from '../../assets/stemsphere.png'; // Make sure this path is correct
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-info">
-          <h3 className="footer-logo">Stemsphere Foundation</h3>
+
+          {/* --- MODIFICATION: New Logo and Text Styling --- */}
+          <div className="footer-logo-container">
+            <img src={stemsphereLogo} alt="Stemsphere Logo" className="footer-logo-icon" />
+            <span className="footer-logo-text">
+              <span className="footer-logo-stem">Stem</span><span className="footer-logo-sphere">sphere</span>
+            </span>
+          </div>
+
           <p className="footer-mission">Empowering the next generation of innovators through STEM education.</p>
           
           <div className="footer-contact-icons">
@@ -39,7 +48,6 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* --- MODIFICATION START --- */}
       <div className="footer-bottom">
         <p className="footer-copyright">© {new Date().getFullYear()} Stemsphere Foundation. All rights reserved.</p>
         <div className="footer-legal-links">
@@ -47,7 +55,6 @@ const Footer = () => {
           <a href="/terms-of-service">Terms of Service</a>
         </div>
       </div>
-      {/* --- MODIFICATION END --- */}
     </footer>
   );
 };
