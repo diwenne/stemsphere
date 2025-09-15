@@ -6,6 +6,7 @@ import wilson from '../../assets/wilson.png';
 import drishya from '../../assets/drishya.jpg';
 import tristan from '../../assets/tristan.png';
 import zoe from '../../assets/zoe.jpg';
+import eden from '../../assets/eden.jpg';
 
 const leaders = [
   {
@@ -50,6 +51,15 @@ const leaders = [
     affiliation: 'Coquitlam, BC',
     bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
     avatarUrl: zoe,
+    tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
+    linkedinUrl: 'http://linkedin.com/in/zoe-zhu-011551377',
+  },
+  {
+    name: 'Eden Liang',
+    title: 'Director of Operations',
+    affiliation: 'Coquitlam, BC',
+    bio: 'Exploring the intersection of technology and human-centered design to create impactful community programs.',
+    avatarUrl: eden,
     tags: ['UX Design Award', 'Girls Who Code Mentor', 'Hackathon Organizer'],
     linkedinUrl: 'http://linkedin.com/in/zoe-zhu-011551377',
   },
