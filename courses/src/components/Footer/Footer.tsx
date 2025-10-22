@@ -44,6 +44,7 @@ const Footer = () => {
           <a href="https://stemsf.org" target="_blank" rel="noopener noreferrer">Home</a>
           <a href="https://stemsf.org/about" target="_blank" rel="noopener noreferrer">About</a>
           <a href="https://stemsf.org/get-involved" target="_blank" rel="noopener noreferrer">Get Involved</a>
+          <a href="https://learn.stemsf.org" target="_blank" rel="noopener noreferrer">Learn</a>
           <a href="https://stemsf.org/donate" target="_blank" rel="noopener noreferrer">Donate</a>
         </div>
       </div>

@@ -106,9 +106,40 @@
 }
 /* --- END OF FIX --- */
 
+.card-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
 .card-cta {
   width: 100%;
   text-align: center;
   padding-top: 14px;
   padding-bottom: 14px;
+}
+
+.btn-secondary-outline {
+  background-color: white;
+  color: var(--accent-green, #008060);
+  border: 2px solid var(--accent-green, #008060);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary-outline:hover {
+  background-color: var(--accent-green, #008060);
+  color: white;
+}
+
+.btn-secondary-outline svg {
+  flex-shrink: 0;
 }

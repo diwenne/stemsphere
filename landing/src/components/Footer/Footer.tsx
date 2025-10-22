@@ -46,6 +46,7 @@ const Footer = () => {
           <a href="/">{t('footer.home')}</a>
           <a href="/about">{t('footer.about')}</a>
           <a href="/get-involved">{t('footer.getInvolved')}</a>
+          <a href="https://learn.stemsf.org" target="_blank" rel="noopener noreferrer">Learn</a>
           <a href="/donate">{t('footer.donate')}</a>
         </div>
         
