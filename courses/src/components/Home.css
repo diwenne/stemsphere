@@ -38,28 +38,23 @@
 
 .hero-subtitle {
   display: inline-block;
-  background: linear-gradient(135deg, #d1fae5, #bfdbfe);
+  background-color: #e0f2f1;
   color: var(--accent-green);
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 999px;
   font-weight: 600;
-  margin-bottom: 20px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-title {
   font-size: 3.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #0f766e 0%, #0ea5e9 50%, #10b981 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  color: var(--text-primary);
   margin-bottom: 24px;
   line-height: 1.2;
-  letter-spacing: -1px;
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
