@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { Home } from './components/Home';
@@ -14,6 +14,11 @@ function App() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [allLessons, setAllLessons] = useState<Lesson[]>([]);
+
+  // Scroll to top whenever page or lesson changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage, selectedLesson]);
 
   const navigateToHome = () => {
     setCurrentPage('home');
@@ -48,7 +53,6 @@ function App() {
               const currentIndex = allLessons.findIndex(l => l.id === selectedLesson.id);
               if (currentIndex < allLessons.length - 1) {
                 setSelectedLesson(allLessons[currentIndex + 1]);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
             hasNextLesson={(() => {

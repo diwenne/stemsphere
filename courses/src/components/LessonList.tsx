@@ -3,6 +3,7 @@ import { supabase, Lesson, authService } from '../lib/supabase';
 import { Clock, Lock, Code, BookOpen, Shield } from 'lucide-react';
 import { AdminLoginModal } from './AdminLoginModal';
 import { AdminDashboard } from './AdminDashboard';
+import './LessonList.css';
 
 interface LessonListProps {
   onSelectLesson: (lesson: Lesson) => void;
@@ -186,7 +187,7 @@ export function LessonList({ onSelectLesson, onLessonsLoaded }: LessonListProps)
   }
 
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen pt-16">
       {showAdminLogin && (
         <AdminLoginModal
           onClose={() => setShowAdminLogin(false)}
@@ -194,43 +195,41 @@ export function LessonList({ onSelectLesson, onLessonsLoaded }: LessonListProps)
         />
       )}
 
-      <section className="bg-primary-700 text-white py-24 px-4 relative">
+      <section className="lesson-library-hero">
         <button
           onClick={() => isAuthenticated ? setShowAdminDashboard(true) : setShowAdminLogin(true)}
-          className="absolute top-6 right-6 flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all border border-white/30 text-sm font-semibold"
+          className="admin-button"
         >
           <Shield size={18} />
           Admin Panel
         </button>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Content Library
-            </h1>
-            <p className="text-xl text-primary-100 font-body max-w-2xl mx-auto">
+        <div className="lesson-library-content">
+          <div className="library-header">
+            <h1 className="library-title">Content Library</h1>
+            <p className="library-subtitle">
               Explore our comprehensive programming courses. Choose a language to begin your learning journey.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="languages-grid">
             {languages.map((language) => (
               <button
                 key={language}
                 onClick={() => handleLanguageClick(language)}
-                className="group p-8 rounded-xl transition-all text-left bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/20 hover:scale-105"
+                className="language-card"
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white/20">
-                    <Code className="text-white" size={24} />
+                <div className="language-card-header">
+                  <div className="language-icon">
+                    <Code size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold">{language}</h3>
+                  <h3 className="language-name">{language}</h3>
                 </div>
-                <p className="text-sm font-body leading-relaxed text-primary-100">
+                <p className="language-description">
                   Master {language} through structured lessons and hands-on practice
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-sm font-medium">
-                  <BookOpen size={16} />
+                <div className="language-cta">
+                  <BookOpen size={18} />
                   <span>View Course</span>
                 </div>
               </button>
