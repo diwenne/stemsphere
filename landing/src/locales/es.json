@@ -26,9 +26,9 @@
       "getInvolvedBtn": "Participar",
       "meetTeamBtn": "Saber Más",
       "stats": [
-        { "icon": "🌍", "text": "10+ Estudiantes Alcanzados" },
-        { "icon": "🏫", "text": "1+ Talleres Realizados" },
-        { "icon": "🏛️", "text": "2+ Capítulos Fundados" }
+        { "icon": "🌍", "text": "50+ Estudiantes Alcanzados" },
+        { "icon": "🏫", "text": "1 Talleres Realizados" },
+        { "icon": "🏛️", "text": "3 Capítulos Fundados" }
       ]
     },
     "benefits": {
