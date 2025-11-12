@@ -26,7 +26,7 @@
       "getInvolvedBtn": "Engagieren Sie sich",
       "meetTeamBtn": "Mehr Erfahren",
       "stats": [
-        { "icon": "🌍", "text": "50+ Studenten erreicht" },
+        { "icon": "🌍", "text": "100+ Studenten erreicht" },
         { "icon": "🏫", "text": "1 Workshops veranstaltet" },
         { "icon": "🏛️", "text": "3 Kapitel gegründet" }
       ]

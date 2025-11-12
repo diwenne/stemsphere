@@ -33,3 +33,7 @@ build/
 
 # OS
 Thumbs.db
+
+# other
+firecrawl/
+landing-v2/

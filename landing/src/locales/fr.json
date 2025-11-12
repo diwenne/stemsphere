@@ -26,8 +26,8 @@
       "getInvolvedBtn": "S'impliquer",
       "meetTeamBtn": "En Savoir Plus",
       "stats": [
-        { "icon": "🌍", "text": "50+ étudiants atteints" },
-        { "icon": "🏫", "text": "1 ateliers organisés" },
+        { "icon": "🌍", "text": "100+ étudiants atteints" },
+        { "icon": "🏫", "text": "5 ateliers organisés" },
         { "icon": "🏛️", "text": "3 chapitres fondés" }
       ]
     },

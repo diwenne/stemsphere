@@ -4,14 +4,17 @@
   "version": "1.0.0",
   "workspaces": [
     "landing",
+    "landing-v2",
     "courses"
   ],
   "scripts": {
     "dev:landing": "npm run dev --workspace=landing",
+    "dev:landing-v2": "npm run dev --workspace=landing-v2",
     "dev:courses": "npm run dev --workspace=courses",
     "build:landing": "npm run build --workspace=landing",
+    "build:landing-v2": "npm run build --workspace=landing-v2",
     "build:courses": "npm run build --workspace=courses",
-    "build:all": "npm run build:landing && npm run build:courses",
+    "build:all": "npm run build:landing && npm run build:landing-v2 && npm run build:courses",
     "install:all": "npm install"
   },
   "engines": {
