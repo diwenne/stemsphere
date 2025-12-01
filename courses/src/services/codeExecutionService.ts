@@ -1,13 +1,40 @@
+import { pyodideService } from './pyodideExecutionService';
+
 export interface ExecutionResult {
   success: boolean;
   output?: string;
   error?: string;
   executionTime?: number;
   language?: string;
+  hasGraphics?: boolean;
+  canvasDataUrl?: string;
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const LANGUAGE_MAP: Record<string, string> = {
+  python: 'python',
+  javascript: 'javascript',
+  typescript: 'typescript',
+  java: 'java',
+  cpp: 'cpp',
+  'c++': 'cpp',
+  csharp: 'csharp',
+  'c#': 'csharp',
+  c: 'c',
+  ruby: 'ruby',
+  go: 'go',
+  rust: 'rust',
+  php: 'php',
+  swift: 'swift',
+  kotlin: 'kotlin',
+  r: 'r',
+  perl: 'perl',
+  lua: 'lua',
+  bash: 'bash',
+  sql: 'sql',
+};
 
 export class CodeExecutionService {
   private getSessionId(): string {
@@ -17,6 +44,24 @@ export class CodeExecutionService {
       sessionStorage.setItem('code_execution_session_id', sessionId);
     }
     return sessionId;
+  }
+
+  private shouldUsePyodide(code: string, language: string): boolean {
+    // Use Pyodide for Python code that uses turtle, matplotlib, or input()
+    return language === 'python' && (
+      code.includes('turtle') ||
+      code.includes('matplotlib') ||
+      code.includes('pyplot') ||
+      code.includes('input(')
+    );
+  }
+
+  interrupt() {
+    pyodideService.interrupt();
+  }
+
+  isRunning(): boolean {
+    return pyodideService.isRunning();
   }
 
   async executeCode(code: string, language: string): Promise<ExecutionResult> {
@@ -31,10 +76,21 @@ export class CodeExecutionService {
     }
 
     try {
+      // Use Pyodide for Python code with turtle, matplotlib, or input
+      if (this.shouldUsePyodide(code, normalizedLanguage)) {
+        console.log('Using Pyodide for client-side execution');
+        const result = await pyodideService.executeCode(code);
+        return {
+          ...result,
+          language: normalizedLanguage,
+        };
+      }
+
+      // Use backend API for all other code
       const sessionId = this.getSessionId();
       const apiUrl = `${SUPABASE_URL}/functions/v1/code-execution`;
 
-      console.log('Executing code:', { language: normalizedLanguage, codeLength: code.length, apiUrl });
+      console.log('Executing code via backend:', { language: normalizedLanguage, codeLength: code.length });
 
       const response = await fetch(apiUrl, {
         method: 'POST',

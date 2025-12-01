@@ -34,6 +34,13 @@ build/
 # OS
 Thumbs.db
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
 # other
 firecrawl/
 landing-v2/

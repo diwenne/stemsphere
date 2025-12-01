@@ -5,7 +5,7 @@ import { Home } from './components/Home';
 import { LessonList } from './components/LessonList';
 import { LessonView } from './components/LessonView';
 import { CodePlayground } from './components/CodePlayground/CodePlayground';
-import { ChatPanel } from './components/AIChat/ChatPanel';
+// import { ChatPanel } from './components/AIChat/ChatPanel';
 import { Lesson } from './lib/supabase';
 
 type Page = 'home' | 'lessons' | 'playground';
@@ -76,11 +76,11 @@ function App() {
 
       <Footer />
 
-      <ChatPanel
+      {/* <ChatPanel
         lessonTitle={selectedLesson?.title}
         programmingLanguage={selectedLesson?.programming_language}
         lessonId={selectedLesson?.id}
-      />
+      /> */}
     </div>
   );
 }
