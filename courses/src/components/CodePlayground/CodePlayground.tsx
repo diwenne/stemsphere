@@ -24,8 +24,8 @@ t.speed(0)
 
 # Draw a hexagonal spiral fractal
 for i in range(360):
-    t.forward(i * 0.5)
-    t.left(59)
+    t.forward(i + 0.5)
+    t.left(67)
 `;
 
 export function CodePlayground() {
