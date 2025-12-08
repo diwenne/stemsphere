@@ -20,15 +20,11 @@ declare global {
 const DEFAULT_PYTHON_CODE = `import turtle
 
 t = turtle.Turtle()
-t.speed(10)
+t.speed(0)
 
-# Draw a colorful spiral
-colors = ["red", "purple", "blue", "green", "orange", "yellow"]
-
-for x in range(360):
-    t.pencolor(colors[x % 6])
-    t.width(x / 100 + 1)
-    t.forward(x)
+# Draw a hexagonal spiral fractal
+for i in range(360):
+    t.forward(i * 0.5)
     t.left(59)
 `;
 
