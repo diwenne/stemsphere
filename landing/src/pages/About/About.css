@@ -1,4 +1,8 @@
 /* --- New Page Header Styles --- */
+#about {
+  padding-top: 150px;
+}
+
 .page-header {
   text-align: center;
   max-width: 700px;
@@ -31,29 +35,34 @@
   margin-bottom: 80px;
 }
 
-.vision-box, .mission-box {
+.vision-box,
+.mission-box {
   padding: 30px;
   border-radius: 12px;
 }
 
 .vision-box {
-  background-color: #f0fdf4; /* Light green */
+  background-color: #f0fdf4;
+  /* Light green */
   border: 1px solid #bbf7d0;
 }
 
 .mission-box {
-  background-color: #ecfeff; /* Light cyan */
+  background-color: #ecfeff;
+  /* Light cyan */
   border: 1px solid #a5f3fc;
 }
 
-.vision-box h2, .mission-box h2 {
+.vision-box h2,
+.mission-box h2 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
 }
 
-.vision-box p, .mission-box p {
+.vision-box p,
+.mission-box p {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.6;

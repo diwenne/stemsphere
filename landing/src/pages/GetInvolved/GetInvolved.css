@@ -1,5 +1,5 @@
 .get-involved-page {
-  padding-top: 80px;
+  padding-top: 150px;
   padding-bottom: 80px;
   text-align: center;
   /* Subtle grid background like the screenshot */
@@ -42,7 +42,8 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+  flex-wrap: wrap;
+  /* Allows cards to stack on smaller screens */
   padding: 0 20px;
 }
 
@@ -90,13 +91,16 @@
   color: var(--text-secondary, #555);
   line-height: 1.6;
   margin-bottom: 24px;
-  flex-grow: 1; /* Pushes the button to the bottom */
+  flex-grow: 1;
+  /* Pushes the button to the bottom */
 }
 
 /* --- THE FIX IS HERE --- */
 .card-features {
-  list-style-type: disc; /* Use standard bullet points */
-  padding-left: 20px; /* Add space for the bullets */
+  list-style-type: disc;
+  /* Use standard bullet points */
+  padding-left: 20px;
+  /* Add space for the bullets */
   margin-bottom: 32px;
   color: var(--text-secondary, #555);
 }
@@ -104,6 +108,7 @@
 .card-features li {
   margin-bottom: 10px;
 }
+
 /* --- END OF FIX --- */
 
 .card-cta-group {

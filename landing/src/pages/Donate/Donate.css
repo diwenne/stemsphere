@@ -1,6 +1,6 @@
 /* --- Hero Section Styling --- */
 .donate-hero-section {
-  padding: 80px 20px;
+  padding: 150px 20px 80px;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@
 .impact-section {
   padding: 80px 20px;
   background-color: #f8fafc;
-   background-image:
+  background-image:
     linear-gradient(rgba(0, 128, 96, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 128, 96, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;

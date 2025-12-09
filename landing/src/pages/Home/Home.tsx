@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
-import { Trophy, Code, Rocket, Lightbulb } from 'lucide-react';
+import { Trophy, Code, Rocket } from 'lucide-react';
 import BenefitCard from '../../components/BenefitCard/BenefitCard';
 import Gallery from '../../components/Gallery/Gallery';
 import './Home.css';
@@ -20,8 +20,7 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
   const benefitIcons = [
     <Trophy size={28} strokeWidth={1.5} />,
     <Code size={28} strokeWidth={1.5} />,
-    <Rocket size={28} strokeWidth={1.5} />,
-    <Lightbulb size={28} strokeWidth={1.5} />
+    <Rocket size={28} strokeWidth={1.5} />
   ];
 
   // Scroll to top on initial mount (before hash navigation)
@@ -91,46 +90,60 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
         </div>
       </Section>
 
-      <Section id="impact">
-        <h2 className="section-title">{t('home.impact.title')}</h2>
-        <p className="section-subtitle">{t('home.impact.subtitle')}</p>
-        <div className="impact-stats-container">
+      <div className="main-content">
+        <Section id="impact">
+          <h2 className="section-title">{t('home.impact.title')}</h2>
+          <p className="section-subtitle">{t('home.impact.subtitle')}</p>
+          <div className="impact-stats-container">
 
-          <div className="impact-stat">
-            <span className="impact-number">100+</span>
-            <span className="impact-label">Students Reached</span>
+            <div className="impact-stat">
+              <span className="impact-number">100+</span>
+              <span className="impact-label">Students Reached</span>
+            </div>
+            <div className="impact-stat">
+              <span className="impact-number">9</span>
+              <span className="impact-label">Workshops Hosted</span>
+            </div>
+            <div className="impact-stat">
+              <span className="impact-number">3</span>
+              <span className="impact-label">Chapters Founded</span>
+            </div>
+            <div className="impact-stat">
+              <span className="impact-number">10+</span>
+              <span className="impact-label">{t('home.impact.stats.hours')}</span>
+            </div>
+            <div className="impact-stat">
+              <span className="impact-number">5+</span>
+              <span className="impact-label">{t('home.impact.stats.projects')}</span>
+            </div>
+            <div className="impact-stat">
+              <span className="impact-number">90%</span>
+              <span className="impact-label">{t('home.impact.stats.pursue')}</span>
+            </div>
           </div>
-          <div className="impact-stat">
-            <span className="impact-number">9</span>
-            <span className="impact-label">Workshops Hosted</span>
-          </div>
-          <div className="impact-stat">
-            <span className="impact-number">3</span>
-            <span className="impact-label">Chapters Founded</span>
-          </div>
-        </div>
-      </Section>
+        </Section>
 
-      <Section id="benefits">
-        <h2 className="section-title">{t('home.benefits.title')}</h2>
-        <p className="section-subtitle">{t('home.benefits.subtitle')}</p>
-        <div className="benefits-grid">
-          {benefits.map((benefit, index) => (
-            <BenefitCard
-              key={index}
-              icon={benefitIcons[index]}
-              title={benefit.title}
-              description={benefit.description}
-            />
-          ))}
-        </div>
-      </Section>
+        <Section id="benefits">
+          <h2 className="section-title">{t('home.benefits.title')}</h2>
+          <p className="section-subtitle">{t('home.benefits.subtitle')}</p>
+          <div className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <BenefitCard
+                key={index}
+                icon={benefitIcons[index]}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            ))}
+          </div>
+        </Section>
 
-      <Section id="gallery">
-        <h2 className="section-title">Gallery</h2>
-        <p className="section-subtitle">A glimpse into our activities and events.</p>
-        <Gallery />
-      </Section>
+        <Section id="gallery">
+          <h2 className="section-title">Gallery</h2>
+          <p className="section-subtitle">A glimpse into our activities and events.</p>
+          <Gallery />
+        </Section>
+      </div>
     </div>
   );
 };
