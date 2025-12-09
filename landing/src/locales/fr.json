@@ -26,9 +26,9 @@
       "getInvolvedBtn": "S'impliquer",
       "meetTeamBtn": "En Savoir Plus",
       "stats": [
-        { "icon": "🌍", "text": "100+ étudiants atteints" },
-        { "icon": "🏫", "text": "9 ateliers organisés" },
-        { "icon": "🏛️", "text": "3 chapitres fondés" }
+        { "icon": "🌍", "text": "étudiants atteints" },
+        { "icon": "🏫", "text": "ateliers organisés" },
+        { "icon": "🏛️", "text": "chapitres fondés" }
       ]
     },
     "benefits": {
@@ -45,11 +45,15 @@
       "title": "Notre impact",
       "subtitle": "Alimenter la curiosité et créer les futurs leaders en STIM.",
       "stats": {
-        "hours": "Heures de codage enseignées",
-        "projects": "Projets construits",
+        "students": "étudiants atteints",
+        "workshops": "ateliers organisés",
+        "chapters": "chapitres fondés",
+        "hours": "Heures enseignées",
+        "partners": "Partenaires scolaires",
         "pursue": "Poursuivent des études en STIM à l'université"
       }
-    }
+    },
+    "carousel": "Photos"
   },
   "about": {
     "header": {

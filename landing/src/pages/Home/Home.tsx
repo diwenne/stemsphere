@@ -5,6 +5,7 @@ import Section from '../../components/Section/Section';
 import { Trophy, Code, Rocket } from 'lucide-react';
 import BenefitCard from '../../components/BenefitCard/BenefitCard';
 import Carousel from '../../components/Carousel/Carousel';
+import { IMPACT_STATS } from '../../constants/impactStats';
 import './Home.css';
 
 interface HomeProps {
@@ -97,27 +98,27 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
           <div className="impact-stats-container">
 
             <div className="impact-stat">
-              <span className="impact-number">100+</span>
-              <span className="impact-label">Students Reached</span>
+              <span className="impact-number">{IMPACT_STATS.students}</span>
+              <span className="impact-label">{t('home.impact.stats.students')}</span>
             </div>
             <div className="impact-stat">
-              <span className="impact-number">9</span>
-              <span className="impact-label">Workshops Hosted</span>
+              <span className="impact-number">{IMPACT_STATS.workshops}</span>
+              <span className="impact-label">{t('home.impact.stats.workshops')}</span>
             </div>
             <div className="impact-stat">
-              <span className="impact-number">3</span>
-              <span className="impact-label">Chapters Founded</span>
+              <span className="impact-number">{IMPACT_STATS.chapters}</span>
+              <span className="impact-label">{t('home.impact.stats.chapters')}</span>
             </div>
             <div className="impact-stat">
-              <span className="impact-number">10+</span>
+              <span className="impact-number">{IMPACT_STATS.hours}</span>
               <span className="impact-label">{t('home.impact.stats.hours')}</span>
             </div>
             <div className="impact-stat">
-              <span className="impact-number">5+</span>
-              <span className="impact-label">{t('home.impact.stats.projects')}</span>
+              <span className="impact-number">{IMPACT_STATS.partners}</span>
+              <span className="impact-label">{t('home.impact.stats.partners')}</span>
             </div>
             <div className="impact-stat">
-              <span className="impact-number">90%</span>
+              <span className="impact-number">{IMPACT_STATS.pursue}</span>
               <span className="impact-label">{t('home.impact.stats.pursue')}</span>
             </div>
           </div>

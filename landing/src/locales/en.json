@@ -28,15 +28,15 @@
       "stats": [
         {
           "icon": "🌍",
-          "text": "100+ Students Reached"
+          "text": "Students Reached"
         },
         {
           "icon": "🏫",
-          "text": "9 Workshops Hosted"
+          "text": "Workshops Hosted"
         },
         {
           "icon": "🏛️",
-          "text": "3 Chapters Founded"
+          "text": "Chapters Founded"
         }
       ]
     },
@@ -65,11 +65,15 @@
       "title": "Our Impact",
       "subtitle": "Fueling curiosity and creating future leaders in STEM.",
       "stats": {
-        "hours": "Hours of Coding Taught",
-        "projects": "Projects Built",
+        "students": "Students Reached",
+        "workshops": "Workshops Hosted",
+        "chapters": "Chapters Founded",
+        "hours": "Hours Taught",
+        "partners": "School Partners",
         "pursue": "Pursue STEM in College"
       }
-    }
+    },
+    "carousel": "Photos"
   },
   "about": {
     "header": {

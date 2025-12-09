@@ -59,7 +59,6 @@ const About = () => {
 
   return (
     <>
-      {/* --- Header and Content are now inside a SINGLE Section --- */}
       <Section id="about">
         <div className="page-header">
           <h1 className="page-title">{t('about.header.title')}</h1>

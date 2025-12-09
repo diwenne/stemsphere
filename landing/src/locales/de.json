@@ -26,9 +26,9 @@
       "getInvolvedBtn": "Engagieren Sie sich",
       "meetTeamBtn": "Mehr Erfahren",
       "stats": [
-        { "icon": "🌍", "text": "100+ Studenten erreicht" },
-        { "icon": "🏫", "text": "9 Workshops veranstaltet" },
-        { "icon": "🏛️", "text": "3 Kapitel gegründet" }
+        { "icon": "🌍", "text": "Studenten erreicht" },
+        { "icon": "🏫", "text": "Workshops veranstaltet" },
+        { "icon": "🏛️", "text": "Kapitel gegründet" }
       ]
     },
     "benefits": {
@@ -45,11 +45,15 @@
       "title": "Unsere Wirkung",
       "subtitle": "Neugier wecken und zukünftige Führungskräfte im MINT-Bereich schaffen.",
       "stats": {
-        "hours": "Stunden Programmierunterricht",
-        "projects": "Erstellte Projekte",
+        "students": "Studenten erreicht",
+        "workshops": "Workshops veranstaltet",
+        "chapters": "Kapitel gegründet",
+        "hours": "Unterrichtsstunden",
+        "partners": "Schulpartner",
         "pursue": "Verfolgen ein MINT-Studium"
       }
-    }
+    },
+    "carousel": "Fotos"
   },
   "about": {
     "header": {

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Carousel.css';
 
 const carouselImages = [
@@ -14,6 +15,7 @@ const carouselImages = [
 ];
 
 const Carousel = () => {
+    const { t } = useTranslation();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     // Create infinite loop by duplicating images
     const infiniteImages = [...carouselImages, ...carouselImages, ...carouselImages];
@@ -61,7 +63,7 @@ const Carousel = () => {
 
     return (
         <div className="carousel-container">
-            <h2 className="carousel-title">Photos</h2>
+            <h2 className="carousel-title">{t('home.carousel')}</h2>
             <div className="carousel">
                 <button className="carousel-button prev" onClick={() => scroll('left')}>
                     <ChevronLeft size={24} />

@@ -26,9 +26,9 @@
       "getInvolvedBtn": "Participar",
       "meetTeamBtn": "Saber Más",
       "stats": [
-        { "icon": "🌍", "text": "100+ Estudiantes Alcanzados" },
-        { "icon": "🏫", "text": "9 Talleres Realizados" },
-        { "icon": "🏛️", "text": "3 Capítulos Fundados" }
+        { "icon": "🌍", "text": "Estudiantes Alcanzados" },
+        { "icon": "🏫", "text": "Talleres Realizados" },
+        { "icon": "🏛️", "text": "Capítulos Fundados" }
       ]
     },
     "benefits": {
@@ -45,11 +45,15 @@
       "title": "Nuestro Impacto",
       "subtitle": "Fomentando la curiosidad y creando futuros líderes en STEM.",
       "stats": {
-        "hours": "Horas de Programación Enseñadas",
-        "projects": "Proyectos Construidos",
+        "students": "Estudiantes Alcanzados",
+        "workshops": "Talleres Realizados",
+        "chapters": "Capítulos Fundados",
+        "hours": "Horas Enseñadas",
+        "partners": "Escuelas asociadas",
         "pursue": "Siguen carreras STEM en la Universidad"
       }
-    }
+    },
+    "carousel": "Fotos"
   },
   "about": {
     "header": {
