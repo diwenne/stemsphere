@@ -186,6 +186,12 @@
   width: auto;
   height: auto;
   padding: 12px 0;
+  color: var(--text-primary) !important;
+}
+
+.mobile-nav-links .nav-link:hover,
+.mobile-nav-links .nav-link.active {
+  color: var(--accent-green) !important;
 }
 
 .mobile-nav-links .mobile-donate {
