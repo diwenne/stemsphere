@@ -1,3 +1,8 @@
+.home-page {
+  overflow-x: hidden;
+  position: relative;
+}
+
 .hero-section {
   padding-top: 0;
   padding-bottom: 0;
@@ -14,6 +19,7 @@
   background-attachment: fixed;
   color: white;
   position: relative;
+  top: 0;
 }
 
 .hero-content {
