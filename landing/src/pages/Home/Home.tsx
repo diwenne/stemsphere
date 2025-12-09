@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
 import { Trophy, Code, Rocket } from 'lucide-react';
 import BenefitCard from '../../components/BenefitCard/BenefitCard';
-import Gallery from '../../components/Gallery/Gallery';
+import Carousel from '../../components/Carousel/Carousel';
 import './Home.css';
 
 interface HomeProps {
@@ -138,12 +138,9 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
           </div>
         </Section>
 
-        <Section id="gallery">
-          <h2 className="section-title">Gallery</h2>
-          <p className="section-subtitle">A glimpse into our activities and events.</p>
-          <Gallery />
-        </Section>
       </div>
+
+      <Carousel />
     </div>
   );
 };

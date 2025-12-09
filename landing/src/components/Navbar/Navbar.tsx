@@ -34,7 +34,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   };
 
   const navItems = [
-    { to: 'benefits', label: t('navbar.benefits') },
     { to: 'impact', label: t('navbar.impact') },
   ];
 
@@ -107,6 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
         <div className="navbar-links">
           {navItems.map(item => (<NavLink key={item.to} to={`/#${item.to}`} className={() => activeSection === item.to ? 'nav-link active' : 'nav-link'}>{item.label}</NavLink>))}
           <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>{t('navbar.about')}</NavLink>
+          <NavLink to="/gallery" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Gallery</NavLink>
           <NavLink to="/get-involved" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>{t('navbar.getInvolved')}</NavLink>
           <a href="https://learn.stemsf.org" className="nav-link" target="_blank" rel="noopener noreferrer">Learn</a>
         </div>
@@ -141,6 +141,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
       <div className={`mobile-nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
         {navItems.map(item => (<NavLink key={item.to} to={`/#${item.to}`} onClick={closeMobileMenu} className={() => activeSection === item.to ? 'nav-link active' : 'nav-link'}>{item.label}</NavLink>))}
         <NavLink to="/about" className="nav-link" onClick={closeMobileMenu}>{t('navbar.about')}</NavLink>
+        <NavLink to="/gallery" className="nav-link" onClick={closeMobileMenu}>Gallery</NavLink>
         <NavLink to="/get-involved" className="nav-link" onClick={closeMobileMenu}>{t('navbar.getInvolved')}</NavLink>
         <a href="https://learn.stemsf.org" className="nav-link" onClick={closeMobileMenu} target="_blank" rel="noopener noreferrer">Learn</a>
         <NavLink to="/donate" className="nav-link mobile-donate" onClick={closeMobileMenu}>{t('navbar.donate')}</NavLink>

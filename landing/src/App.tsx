@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import GetInvolved from './pages/GetInvolved/GetInvolved';
+import GalleryPage from './pages/GalleryPage/GalleryPage';
 import Donate from './pages/Donate/Donate';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsOfService from './components/Legal/TermsOfService';
@@ -28,17 +29,18 @@ const AppContent = () => {
 
   return (
     <>
-      <Navbar 
-        activeSection={activeSection} 
-        setActiveSection={setActiveSection} 
+      <Navbar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
       />
       <main>
         <Routes>
-          <Route 
-            path="/" 
-            element={<Home setActiveSection={setActiveSection} />} 
+          <Route
+            path="/"
+            element={<Home setActiveSection={setActiveSection} />}
           />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
