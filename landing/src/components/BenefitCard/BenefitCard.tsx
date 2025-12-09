@@ -2,7 +2,7 @@ import React from 'react';
 import './BenefitCard.css';
 
 interface BenefitCardProps {
-  icon: string; // Using emoji as icon for simplicity
+  icon: React.ReactNode;
   title: string;
   description: string;
 }

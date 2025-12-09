@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.css';
 import stemsphereLogo from '../../assets/stemsphere.png';
 
@@ -30,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     setLangDropdownOpen(false);
     setMobileLangOpen(false);
   };
-  
+
   const navItems = [
     { to: 'benefits', label: t('navbar.benefits') },
     { to: 'impact', label: t('navbar.impact') },
@@ -67,6 +68,22 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [desktopDropdownRef]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.navbar-header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header className="navbar-header">
       <nav className="navbar-container">
@@ -87,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
         <div className="navbar-right">
           <div className="language-switcher" ref={desktopDropdownRef}>
             <button className="current-lang-btn" onClick={() => setLangDropdownOpen(!isLangDropdownOpen)}>
-              {currentLanguage.name} <span className="dropdown-arrow">▼</span>
+              {currentLanguage.name} <ChevronDown size={14} className="dropdown-arrow" />
             </button>
             {isLangDropdownOpen && (
               <div className="lang-dropdown">
@@ -97,11 +114,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
           </div>
           <NavLink to="/donate" className="navbar-cta">{t('navbar.donate')}</NavLink>
           <button className="hamburger-menu" onClick={handleHamburgerClick}>
-            {isMobileMenuOpen ? '✕' : '☰'}
+            {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
       </nav>
-      
+
       {/* --- MOBILE CONTROLS --- */}
       {isMobileMenuOpen && (
         // NEW: This button now toggles the language overlay

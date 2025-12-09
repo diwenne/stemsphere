@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Globe, Handshake, Lightbulb, Rocket } from 'lucide-react';
 import Section from '../../components/Section/Section';
 import LeadershipCard from '../../components/LeadershipCard/LeadershipCard';
 import './About.css';
@@ -29,9 +30,16 @@ interface ValueCardProps {
 
 const About = () => {
   const { t } = useTranslation();
-  
+
   const translatedLeaders = t('about.leaders', { returnObjects: true }) as Omit<Leader, 'avatarUrl'>[];
-  const valueCards = t('about.values.cards', { returnObjects: true }) as ValueCardProps[];
+  const valueCards = t('about.values.cards', { returnObjects: true }) as Omit<ValueCardProps, 'icon'>[];
+
+  const valueIcons = [
+    <Globe size={32} strokeWidth={1.5} />,
+    <Handshake size={32} strokeWidth={1.5} />,
+    <Lightbulb size={32} strokeWidth={1.5} />,
+    <Rocket size={32} strokeWidth={1.5} />
+  ];
 
   const avatarMap: { [key: string]: string } = {
     'Diwen Huang': diwen,
@@ -73,7 +81,7 @@ const About = () => {
           <div className="values-grid">
             {valueCards.map((card, index) => (
               <div className="value-card" key={index}>
-                <span className="value-icon">{card.icon}</span>
+                <span className="value-icon">{valueIcons[index]}</span>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
               </div>

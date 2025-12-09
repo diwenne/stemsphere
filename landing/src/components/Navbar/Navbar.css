@@ -1,11 +1,18 @@
 .navbar-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  z-index: 1000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar-header.scrolled {
   background-color: rgba(252, 253, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  z-index: 1000;
 }
 
 .navbar-container {
@@ -27,7 +34,7 @@
 
 .logo-icon {
   flex-shrink: 0;
-  height: 44px; 
+  height: 44px;
 }
 
 .logo-text {
@@ -54,8 +61,14 @@
   background-image: linear-gradient(60deg, #2dd4bf, #0d9488, #042f2e);
 }
 
+/* Lighter sphere text when transparent */
+.navbar-header:not(.scrolled) .logo-sphere {
+  background-image: linear-gradient(60deg, #5eead4, #2dd4bf, #14b8a6);
+}
+
 .navbar-links {
-  display: none; /* Hidden on mobile */
+  display: none;
+  /* Hidden on mobile */
   gap: 30px;
   height: 100%;
 }
@@ -71,6 +84,21 @@
   align-items: center;
   height: 100%;
   text-decoration: none;
+}
+
+/* White text when navbar is transparent (over hero) */
+.navbar-header:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-header:not(.scrolled) .nav-link:hover,
+.navbar-header:not(.scrolled) .nav-link.active {
+  color: white;
+}
+
+/* Revert to dark text when scrolled */
+.navbar-header.scrolled .nav-link {
+  color: var(--text-secondary);
 }
 
 .nav-link:hover,
@@ -92,8 +120,20 @@
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.2s ease;
-  display: none; /* Hidden on mobile */
+  display: none;
+  /* Hidden on mobile */
   text-decoration: none;
+}
+
+/* White CTA when transparent */
+.navbar-header:not(.scrolled) .navbar-cta {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-header:not(.scrolled) .navbar-cta:hover {
+  background-color: white;
+  color: var(--accent-green);
 }
 
 .navbar-cta:hover {
@@ -107,7 +147,8 @@
   color: white;
   border: none;
   cursor: pointer;
-  z-index: 1004; /* Highest z-index for controls */
+  z-index: 1004;
+  /* Highest z-index for controls */
   width: 70px;
   height: 70px;
   display: flex;
@@ -161,6 +202,7 @@
   position: relative;
   margin-right: 12px;
 }
+
 .current-lang-btn {
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -174,13 +216,27 @@
   gap: 6px;
   transition: all 0.2s ease;
 }
+
+/* White lang btn when transparent */
+.navbar-header:not(.scrolled) .current-lang-btn {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-header:not(.scrolled) .current-lang-btn:hover {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .current-lang-btn:hover {
   border-color: var(--accent-green);
   color: var(--accent-green);
 }
+
 .dropdown-arrow {
   font-size: 0.6em;
 }
+
 .lang-dropdown {
   position: absolute;
   top: calc(100% + 5px);
@@ -188,11 +244,12 @@
   background-color: white;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 5px;
   z-index: 1001;
   min-width: 100%;
 }
+
 .lang-dropdown button {
   background: none;
   border: none;
@@ -204,6 +261,7 @@
   font-weight: 500;
   color: var(--text-secondary);
 }
+
 .lang-dropdown button:hover {
   background-color: var(--accent-green);
   color: white;
@@ -213,12 +271,16 @@
 .mobile-lang-button {
   position: fixed;
   top: 0;
-  right: 72px; /* Reduced space between buttons (was 80px) */
-  background-color: var(--accent-green); /* Changed back to accent color */
-  color: white; /* Ensure text is visible */
-  border: none; /* Removed border */
+  right: 72px;
+  /* Reduced space between buttons (was 80px) */
+  background-color: var(--accent-green);
+  /* Changed back to accent color */
+  color: white;
+  /* Ensure text is visible */
+  border: none;
+  /* Removed border */
   width: 70px;
-  height: 70px; 
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -236,20 +298,25 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--card-background);
-  z-index: 1003; /* Sits below the control buttons */
+  z-index: 1003;
+  /* Sits below the control buttons */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
   opacity: 0;
-  pointer-events: none; /* Prevents interaction when hidden */
+  pointer-events: none;
+  /* Prevents interaction when hidden */
   transition: opacity 0.3s ease-in-out;
 }
+
 .mobile-lang-overlay.open {
   opacity: 1;
-  pointer-events: auto; /* Allows interaction when visible */
+  pointer-events: auto;
+  /* Allows interaction when visible */
 }
+
 .mobile-lang-overlay button {
   background: none;
   border: none;
@@ -260,9 +327,11 @@
   padding: 10px 20px;
   transition: color 0.2s ease;
 }
+
 .mobile-lang-overlay button:hover {
   color: var(--accent-green);
 }
+
 .mobile-lang-overlay button.active {
   color: var(--accent-green);
 }
@@ -272,18 +341,23 @@
   .navbar-links {
     display: flex;
   }
+
   .navbar-cta {
     display: inline-block;
   }
+
   .hamburger-menu {
     display: none;
   }
+
   .mobile-nav-links {
     display: none;
   }
+
   .language-switcher {
     display: flex;
   }
+
   .nav-link::after {
     content: '';
     position: absolute;
@@ -295,6 +369,7 @@
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
   }
+
   .nav-link:hover::after,
   .nav-link.active::after {
     transform: scaleX(1);
@@ -306,9 +381,11 @@
   .navbar-links {
     gap: 20px;
   }
+
   .navbar-links .nav-link {
     font-size: 0.9rem;
   }
+
   .navbar-cta {
     padding: 8px 16px;
     font-size: 0.9rem;
