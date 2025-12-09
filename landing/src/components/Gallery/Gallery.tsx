@@ -10,6 +10,18 @@ const images = [
     '/images/gallery/gallery-6.jpg',
     '/images/gallery/gallery-7.jpg',
     '/images/gallery/gallery-8.jpg',
+    '/images/gallery/gallery-9.jpg',
+    '/images/gallery/gallery-10.jpg',
+    '/images/gallery/gallery-11.jpg',
+    '/images/gallery/gallery-12.jpg',
+    '/images/gallery/gallery-13.jpg',
+    '/images/gallery/gallery-14.jpg',
+    '/images/gallery/gallery-15.jpg',
+    '/images/gallery/gallery-16.jpg',
+    '/images/gallery/gallery-17.jpg',
+    '/images/gallery/gallery-18.jpg',
+    '/images/gallery/gallery-19.jpg',
+    '/images/gallery/gallery-20.jpg',
 ];
 
 const Gallery = () => {
