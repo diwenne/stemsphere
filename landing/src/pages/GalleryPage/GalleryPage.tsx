@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from '../../components/Section/Section';
 import Gallery from '../../components/Gallery/Gallery';
 import './GalleryPage.css';

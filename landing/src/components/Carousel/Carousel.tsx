@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './Carousel.css';
 
@@ -32,7 +32,6 @@ const Carousel = () => {
         const container = scrollContainerRef.current;
         const itemWidth = 400;
         const maxScroll = itemWidth * carouselImages.length * 2;
-        const minScroll = itemWidth * carouselImages.length;
 
         // Loop back to middle when reaching end
         if (container.scrollLeft >= maxScroll) {
