@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.css';
@@ -23,6 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   const [isMobileLangOpen, setMobileLangOpen] = useState(false);
   const desktopDropdownRef = useRef<HTMLDivElement>(null);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
 
   const currentLanguage = languages.find(lang => i18n.language.startsWith(lang.code)) || languages[0];
 
@@ -72,17 +73,26 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     const handleScroll = () => {
       const header = document.querySelector('.navbar-header');
       if (header) {
-        if (window.scrollY > 50) {
+        // If not on home page, always show as scrolled (solid background)
+        if (location.pathname !== '/') {
           header.classList.add('scrolled');
         } else {
-          header.classList.remove('scrolled');
+          // On home page, toggle based on scroll position
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
         }
       }
     };
 
+    // Run once on mount/location change to set initial state
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <header className="navbar-header">

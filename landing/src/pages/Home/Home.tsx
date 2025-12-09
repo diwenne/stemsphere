@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Section from '../../components/Section/Section';
-import { Globe, School, Landmark, Trophy, Code, Rocket, Lightbulb } from 'lucide-react';
+import { Trophy, Code, Rocket, Lightbulb } from 'lucide-react';
 import BenefitCard from '../../components/BenefitCard/BenefitCard';
 import Gallery from '../../components/Gallery/Gallery';
 import './Home.css';
@@ -11,25 +11,11 @@ interface HomeProps {
   setActiveSection: (sectionId: string) => void;
 }
 
-// Define a type for our stat object
-interface HeroStat {
-  icon: string;
-  text: string;
-}
-
 const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
   const benefits = t('home.benefits.cards', { returnObjects: true }) as { title: string, description: string }[];
-  // Load the array of stats from the translation file
-  const heroStats = t('home.hero.stats', { returnObjects: true }) as HeroStat[];
-
-  const heroIcons = [
-    <Globe size={40} strokeWidth={1.5} />,
-    <School size={40} strokeWidth={1.5} />,
-    <Landmark size={40} strokeWidth={1.5} />
-  ];
 
   const benefitIcons = [
     <Trophy size={28} strokeWidth={1.5} />,
@@ -37,6 +23,11 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
     <Rocket size={28} strokeWidth={1.5} />,
     <Lightbulb size={28} strokeWidth={1.5} />
   ];
+
+  // Scroll to top on initial mount (before hash navigation)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -100,32 +91,22 @@ const Home: React.FC<HomeProps> = ({ setActiveSection }) => {
         </div>
       </Section>
 
-      <Section id="stats" className="stats-section">
-        <div className="hero-stats">
-          {heroStats.map((stat, index) => (
-            <div className="hero-stat-item" key={index}>
-              <span className="hero-stat-icon">{heroIcons[index]}</span>
-              <span className="hero-stat-text">{stat.text}</span>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       <Section id="impact">
         <h2 className="section-title">{t('home.impact.title')}</h2>
         <p className="section-subtitle">{t('home.impact.subtitle')}</p>
         <div className="impact-stats-container">
+
           <div className="impact-stat">
-            <span className="impact-number">10+</span>
-            <span className="impact-label">{t('home.impact.stats.hours')}</span>
+            <span className="impact-number">100+</span>
+            <span className="impact-label">Students Reached</span>
           </div>
           <div className="impact-stat">
-            <span className="impact-number">5+</span>
-            <span className="impact-label">{t('home.impact.stats.projects')}</span>
+            <span className="impact-number">9</span>
+            <span className="impact-label">Workshops Hosted</span>
           </div>
           <div className="impact-stat">
-            <span className="impact-number">90%</span>
-            <span className="impact-label">{t('home.impact.stats.pursue')}</span>
+            <span className="impact-number">3</span>
+            <span className="impact-label">Chapters Founded</span>
           </div>
         </div>
       </Section>
