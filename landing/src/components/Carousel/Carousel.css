@@ -89,13 +89,18 @@
 }
 
 @media (max-width: 768px) {
+    .carousel-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
     .carousel {
-        padding: 0 60px;
+        padding: 0 50px;
     }
 
     .carousel-item {
-        width: 300px;
-        height: 220px;
+        width: 280px;
+        height: 200px;
     }
 
     .carousel-button {
@@ -107,16 +112,37 @@
         width: 20px;
         height: 20px;
     }
+
+    .carousel-button.prev {
+        left: 10px;
+    }
+
+    .carousel-button.next {
+        right: 10px;
+    }
 }
 
 @media (max-width: 480px) {
+    .carousel-container {
+        padding: 40px 0;
+    }
+
+    .carousel-title {
+        font-size: 1.75rem;
+        margin-bottom: 24px;
+    }
+
     .carousel {
-        padding: 0 50px;
+        padding: 0 40px;
+    }
+
+    .carousel-scroll {
+        gap: 16px;
     }
 
     .carousel-item {
-        width: 260px;
-        height: 180px;
+        width: 240px;
+        height: 160px;
     }
 
     .carousel-button {
@@ -125,10 +151,35 @@
     }
 
     .carousel-button.prev {
-        left: 10px;
+        left: 5px;
     }
 
     .carousel-button.next {
-        right: 10px;
+        right: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .carousel-title {
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        padding: 0 35px;
+    }
+
+    .carousel-item {
+        width: 200px;
+        height: 140px;
+    }
+
+    .carousel-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .carousel-button svg {
+        width: 18px;
+        height: 18px;
     }
 }
