@@ -12,7 +12,7 @@ const teamMembers = [
         designation: "President",
         image: "/assets/diwen.jpg",
         bio: "Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.",
-        tags: ["Computer Vision Research", "iOS Developer"],
+        tags: ["iOS Developer", "Likes Starbucks"],
         linkedin: "http://linkedin.com/in/diwenh5"
     },
     {
