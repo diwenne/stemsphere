@@ -26,24 +26,7 @@ const galleryImages = [
 export default function Home() {
   return (
     <main className="relative bg-white dark:bg-neutral-950 flex flex-col overflow-hidden mx-auto">
-      {/* Hero with grid fading into it from below */}
-      <div className="relative">
-        <HeroSection />
-        {/* Grid that extends up into hero and fades at top */}
-        <div className="absolute inset-0 top-[50%] pointer-events-none">
-          <AnimatedGridPattern
-            numSquares={30}
-            maxOpacity={0.15}
-            duration={3}
-            repeatDelay={1}
-            className={cn(
-              "[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_70%,transparent)]",
-              "fill-emerald-500/30 stroke-emerald-500/30",
-              "dark:fill-emerald-500/20 dark:stroke-emerald-500/20"
-            )}
-          />
-        </div>
-      </div>
+      <HeroSection />
 
       {/* Content sections with grid pattern background */}
       <div className="relative">
