@@ -41,26 +41,26 @@ export default function GetInvolvedPage() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <form className="space-y-6">
+                        <form action="https://formspree.io/f/mldqzzbe" method="POST" className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="firstName" className="text-slate-700 dark:text-slate-200">First Name</Label>
-                                    <Input id="firstName" placeholder="John" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
+                                    <Input id="firstName" name="firstName" placeholder="John" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="lastName" className="text-slate-700 dark:text-slate-200">Last Name</Label>
-                                    <Input id="lastName" placeholder="Doe" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
+                                    <Input id="lastName" name="lastName" placeholder="Doe" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <Label htmlFor="email" className="text-slate-700 dark:text-slate-200">Email</Label>
-                                <Input id="email" type="email" placeholder="john@example.com" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
+                                <Input id="email" name="email" type="email" placeholder="john@example.com" className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500" />
                             </div>
 
                             <div className="space-y-2">
                                 <Label htmlFor="interest" className="text-slate-700 dark:text-slate-200">I'm interested in...</Label>
-                                <Select>
+                                <Select name="interest">
                                     <SelectTrigger className="bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white">
                                         <SelectValue placeholder="Select an option" />
                                     </SelectTrigger>
@@ -77,6 +77,7 @@ export default function GetInvolvedPage() {
                                 <Label htmlFor="message" className="text-slate-700 dark:text-slate-200">Message</Label>
                                 <Textarea
                                     id="message"
+                                    name="message"
                                     placeholder="Tell us more about how you'd like to get involved..."
                                     className="min-h-[120px] bg-white dark:bg-neutral-900 border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-neutral-500"
                                 />
