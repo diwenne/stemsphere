@@ -91,7 +91,7 @@ const Header = () => {
             {/* Right Side Actions */}
             <div className="flex items-center gap-4">
               <div className="hidden sm:block">
-                <ModeToggle />
+                <ModeToggle isHeroIdle={pathname === "/" && !isScrolled} />
               </div>
               <Link href="/donate" className="hidden sm:block">
                 <Button variant="solid" className="rounded-full">

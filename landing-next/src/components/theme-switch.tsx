@@ -5,8 +5,9 @@ import { Moon, Sun } from "@aliimam/icons";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Toggle } from "@/components/ui/toggle";
+import { cn } from "@/lib/utils";
 
-export function ModeToggle() {
+export function ModeToggle({ isHeroIdle = false }: { isHeroIdle?: boolean }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -20,19 +21,30 @@ export function ModeToggle() {
     <div className="flex flex-col justify-center">
       <div>
         <Toggle
-          className="group bg-secondary dark:bg-secondary data-[state=on]:hover:bg-muted cursor-pointer size-9 data-[state=on]:bg-transparent"
+          className={cn(
+            "group cursor-pointer size-9 data-[state=on]:bg-transparent",
+            isHeroIdle
+              ? "bg-white/20 hover:bg-white/30 data-[state=on]:hover:bg-white/30"
+              : "bg-secondary dark:bg-secondary data-[state=on]:hover:bg-muted"
+          )}
           pressed={theme === "dark"}
           onPressedChange={() => setTheme(theme === "dark" ? "light" : "dark")}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
           <Moon
             size={16}
-            className="shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100"
+            className={cn(
+              "shrink-0 scale-0 opacity-0 transition-all group-data-[state=on]:scale-100 group-data-[state=on]:opacity-100",
+              isHeroIdle && "text-white"
+            )}
             aria-hidden="true"
           />
           <Sun
             size={16}
-            className="absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0"
+            className={cn(
+              "absolute shrink-0 scale-100 opacity-100 transition-all group-data-[state=on]:scale-0 group-data-[state=on]:opacity-0",
+              isHeroIdle && "text-white"
+            )}
             aria-hidden="true"
           />
         </Toggle>
@@ -40,4 +52,4 @@ export function ModeToggle() {
     </div>
   );
 }
- 
+
