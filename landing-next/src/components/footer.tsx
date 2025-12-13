@@ -44,7 +44,7 @@ export function Footer() {
                                 <Linkedin size={20} />
                             </a>
                             <a
-                                href="https://www.instagram.com/stemspherefoundation?igsh=bm9obDliMm90Ym04&utm_source=qr"
+                                href="https://www.instagram.com/stemsforg"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-700 text-slate-600 dark:text-slate-400 hover:text-emerald-500 hover:border-emerald-500 transition-colors"
