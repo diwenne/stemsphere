@@ -1,5 +1,5 @@
 "use client";
-import { ParallaxScroll } from "@/components/ui/parallax-scroll";
+import { MasonryGallery } from "@/components/masonry-gallery";
 
 const images = [
     "/images/gallery/gallery-1.jpg",
@@ -49,12 +49,7 @@ export default function GalleryPage() {
                     </p>
                 </div>
 
-                {/* The ParallaxScroll component handles its own height/scrolling, 
-            but we want it to fit nicely in the page flow. 
-            We'll give it a fixed height or let it be the main content. 
-            Aceternity's default implementation is a scroll container.
-        */}
-                <ParallaxScroll images={images} className="h-[calc(100vh-200px)]" />
+                <MasonryGallery images={images} />
             </div>
         </div>
     );

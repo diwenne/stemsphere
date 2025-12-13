@@ -62,14 +62,14 @@ export function InfiniteCarousel({
                 {duplicatedImages.map((src, index) => (
                     <div
                         key={`${src}-${index}`}
-                        className="relative flex-shrink-0 w-64 h-48 md:w-80 md:h-56 rounded-lg overflow-hidden shadow-lg"
+                        className="flex-shrink-0 rounded-sm shadow-lg"
                     >
                         <Image
                             src={src}
                             alt={`Gallery image ${(index % images.length) + 1}`}
-                            fill
-                            className="object-cover hover:scale-105 transition-transform duration-500"
-                            sizes="(max-width: 768px) 256px, 320px"
+                            width={320}
+                            height={240}
+                            className="w-64 md:w-80 h-auto rounded-sm hover:scale-105 transition-transform duration-500"
                         />
                     </div>
                 ))}
