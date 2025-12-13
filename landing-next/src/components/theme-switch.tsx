@@ -24,7 +24,7 @@ export function ModeToggle({ isHeroIdle = false }: { isHeroIdle?: boolean }) {
           className={cn(
             "group cursor-pointer size-9 data-[state=on]:bg-transparent",
             isHeroIdle
-              ? "bg-white/20 hover:bg-white/30 data-[state=on]:hover:bg-white/30"
+              ? "bg-transparent hover:bg-white/10 data-[state=on]:hover:bg-white/10"
               : "bg-secondary dark:bg-secondary data-[state=on]:hover:bg-muted"
           )}
           pressed={theme === "dark"}
