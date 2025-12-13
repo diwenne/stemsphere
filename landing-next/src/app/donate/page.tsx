@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/neon-button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 export default function DonatePage() {
 
@@ -34,8 +36,19 @@ export default function DonatePage() {
     ];
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-black pt-32 pb-20 px-4">
-            <div className="max-w-5xl mx-auto">
+        <div className="relative min-h-screen bg-slate-50 dark:bg-black pt-32 pb-20 px-4 overflow-hidden">
+            <AnimatedGridPattern
+                numSquares={30}
+                maxOpacity={0.15}
+                duration={3}
+                repeatDelay={1}
+                className={cn(
+                    "[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,white,transparent)]",
+                    "fill-emerald-500/30 stroke-emerald-500/30",
+                    "dark:fill-emerald-500/20 dark:stroke-emerald-500/20"
+                )}
+            />
+            <div className="relative z-10 max-w-5xl mx-auto">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">
                         Support Our Mission
@@ -110,3 +123,4 @@ export default function DonatePage() {
         </div>
     );
 }
+

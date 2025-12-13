@@ -5,12 +5,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 export default function GetInvolvedPage() {
 
     return (
-        <div className="min-h-screen w-full bg-slate-50 dark:bg-neutral-950 flex flex-col items-center justify-center antialiased pt-32 pb-20 px-4">
-            <div className="max-w-2xl w-full">
+        <div className="relative min-h-screen w-full bg-slate-50 dark:bg-neutral-950 flex flex-col items-center justify-center antialiased pt-32 pb-20 px-4 overflow-hidden">
+            <AnimatedGridPattern
+                numSquares={30}
+                maxOpacity={0.15}
+                duration={3}
+                repeatDelay={1}
+                className={cn(
+                    "[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,white,transparent)]",
+                    "fill-emerald-500/30 stroke-emerald-500/30",
+                    "dark:fill-emerald-500/20 dark:stroke-emerald-500/20"
+                )}
+            />
+            <div className="relative z-10 max-w-2xl w-full">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-4">
                         Get Involved
@@ -79,3 +92,4 @@ export default function GetInvolvedPage() {
         </div>
     );
 }
+
