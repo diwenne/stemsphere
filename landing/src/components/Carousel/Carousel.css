@@ -2,6 +2,8 @@
     width: 100%;
     padding: 60px 0;
     background: transparent;
+    overflow: hidden;
+    /* Prevent horizontal scrollbar on body if items overflow */
 }
 
 .carousel-title {
@@ -13,10 +15,13 @@
 }
 
 .carousel {
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    /* Allow full width */
+    margin: 0;
     position: relative;
-    padding: 0 80px;
+    padding: 0;
+    /* Remove padding to prevent cutting off */
 }
 
 .carousel-scroll {
@@ -24,11 +29,12 @@
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; REMOVED for infinite loop control */
     padding: 20px 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
 }
 
 .carousel-scroll::-webkit-scrollbar {
@@ -81,21 +87,19 @@
 }
 
 .carousel-button.prev {
-    left: 20px;
+    left: 40px;
+    /* Adjusted for full width */
 }
 
 .carousel-button.next {
-    right: 20px;
+    right: 40px;
+    /* Adjusted for full width */
 }
 
 @media (max-width: 768px) {
     .carousel-title {
         font-size: 2rem;
         margin-bottom: 30px;
-    }
-
-    .carousel {
-        padding: 0 50px;
     }
 
     .carousel-item {
@@ -114,11 +118,11 @@
     }
 
     .carousel-button.prev {
-        left: 10px;
+        left: 20px;
     }
 
     .carousel-button.next {
-        right: 10px;
+        right: 20px;
     }
 }
 
@@ -130,10 +134,6 @@
     .carousel-title {
         font-size: 1.75rem;
         margin-bottom: 24px;
-    }
-
-    .carousel {
-        padding: 0 40px;
     }
 
     .carousel-scroll {
@@ -151,21 +151,17 @@
     }
 
     .carousel-button.prev {
-        left: 5px;
+        left: 10px;
     }
 
     .carousel-button.next {
-        right: 5px;
+        right: 10px;
     }
 }
 
 @media (max-width: 360px) {
     .carousel-title {
         font-size: 1.5rem;
-    }
-
-    .carousel {
-        padding: 0 35px;
     }
 
     .carousel-item {
