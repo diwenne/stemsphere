@@ -163,6 +163,16 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    background-color: #f8fafc;
+    /* slate-50 for light mode */
+  }
+
+  html.dark {
+    background-color: #030303;
+    /* Match hero dark bg */
+  }
+
   body {
     @apply bg-background text-foreground;
   }
