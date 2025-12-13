@@ -1,6 +1,6 @@
 "use client";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { Globe, Handshake, Lightbulb, Rocket } from "lucide-react";
+import { Globe, Handshake, Lightbulb, Rocket, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
@@ -9,74 +9,77 @@ const teamMembers = [
     {
         id: 1,
         name: "Diwen Huang",
-        designation: "Founder & Executive Director",
+        designation: "President",
         image: "/assets/diwen.jpg",
-        bio: "Diwen is a high school student passionate about bridging the gap in STEM education. He founded Stemsphere to provide accessible resources to students worldwide.",
-        tags: ["Leadership", "Engineering", "Education"],
-        linkedin: "https://www.linkedin.com/in/diwen-huang-b8b8a821a/"
+        bio: "Aspiring AI researcher and software engineer, passionate about making STEM education accessible to all.",
+        tags: ["Computer Vision Research", "Bestselling Author", "iOS Developer"],
+        linkedin: "http://linkedin.com/in/diwenh5"
     },
     {
         id: 2,
         name: "Wilson Huang",
-        designation: "Director of Operations",
+        designation: "Vice President",
         image: "/assets/wilson.png",
-        bio: "Wilson oversees the day-to-day operations of Stemsphere, ensuring smooth execution of workshops and events.",
-        tags: ["Operations", "Management", "Logistics"],
-        linkedin: ""
+        bio: "Dedicated to creating innovative curricula that bridge the gap between classroom theory and real-world application.",
+        tags: ["Algorithmic Research", "STEM Curriculum Designer", "UN Delegate"],
+        linkedin: "https://www.linkedin.com/in/wilson-bohan-huang/"
     },
     {
         id: 3,
         name: "Drishya Sharma",
-        designation: "Director of Outreach",
+        designation: "Director of Programs",
         image: "/assets/drishya.jpg",
-        bio: "Drishya leads our outreach efforts, connecting with schools and community organizations to expand our impact.",
-        tags: ["Outreach", "Communication", "Networking"],
-        linkedin: ""
+        bio: "Focused on building inclusive STEM initiatives that connect technology with human-centered design to serve diverse learners.",
+        tags: ["STEM Tutor", "Community Builder"],
+        linkedin: "http://linkedin.com/in/drishya-anonymous-14736a218"
     },
     {
         id: 4,
         name: "Tristan Du",
-        designation: "Director of Technology",
+        designation: "Director of Partnerships",
         image: "/assets/tristan.png",
-        bio: "Tristan manages our digital platforms and develops technical curriculum for our coding workshops.",
-        tags: ["Technology", "Coding", "Web Dev"],
-        linkedin: ""
+        bio: "Passionate about forging relationships between schools, organizations, and communities to expand STEM learning opportunities.",
+        tags: ["UX Design", "Outdoor Enthusiast"],
+        linkedin: "https://linkedin.com/in/tristan-du-329595384"
     },
     {
         id: 5,
         name: "Zoe Zhu",
-        designation: "Director of Marketing",
+        designation: "Director of Communications",
         image: "/assets/zoe.jpg",
-        bio: "Zoe creates engaging content and manages our social media presence to spread the word about Stemsphere.",
-        tags: ["Marketing", "Social Media", "Design"],
-        linkedin: ""
+        bio: "Ambitious STEM and business student, driven to innovate educational resources and enhance foundational learning.",
+        tags: ["Aspiring Business Major", "Creative Thinker"],
+        linkedin: "http://linkedin.com/in/zoe-zhu-011551377"
     },
     {
         id: 6,
         name: "Eden Liang",
-        designation: "Director of Finance",
+        designation: "Director of Finances",
         image: "/assets/eden.jpg",
-        bio: "Eden manages our budget and fundraising initiatives to ensure the sustainability of our programs.",
-        tags: ["Finance", "Fundraising", "Budgeting"],
-        linkedin: ""
+        bio: "Dedicated to combining engineering and financial literacy to support sustainable STEM initiatives.",
+        tags: ["Shad Design Award", "Startup Experience", "Robotics Programmer"],
+        linkedin: "http://linkedin.com/in/zoe-zhu-011551377"
     },
     {
         id: 7,
         name: "Timmy Jin",
-        designation: "Director of Curriculum",
+        designation: "Executive Member",
         image: "/assets/timmy.jpeg",
-        bio: "Timmy develops our STEM curriculum, ensuring it is engaging, educational, and aligned with standards.",
-        tags: ["Curriculum", "Education", "Teaching"],
-        linkedin: ""
+        bio: "Blending interests in technology and business to ensure STEMsphere's projects are financially resilient and impactful.",
+        tags: ["STEM Enthusiast", "Design-Minded"],
+        linkedin: "https://linkedin.com/in/timmy-jin-24bb51363"
     },
+];
+
+const chapterPresidents = [
     {
-        id: 8,
+        id: 1,
         name: "Andy Guo",
-        designation: "Director of Events",
+        chapter: "Meadowridge",
         image: "/assets/andy.jpg",
-        bio: "Andy organizes our workshops and events, creating memorable learning experiences for students.",
-        tags: ["Events", "Planning", "Coordination"],
-        linkedin: ""
+        bio: "Combining analytical skills with a passion for teamwork to manage resources and support student-led STEM programs.",
+        tags: ["World Scholars Cup", "Team Player"],
+        linkedin: "http://linkedin.com/in/andy-guo-11a699329"
     },
 ];
 
@@ -191,7 +194,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Detailed Team Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
                         {teamMembers.map((member) => (
                             <div key={member.id} className="bg-white dark:bg-neutral-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-neutral-800 hover:shadow-md transition-all group">
                                 <div className="aspect-square overflow-hidden relative">
@@ -203,6 +206,47 @@ export default function AboutPage() {
                                     <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">{member.bio}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {member.tags.map(tag => (
+                                            <span key={tag} className="px-2 py-1 bg-slate-100 dark:bg-neutral-800 text-slate-600 dark:text-slate-300 text-xs rounded-full">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Chapter Presidents Section */}
+                <div id="chapters" className="space-y-12">
+                    <div className="text-center space-y-4">
+                        <span className="text-emerald-500 font-semibold tracking-wide uppercase text-sm">
+                            Local Leadership
+                        </span>
+                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+                            Chapter Presidents
+                        </h2>
+                        <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                            Meet the leaders who bring Stemsphere to their local communities.
+                        </p>
+                    </div>
+
+                    {/* Chapter Presidents Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        {chapterPresidents.map((president) => (
+                            <div key={president.id} className="bg-white dark:bg-neutral-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-neutral-800 hover:shadow-md transition-all group">
+                                <div className="aspect-square overflow-hidden relative">
+                                    <img src={president.image} alt={president.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{president.name}</h3>
+                                    <p className="text-emerald-500 font-medium text-sm mb-4 flex items-center gap-1">
+                                        <MapPin className="w-4 h-4" />
+                                        {president.chapter}
+                                    </p>
+                                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">{president.bio}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {president.tags.map(tag => (
                                             <span key={tag} className="px-2 py-1 bg-slate-100 dark:bg-neutral-800 text-slate-600 dark:text-slate-300 text-xs rounded-full">
                                                 {tag}
                                             </span>
