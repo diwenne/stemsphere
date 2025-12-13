@@ -87,22 +87,34 @@ const values = [
     {
         title: "Global Community",
         description: "Connecting students from diverse backgrounds through a shared passion for STEM.",
-        icon: <Globe className="h-8 w-8 text-emerald-500" />,
+        icon: <Globe className="h-8 w-8 text-blue-500" />,
+        iconBg: "bg-blue-50 dark:bg-blue-950/50",
+        gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
+        accentColor: "bg-blue-500",
     },
     {
         title: "Collaboration",
         description: "Fostering teamwork and peer-to-peer learning to solve complex problems.",
-        icon: <Handshake className="h-8 w-8 text-emerald-500" />,
+        icon: <Handshake className="h-8 w-8 text-violet-500" />,
+        iconBg: "bg-violet-50 dark:bg-violet-950/50",
+        gradient: "from-violet-500/10 via-purple-500/5 to-transparent",
+        accentColor: "bg-violet-500",
     },
     {
         title: "Innovation",
         description: "Encouraging creative thinking and novel approaches to scientific challenges.",
-        icon: <Lightbulb className="h-8 w-8 text-emerald-500" />,
+        icon: <Lightbulb className="h-8 w-8 text-amber-500" />,
+        iconBg: "bg-amber-50 dark:bg-amber-950/50",
+        gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
+        accentColor: "bg-amber-500",
     },
     {
         title: "Empowerment",
         description: "Providing the tools and confidence for students to become future leaders.",
-        icon: <Rocket className="h-8 w-8 text-emerald-500" />,
+        icon: <Rocket className="h-8 w-8 text-rose-500" />,
+        iconBg: "bg-rose-50 dark:bg-rose-950/50",
+        gradient: "from-rose-500/10 via-pink-500/5 to-transparent",
+        accentColor: "bg-rose-500",
     },
 ];
 
@@ -115,6 +127,7 @@ export default function AboutPage() {
                 duration={3}
                 repeatDelay={1}
                 className={cn(
+                    "z-0",
                     "[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,white,transparent)]",
                     "fill-emerald-500/30 stroke-emerald-500/30",
                     "dark:fill-emerald-500/20 dark:stroke-emerald-500/20"
@@ -133,22 +146,34 @@ export default function AboutPage() {
                 </div>
 
                 {/* Mission & Vision */}
-                <div className="grid md:grid-cols-2 gap-12">
-                    <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-800">
-                        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div className="group relative bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-800 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-800 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        {/* Hover gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                        <h2 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4">
                             Our Vision
                         </h2>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed">
                             To create a world where every student has the opportunity to explore their potential in science, technology, engineering, and mathematics, regardless of their background.
                         </p>
+
+                        {/* Bottom accent */}
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-emerald-500 rounded-full group-hover:w-1/2 transition-all duration-500" />
                     </div>
-                    <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-800">
-                        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                    <div className="group relative bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-800 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-800 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                        {/* Hover gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                        <h2 className="relative z-10 text-2xl font-bold text-slate-900 dark:text-white mb-4">
                             Our Mission
                         </h2>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p className="relative z-10 text-slate-600 dark:text-slate-400 leading-relaxed">
                             We strive to provide high-quality, free STEM resources and mentorship to students globally, fostering a community of curious learners and future innovators.
                         </p>
+
+                        {/* Bottom accent */}
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-emerald-500 rounded-full group-hover:w-1/2 transition-all duration-500" />
                     </div>
                 </div>
 
@@ -157,19 +182,33 @@ export default function AboutPage() {
                     <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">
                         Our Values
                     </h2>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {values.map((value, index) => (
-                            <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow">
-                                <CardHeader>
-                                    <div className="mb-4">{value.icon}</div>
-                                    <CardTitle className="text-xl">{value.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-slate-600 dark:text-slate-400">
-                                        {value.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
+                            <div
+                                key={index}
+                                className="group relative flex flex-col p-6 bg-white dark:bg-neutral-900 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                            >
+                                {/* Hover gradient */}
+                                <div className={cn("absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500", value.gradient)} />
+
+                                {/* Icon */}
+                                <div className={cn("relative z-10 mb-4 p-3 w-fit rounded-xl group-hover:scale-110 transition-transform duration-300", value.iconBg)}>
+                                    {value.icon}
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="relative z-10 text-xl font-bold text-slate-900 dark:text-white mb-3">
+                                    {value.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="relative z-10 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    {value.description}
+                                </p>
+
+                                {/* Bottom accent */}
+                                <div className={cn("absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full group-hover:w-1/2 transition-all duration-500", value.accentColor)} />
+                            </div>
                         ))}
                     </div>
                 </div>

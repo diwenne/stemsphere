@@ -45,7 +45,7 @@ const stats = [
         key: "partners",
         value: 1,
         suffix: "",
-        label: "Partners",
+        label: "School Partners",
         icon: Handshake,
         gradient: "from-emerald-500/20 via-teal-500/10 to-emerald-500/5",
         iconColor: "text-emerald-500",
