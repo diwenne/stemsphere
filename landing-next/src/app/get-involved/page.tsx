@@ -57,8 +57,15 @@ export default function GetInvolvedPage() {
                     <p className="text-lg text-slate-600 dark:text-slate-400">
                         Join us in our mission to make STEM education accessible to all.
                     </p>
+                    <a
+                        href="/handbook.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-500 hover:underline text-sm mt-2 inline-block"
+                    >
+                        Download School Information Packet →
+                    </a>
                 </div>
-
                 <Card className="bg-white dark:bg-neutral-900 border-slate-200 dark:border-neutral-800 shadow-sm">
                     <CardHeader>
                         <CardTitle className="text-slate-900 dark:text-white">Contact Us</CardTitle>
