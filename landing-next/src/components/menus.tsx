@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react"; 
+import * as React from "react";
 
 import {
   NavigationMenu,
@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/lib/utils";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -19,13 +19,13 @@ const components: { title: string; href: string; description: string }[] = [
     href: "#",
     description:
       "Explore our comprehensive UI design and components docs, empowering integration.",
-  },  
+  },
   {
     title: "Colors",
     href: "#",
     description:
       "Vibrant, accessible color palette for intuitive, seamless UI design and components.",
-  },  
+  },
   {
     title: "Blocks",
     href: "#",
