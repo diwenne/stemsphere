@@ -1,50 +1,94 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
+const navItems = [
+    { href: "/", label: "All Posts" },
+    { href: "https://stemsf.org", label: "Main Site", external: true },
+    { href: "https://stemsf.org/about", label: "About", external: true },
+    { href: "https://stemsf.org/get-involved", label: "Get Involved", external: true },
+];
+
 export function Header() {
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMobileMenuOpen]);
+
+    const closeMobileMenu = () => setMobileMenuOpen(false);
+
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-lg">
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2">
-                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">
-                        Stemsphere
-                    </span>
-                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                        Blog
+        <header className="navbar-header">
+            <nav className="navbar-container">
+                {/* Logo */}
+                <Link href="/" className="stemsphere-logo" onClick={closeMobileMenu}>
+                    <Image
+                        src="/images/stemsphere.png"
+                        alt="Stemsphere Logo"
+                        width={36}
+                        height={36}
+                        className="logo-icon"
+                    />
+                    <span className="logo-text">
+                        <span className="logo-stem">Stem</span>
+                        <span className="logo-sphere">sphere</span>
                     </span>
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-6">
-                    <Link
-                        href="/"
-                        className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition-colors"
-                    >
-                        All Posts
-                    </Link>
-                    <Link
-                        href="/category/tutorials"
-                        className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition-colors"
-                    >
-                        Tutorials
-                    </Link>
-                    <Link
-                        href="/category/news"
-                        className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition-colors"
-                    >
-                        News
-                    </Link>
-                    <Link
-                        href="https://stemsf.org"
-                        className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition-colors"
-                        target="_blank"
-                    >
-                        Main Site ↗
-                    </Link>
-                </nav>
-
-                <div className="flex items-center gap-4">
-                    <ThemeToggle />
+                {/* Desktop Navigation */}
+                <div className="navbar-links">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            className="nav-link"
+                            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        >
+                            {item.label}
+                            {item.external && <span className="ml-1 text-xs opacity-60">↗</span>}
+                        </Link>
+                    ))}
                 </div>
+
+                {/* Right side controls */}
+                <div className="navbar-right">
+                    <ThemeToggle />
+                    <button
+                        className="hamburger-menu"
+                        onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
+            </nav>
+
+            {/* Mobile Navigation */}
+            <div className={`mobile-nav-links ${isMobileMenuOpen ? "open" : ""}`}>
+                {navItems.map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        className="nav-link"
+                        onClick={closeMobileMenu}
+                        {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                        {item.label}
+                    </Link>
+                ))}
             </div>
         </header>
     );

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Clock, User } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight } from "lucide-react";
 import type { Post } from "@/lib/posts";
 
 interface PostCardProps {
@@ -14,7 +14,7 @@ interface PostCardProps {
 export function PostCard({ post, index = 0 }: PostCardProps) {
     const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
         year: "numeric",
-        month: "long",
+        month: "short",
         day: "numeric",
     });
 
@@ -23,53 +23,69 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="h-full group"
         >
-            <Link href={`/${post.slug}`}>
-                <div className="group bg-white dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-800 hover:-translate-y-1 transition-all duration-300">
+            <Link href={`/${post.slug}`} className="block h-full">
+                <div className="post-card">
+                    {/* Image */}
                     {post.image && (
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="post-card-image">
                             <Image
                                 src={post.image}
                                 alt={post.title}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
-                            <div className="absolute top-3 left-3">
-                                <span className="px-3 py-1 text-xs font-medium bg-emerald-500 text-white rounded-full">
-                                    {post.category}
+                            {/* Category overlay on image */}
+                            <div className="absolute top-4 left-4 z-10">
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm border border-slate-200/50 dark:border-neutral-700/50">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                                    <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                                        {post.category}
+                                    </span>
                                 </span>
                             </div>
                         </div>
                     )}
 
-                    <div className="p-6">
+                    {/* Content */}
+                    <div className="post-card-content">
+                        {/* Category badge (when no image) */}
                         {!post.image && (
-                            <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 rounded-full mb-3">
+                            <span className="post-card-category">
                                 {post.category}
                             </span>
                         )}
 
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-500 transition-colors line-clamp-2">
+                        <h2 className="post-card-title">
                             {post.title}
                         </h2>
 
-                        <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+                        <p className="post-card-excerpt">
                             {post.excerpt}
                         </p>
 
-                        <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-500">
-                            <div className="flex items-center gap-1">
-                                <User className="h-3.5 w-3.5" />
+                        <div className="post-card-meta">
+                            <div className="post-card-meta-item">
+                                <User size={14} />
                                 <span>{post.author}</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Calendar className="h-3.5 w-3.5" />
+                            <div className="post-card-meta-item">
+                                <Calendar size={14} />
                                 <span>{formattedDate}</span>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Clock className="h-3.5 w-3.5" />
-                                <span>{post.readingTime} min read</span>
+                            <div className="post-card-meta-item">
+                                <Clock size={14} />
+                                <span>{post.readingTime} min</span>
                             </div>
+                        </div>
+
+                        {/* Read More Link */}
+                        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-neutral-800">
+                            <span className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 dark:text-teal-400 group-hover:gap-3 transition-all">
+                                Read Article
+                                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                            </span>
                         </div>
                     </div>
                 </div>
