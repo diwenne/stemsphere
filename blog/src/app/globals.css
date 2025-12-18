@@ -31,7 +31,7 @@
   }
 
   html {
-    background-color: var(--bg-primary);
+    @apply bg-white dark:bg-neutral-950;
     scroll-behavior: smooth;
   }
 
