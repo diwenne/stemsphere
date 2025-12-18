@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
 }
@@ -31,15 +33,34 @@
   }
 
   html {
-    @apply bg-white dark:bg-neutral-950;
+    background-color: #ffffff;
     scroll-behavior: smooth;
   }
 
+  html.dark {
+    background-color: #0a0a0a;
+  }
+
   body {
-    @apply bg-white dark:bg-neutral-950 text-slate-900 dark:text-slate-100;
+    background-color: #ffffff;
+    color: #0f172a;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    background-color: #0a0a0a;
+    color: #f1f5f9;
+  }
+
+  /* Main content dark mode */
+  .main-content {
+    background-color: #ffffff;
+  }
+
+  .dark .main-content {
+    background-color: #0a0a0a;
   }
 }
 

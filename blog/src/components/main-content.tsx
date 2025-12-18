@@ -11,7 +11,7 @@ interface MainContentProps {
 
 export function MainContent({ posts }: MainContentProps) {
     return (
-        <div className="min-h-screen bg-white dark:bg-neutral-950 pt-16 relative overflow-hidden">
+        <div className="main-content min-h-screen pt-16 relative overflow-hidden">
             {/* 3D Animated Grid Pattern with skew effect and edge fading */}
             <AnimatedGridPattern
                 numSquares={30}
