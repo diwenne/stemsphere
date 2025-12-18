@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
-import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
-import { PostHeader } from "@/components/post-header";
+import { PostContent } from "@/components/post-content";
 import type { Metadata } from "next";
 
 interface Props {
@@ -47,9 +45,7 @@ export default async function PostPage({ params }: Props) {
     }
 
     return (
-        <article className="min-h-screen bg-white dark:bg-neutral-950 pt-16">
-            <PostHeader post={post} />
-
+        <PostContent post={post}>
             {/* Featured Image */}
             {post.image && (
                 <div className="max-w-4xl mx-auto px-6 py-10">
@@ -71,6 +67,6 @@ export default async function PostPage({ params }: Props) {
                     <MDXRemote source={post.content} />
                 </div>
             </div>
-        </article>
+        </PostContent>
     );
 }
