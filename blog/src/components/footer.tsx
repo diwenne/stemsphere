@@ -1,21 +1,18 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export function Footer() {
     return (
         <footer className="footer">
             <div className="footer-content">
                 {/* Logo */}
-                <div className="footer-logo">
-                    <Image
-                        src="/images/stemsphere.png"
-                        alt="Stemsphere Logo"
-                        width={28}
-                        height={28}
-                    />
-                    <span className="logo-text text-lg">
-                        <span className="logo-stem">Stem</span>
-                        <span className="logo-sphere">sphere</span>
+                <div className="footer-logo flex items-center gap-2">
+                    <div className="relative w-8 h-8 overflow-hidden rounded-full">
+                        <img src="/images/stemsphere.png" alt="Stemsphere Logo" className="object-cover w-full h-full" />
+                    </div>
+                    <span className="font-bold text-xl tracking-tight">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 via-emerald-400 to-emerald-600 dark:from-emerald-300 dark:via-white/90 dark:to-emerald-300">
+                            Stemsphere
+                        </span>
                     </span>
                 </div>
 

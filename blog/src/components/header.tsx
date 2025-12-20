@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -34,17 +33,14 @@ export function Header() {
         <header className="navbar-header">
             <nav className="navbar-container">
                 {/* Logo */}
-                <Link href="/" className="stemsphere-logo" onClick={closeMobileMenu}>
-                    <Image
-                        src="/images/stemsphere.png"
-                        alt="Stemsphere Logo"
-                        width={36}
-                        height={36}
-                        className="logo-icon"
-                    />
-                    <span className="logo-text">
-                        <span className="logo-stem">Stem</span>
-                        <span className="logo-sphere">sphere</span>
+                <Link href="/" className="stemsphere-logo flex items-center gap-2" onClick={closeMobileMenu}>
+                    <div className="relative w-9 h-9 overflow-hidden rounded-full">
+                        <img src="/images/stemsphere.png" alt="Stemsphere Logo" className="object-cover w-full h-full" />
+                    </div>
+                    <span className="font-bold text-xl tracking-tight hidden sm:block">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-700 via-slate-500 to-slate-700 dark:from-slate-200 dark:via-white dark:to-slate-200">
+                            Stemsphere
+                        </span>
                     </span>
                 </Link>
 
