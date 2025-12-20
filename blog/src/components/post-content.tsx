@@ -35,22 +35,26 @@ export function PostContent({ post, children }: PostContentProps) {
             />
 
             {/* Header Section */}
-            <header className="relative z-10 py-16 md:py-20">
+            <header className="relative z-10 py-10 md:py-12">
                 <div className="max-w-3xl mx-auto px-6">
                     {/* Back Link */}
-                    <Link
-                        href="/"
-                        className="inline-flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors mb-8"
-                    >
-                        <ArrowLeft size={16} />
-                        Back to Blog
-                    </Link>
+                    <div className="mb-6">
+                        <Link
+                            href="/"
+                            className="inline-flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                        >
+                            <ArrowLeft size={16} />
+                            Back to Blog
+                        </Link>
+                    </div>
 
                     {/* Category Badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/30 border border-teal-200/50 dark:border-teal-800/30 mb-6">
-                        <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                        <span className="text-xs font-medium uppercase tracking-wider text-teal-700 dark:text-teal-300">
-                            {post.category}
+                    <div className="mb-6">
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/30 border border-teal-200/50 dark:border-teal-800/30">
+                            <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                            <span className="text-xs font-medium uppercase tracking-wider text-teal-700 dark:text-teal-300">
+                                {post.category}
+                            </span>
                         </span>
                     </div>
 
