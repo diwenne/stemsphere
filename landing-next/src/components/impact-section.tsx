@@ -7,7 +7,7 @@ import { Users, Calendar, MapPin, Clock, Handshake, TrendingUp, Sparkles } from 
 const stats = [
     {
         key: "students",
-        value: 170,
+        value: 220,
         suffix: "+",
         label: "Students Reached",
         icon: Users,
@@ -16,7 +16,7 @@ const stats = [
     },
     {
         key: "workshops",
-        value: 11,
+        value: 12,
         suffix: "",
         label: "Workshops Hosted",
         icon: Calendar,
@@ -34,7 +34,7 @@ const stats = [
     },
     {
         key: "hours",
-        value: 115,
+        value: 165,
         suffix: "+",
         label: "Hours of Content",
         icon: Clock,
