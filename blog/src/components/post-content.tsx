@@ -12,7 +12,7 @@ interface PostContentProps {
 }
 
 export function PostContent({ post, children }: PostContentProps) {
-    const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    const formattedDate = new Date(post.date + "T12:00:00").toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",

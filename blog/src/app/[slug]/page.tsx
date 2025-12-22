@@ -49,7 +49,7 @@ export default async function PostPage({ params }: Props) {
             {/* Featured Image */}
             {post.image && (
                 <div className="max-w-4xl mx-auto px-6 py-4">
-                    <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-100 dark:border-neutral-800 shadow-lg">
+                    <div className="relative aspect-video overflow-hidden border border-slate-100 dark:border-neutral-800 shadow-lg">
                         <Image
                             src={post.image}
                             alt={post.title}
