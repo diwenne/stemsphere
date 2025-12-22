@@ -1,5 +1,5 @@
 "use client";
-import { Equal, X } from "lucide-react"; // Changed from @aliimam/icons to lucide-react as it's already installed
+import { Equal, X, ChevronDown } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/neon-button";
@@ -12,13 +12,19 @@ const menuItems = [
   { name: "About", href: "/about" },
   { name: "Gallery", href: "/gallery" },
   { name: "Get Involved", href: "/get-involved" },
-  { name: "Learn", href: "https://learn.stemsf.org", external: true },
+];
+
+const exploreItems = [
+  { name: "Learn", href: "https://learn.stemsf.org", external: true, description: "Interactive STEM courses" },
+  { name: "Blog", href: "https://blog.stemsf.org", external: true, description: "News and workshop recaps" },
 ];
 
 const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [exploreOpen, setExploreOpen] = React.useState(false);
   const pathname = usePathname();
+  const exploreRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +32,17 @@ const Header = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (exploreRef.current && !exploreRef.current.contains(event.target as Node)) {
+        setExploreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -72,8 +89,6 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-emerald-500",
                     pathname === item.href
@@ -86,6 +101,40 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+
+              {/* Explore Dropdown */}
+              <div className="relative" ref={exploreRef}>
+                <button
+                  onClick={() => setExploreOpen(!exploreOpen)}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-emerald-500 flex items-center gap-1",
+                    pathname === "/" && !isScrolled
+                      ? "text-white/90 hover:text-white"
+                      : "text-slate-600 dark:text-slate-300"
+                  )}
+                >
+                  Explore
+                  <ChevronDown size={14} className={cn("transition-transform", exploreOpen && "rotate-180")} />
+                </button>
+
+                {exploreOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-xl p-2 z-50">
+                    {exploreItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                        className="block px-4 py-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                        onClick={() => setExploreOpen(false)}
+                      >
+                        <span className="block text-sm font-medium text-slate-900 dark:text-white">{item.name}</span>
+                        <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.description}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Right Side Actions */}
@@ -117,8 +166,6 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
                   className={cn(
                     "text-lg font-medium py-2 px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors",
                     pathname === item.href ? "text-emerald-500 bg-emerald-50 dark:bg-emerald-900/20" : "text-slate-600 dark:text-slate-300"
@@ -128,6 +175,24 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+
+              {/* Explore Section in Mobile */}
+              <div className="border-t border-neutral-100 dark:border-neutral-800 pt-4 mt-2">
+                <span className="text-xs uppercase tracking-wider text-slate-400 px-4 mb-2 block">Explore</span>
+                {exploreItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="text-lg font-medium py-2 px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-slate-600 dark:text-slate-300 block"
+                    onClick={() => setMenuState(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
               <div className="flex items-center justify-between px-4 pt-4 border-t border-neutral-100 dark:border-neutral-800">
                 <span className="text-sm text-slate-500">Theme</span>
                 <ModeToggle />
