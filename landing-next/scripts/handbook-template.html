@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stemsphere School Information Package</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --emerald-50: #ecfdf5;
+            --emerald-100: #d1fae5;
+            --emerald-200: #a7f3d0;
+            --emerald-300: #6ee7b7;
+            --emerald-400: #34d399;
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            --emerald-700: #047857;
+            --emerald-800: #065f46;
+            --emerald-900: #064e3b;
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            --neutral-950: #0a0a0a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 25mm 20mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--emerald-400), var(--emerald-600));
+        }
+
+        /* Cover Page */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(297mm - 50mm);
+        }
+
+        .cover .logo-text {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+        }
+
+        .cover .foundation-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--neutral-500);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .cover .tagline {
+            font-size: 18px;
+            color: var(--neutral-600);
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 80px;
+        }
+
+        .cover .title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 16px;
+        }
+
+        .cover .subtitle {
+            font-size: 14px;
+            color: var(--neutral-500);
+        }
+
+        .cover .corner-decoration {
+            position: absolute;
+            bottom: 30mm;
+            left: 20mm;
+            right: 20mm;
+            border-top: 1px solid var(--neutral-200);
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .cover .corner-decoration p {
+            font-size: 11px;
+            color: var(--neutral-400);
+        }
+
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-header .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--emerald-400), var(--emerald-600));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--neutral-900);
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section p {
+            font-size: 14px;
+            color: var(--neutral-600);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--neutral-800);
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+
+        /* Value Cards */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .value-card {
+            background: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .value-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--emerald-700);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .value-card h4::before {
+            content: '◆';
+            color: var(--emerald-500);
+            font-size: 10px;
+        }
+
+        .value-card p {
+            font-size: 13px;
+            color: var(--neutral-600);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--neutral-50);
+            border-radius: 12px;
+            border: 1px solid var(--neutral-200);
+        }
+
+        .team-member .avatar {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--emerald-200), var(--emerald-400));
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--emerald-800);
+        }
+
+        .team-member .name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: 4px;
+        }
+
+        .team-member .role {
+            font-size: 12px;
+            color: var(--emerald-600);
+            font-weight: 500;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, var(--emerald-50), var(--emerald-100));
+            border: 1px solid var(--emerald-200);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--emerald-800);
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            font-size: 13px;
+            color: var(--emerald-700);
+            margin: 0;
+        }
+
+        /* Bullet List */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .bullet-list li {
+            font-size: 14px;
+            color: var(--neutral-600);
+            padding: 10px 0 10px 28px;
+            position: relative;
+            border-bottom: 1px solid var(--neutral-100);
+        }
+
+        .bullet-list li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--emerald-500);
+            border-radius: 50%;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: var(--neutral-900);
+            color: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--emerald-400);
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: var(--neutral-300);
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--neutral-900), var(--neutral-800));
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .contact-section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--neutral-700);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--emerald-500);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .contact-item .details {
+            flex: 1;
+        }
+
+        .contact-item .label {
+            font-size: 11px;
+            color: var(--neutral-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item .value {
+            font-size: 15px;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 20mm;
+            right: 20mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .page-footer .brand {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--emerald-600);
+        }
+
+        .page-footer .page-num {
+            font-size: 11px;
+            color: var(--neutral-400);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cover Page -->
+    <div class="page">
+        <div class="cover">
+            <div class="logo-text">Stemsphere</div>
+            <div class="foundation-text">Foundation</div>
+            <div class="tagline">Empowering the next generation through STEM</div>
+            <div class="title">School Information Package</div>
+            <div class="subtitle">Partner with us to bring hands-on STEM education to your students</div>
+        </div>
+        <div class="corner-decoration">
+            <p>© 2025 Stemsphere Foundation. All rights reserved. | stemsf.org</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Mission & Values Page -->
+    <div class="page">
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">🎯</div>
+                <h2>Our Mission</h2>
+            </div>
+            <p>
+                Stemsphere Foundation is dedicated to providing STEM education and mentorship for young people
+                to become problem-solvers, leaders, and innovators. Our vision involves a world where young
+                people are empowered to unleash their creativity in STEM and shape a better future for all.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">💎</div>
+                <h2>Our Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Accessibility</h4>
+                    <p>Making quality STEM education accessible to all students, no matter their background or location.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <h4>Innovation</h4>
+                    <p>We spark curiosity and creativity, empowering students to learn and advance STEM knowledge.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Collaboration</h4>
+                    <p>Fostering teamwork and community, empowering students to learn, build, and innovate together.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Impact</h4>
+                    <p>We strive to create meaningful, positive change for students, communities, and the world.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="brand">Stemsphere Foundation</div>
+            <div class="page-num">2</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Team Page -->
+    <div class="page">
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">👥</div>
+                <h2>Our Team</h2>
+            </div>
+            <p>
+                Our team consists of 6 dedicated individuals determined to follow Stemsphere's mission
+                and maintain the foundation's structure. Every executive has experience in the IB
+                (International Baccalaureate Program), making them excellent resources for younger
+                students to connect with.
+            </p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="avatar">DH</div>
+                    <div class="name">Diwen Huang</div>
+                    <div class="role">President</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">WH</div>
+                    <div class="name">Wilson Huang</div>
+                    <div class="role">Vice President</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">DS</div>
+                    <div class="name">Drishya Sharma</div>
+                    <div class="role">Director of Programs</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">ZZ</div>
+                    <div class="name">Zoe Zhu</div>
+                    <div class="role">Director of Communications</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">TD</div>
+                    <div class="name">Tristan Du</div>
+                    <div class="role">Director of Partnerships</div>
+                </div>
+                <div class="team-member">
+                    <div class="avatar">EL</div>
+                    <div class="name">Eden Liang</div>
+                    <div class="role">Director of Finances</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="brand">Stemsphere Foundation</div>
+            <div class="page-num">3</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Workshop Format Page -->
+    <div class="page">
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">📋</div>
+                <h2>Workshop Format</h2>
+            </div>
+
+            <div class="info-box">
+                <h4>Typical Session Length</h4>
+                <p>1 Hour — We offer various frequency options, including one-off sessions or a series of workshops.
+                    Available in both in-person and online delivery modes.</p>
+            </div>
+
+            <h3>Workshop Content</h3>
+            <p>Workshops offered by Stemsphere Foundation have a variety of structures. Here's what a typical workshop
+                includes:</p>
+
+            <ul class="bullet-list">
+                <li>A fun and engaging <strong>hands-on project</strong> that reflects the main topic discussed</li>
+                <li>Various <strong>group activities</strong> that give students realistic examples of STEM and its
+                    connection to everyday life</li>
+                <li>A final <strong>discussion and reflection</strong> to reinforce learning and reflect on the topic
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">🎓</div>
+                <h2>Ideal Student Group</h2>
+            </div>
+
+            <div class="two-columns">
+                <div>
+                    <h3>Grade Level</h3>
+                    <p>Our ideal students are in <strong>middle school</strong>. No prior experience is needed for any
+                        of our workshops.</p>
+                </div>
+                <div>
+                    <h3>Group Size</h3>
+                    <p>We're flexible, but recommend <strong>5–30 students</strong> per group for optimal engagement.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="brand">Stemsphere Foundation</div>
+            <div class="page-num">4</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Logistics & Pricing Page -->
+    <div class="page">
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">⚙️</div>
+                <h2>Preparation & Logistics</h2>
+            </div>
+
+            <h3>What We Need From You</h3>
+            <ul class="bullet-list">
+                <li>Suitable facility space to host our workshop</li>
+                <li>Available technology for attending students</li>
+                <li>Involvement of teachers/administration</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Flexibility & Accessibility</h4>
+                <p>Upon request, Stemsphere Foundation will accommodate language barriers, accessibility needs, and
+                    provide unlimited flexibility for different school contexts.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">💰</div>
+                <h2>Pricing</h2>
+            </div>
+            <p>
+                Stemsphere Foundation is a nonprofit organization, meaning we require funding to cover essential costs.
+                We are a registered nonprofit — <strong>tax write-offs are available upon request</strong>.
+                Prices are negotiable based on your needs.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Get Started</h4>
+                <p>For detailed pricing information, please visit stemsf.org or contact us directly.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">🚀</div>
+                <h2>Next Steps</h2>
+            </div>
+            <p>
+                Schools can book with Stemsphere Foundation through our website at <strong>stemsf.org</strong>.
+                Click "Get Involved" and select "Request a Workshop."
+            </p>
+            <p>
+                For partnerships, we offer affordable and reliable lessons and guidance from a diverse group of role
+                models.
+            </p>
+        </div>
+
+        <div class="page-footer">
+            <div class="brand">Stemsphere Foundation</div>
+            <div class="page-num">5</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Contact Page -->
+    <div class="page">
+        <div class="section">
+            <div class="section-header">
+                <div class="icon">📬</div>
+                <h2>Get In Touch</h2>
+            </div>
+            <p>
+                We'd love to hear from you! Whether you have questions, want to request a workshop,
+                or are interested in partnering with us, reach out through any of the channels below.
+            </p>
+
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div class="details">
+                        <div class="label">Email</div>
+                        <div class="value">hello@stemsf.org</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🌐</div>
+                    <div class="details">
+                        <div class="label">Website</div>
+                        <div class="value">stemsf.org</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📸</div>
+                    <div class="details">
+                        <div class="label">Instagram</div>
+                        <div class="value">@stemsphereorg</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <div class="details">
+                        <div class="label">LinkedIn</div>
+                        <div class="value">Stemsphere Foundation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="brand">Stemsphere Foundation</div>
+            <div class="page-num">6</div>
+        </div>
+    </div>
+</body>
+
+</html>
