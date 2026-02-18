@@ -10,7 +10,7 @@ export function Footer() {
     return (
         <footer className="bg-slate-50 dark:bg-neutral-950 border-t border-slate-200 dark:border-neutral-800 pt-16 pb-8 overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 relative z-20">
                     {/* Brand & Mission */}
 
 
@@ -101,8 +101,8 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-slate-200 dark:border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 dark:text-slate-500">
-                    <p>© {currentYear} Stemsphere. All rights reserved.</p>
-                    <div className="flex gap-6">
+                    <p className="relative z-20">© {currentYear} Stemsphere. All rights reserved.</p>
+                    <div className="flex gap-6 relative z-20">
                         <Link href="/privacy-policy" className="hover:text-emerald-500 transition-colors">
                             Privacy Policy
                         </Link>
