@@ -81,7 +81,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
                 rotate: 0,
                 transition: { duration: 0.2 },
             }}
-            className="flex flex-col items-center justify-center p-10 rounded-[3rem] cursor-default aspect-square"
+            className="flex flex-col items-center justify-center p-8 rounded-[2.5rem] cursor-default aspect-square"
             style={{
                 backgroundColor: stat.bgColor,
                 border: `4px dashed ${stat.color}40`,
@@ -92,7 +92,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
             {/* Big bouncy number */}
             <span
-                className="text-6xl md:text-7xl font-extrabold mb-2"
+                className="text-5xl md:text-6xl font-extrabold mb-2"
                 style={{ color: stat.color }}
             >
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
@@ -100,7 +100,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
             {/* Label */}
             <span
-                className="text-lg md:text-xl font-bold text-center mt-2"
+                className="text-base md:text-lg font-bold text-center mt-2"
                 style={{
                     color: stat.color,
                     opacity: 0.9,
@@ -114,7 +114,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
 export function ImpactSection() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-10 max-w-4xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 py-10 max-w-3xl mx-auto items-start">
             {stats.map((stat, index) => (
                 <StatBubble key={stat.key} stat={stat} index={index} />
             ))}
