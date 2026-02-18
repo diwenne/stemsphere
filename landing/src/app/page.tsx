@@ -4,17 +4,16 @@ import { HeroSection } from "@/components/hero-section";
 import { BenefitsSection } from "@/components/benefits-section";
 import { ImpactSection } from "@/components/impact-section";
 import { RecentBlogsSection } from "@/components/recent-blogs-section";
-import { RainbowRibbon } from "@/components/rainbow-ribbon";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#FEFCF9] dark:bg-neutral-950 flex flex-col overflow-hidden mx-auto">
-      {/* Rainbow ribbon spans the entire page, above all content */}
-      <RainbowRibbon />
+    <main className="relative bg-[#FEFCF9] dark:bg-neutral-950 flex flex-col mx-auto">
 
       <HeroSection />
 
+
       {/* Content sections with ribbon flowing through */}
+
       <div className="relative" style={{ minHeight: "200vh" }}>
 
 

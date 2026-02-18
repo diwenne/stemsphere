@@ -3,6 +3,7 @@ import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { RainbowRibbon } from "@/components/rainbow-ribbon";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -29,12 +30,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
+          <div className="relative">
+            <RainbowRibbon />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
