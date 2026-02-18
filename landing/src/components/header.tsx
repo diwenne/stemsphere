@@ -17,6 +17,7 @@ const menuItems = [
 const exploreItems = [
   { name: "Learn", href: "https://learn.stemsf.org", external: true, description: "Interactive STEM courses" },
   { name: "Blog", href: "https://blog.stemsf.org", external: true, description: "News and workshop recaps" },
+  { name: "The Team", href: "/about#team", external: false, description: "Meet the people behind Stemsphere" },
 ];
 
 const Header = () => {
