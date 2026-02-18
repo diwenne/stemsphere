@@ -59,6 +59,7 @@ export default function GalleryPage() {
                             src="/icons/camera-snap.png"
                             alt="Gallery"
                             fill
+                            unoptimized
                             className="object-contain"
                         />
                     </motion.div>

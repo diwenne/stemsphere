@@ -56,6 +56,7 @@ export default function GetInvolvedPage() {
                             src="/icons/mailbox-hello.png"
                             alt="Get Involved"
                             fill
+                            unoptimized
                             className="object-contain"
                         />
                     </motion.div>
@@ -128,26 +129,26 @@ export default function GetInvolvedPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <Label htmlFor="firstName" className="text-neutral-700 dark:text-neutral-200">First Name</Label>
-                                            <Input id="firstName" name="firstName" placeholder="John" required className="bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:border-emerald-400" />
+                                            <Input id="firstName" name="firstName" placeholder="John" required className="bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800 placeholder:text-neutral-400 dark:placeholder:text-neutral-400 focus:border-emerald-400" />
                                         </div>
                                         <div className="space-y-2">
                                             <Label htmlFor="lastName" className="text-neutral-700 dark:text-neutral-200">Last Name</Label>
-                                            <Input id="lastName" name="lastName" placeholder="Doe" required className="bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:border-emerald-400" />
+                                            <Input id="lastName" name="lastName" placeholder="Doe" required className="bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800 placeholder:text-neutral-400 dark:placeholder:text-neutral-400 focus:border-emerald-400" />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
                                         <Label htmlFor="email" className="text-neutral-700 dark:text-neutral-200">Email</Label>
-                                        <Input id="email" name="email" type="email" placeholder="john@example.com" required className="bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:border-emerald-400" />
+                                        <Input id="email" name="email" type="email" placeholder="john@example.com" required className="bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800 placeholder:text-neutral-400 dark:placeholder:text-neutral-400 focus:border-emerald-400" />
                                     </div>
 
                                     <div className="space-y-2">
                                         <Label htmlFor="interest" className="text-neutral-700 dark:text-neutral-200">I&apos;m interested in...</Label>
                                         <Select value={interest} onValueChange={setInterest}>
-                                            <SelectTrigger className="bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white">
+                                            <SelectTrigger className="bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800">
                                                 <SelectValue placeholder="Select an option" />
                                             </SelectTrigger>
-                                            <SelectContent className="bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white">
+                                            <SelectContent className="bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800">
                                                 <SelectItem value="volunteering">Volunteering</SelectItem>
                                                 <SelectItem value="partnership">Partnership</SelectItem>
                                                 <SelectItem value="starting-chapter">Starting a Chapter</SelectItem>
@@ -164,7 +165,7 @@ export default function GetInvolvedPage() {
                                             name="message"
                                             placeholder="Tell us more about how you'd like to get involved..."
                                             required
-                                            className="min-h-[120px] bg-white dark:bg-neutral-900 border-emerald-200 dark:border-neutral-700 text-neutral-800 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:border-emerald-400"
+                                            className="min-h-[120px] bg-white dark:bg-white border-emerald-200 dark:border-neutral-300 text-neutral-800 dark:text-neutral-800 placeholder:text-neutral-400 dark:placeholder:text-neutral-400 focus:border-emerald-400"
                                         />
                                     </div>
 

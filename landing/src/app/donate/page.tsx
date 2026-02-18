@@ -141,6 +141,7 @@ export default function DonatePage() {
                                         src={tier.icon}
                                         alt={tier.amount}
                                         fill
+                                        unoptimized
                                         className="object-contain"
                                     />
                                 </div>
@@ -214,6 +215,7 @@ export default function DonatePage() {
                                             src={item.icon}
                                             alt={item.title}
                                             fill
+                                            unoptimized
                                             className="object-contain"
                                         />
                                     </div>

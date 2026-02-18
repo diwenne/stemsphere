@@ -249,6 +249,7 @@ export default function AboutPage() {
                                     src={item.icon}
                                     alt={item.title}
                                     fill
+                                    unoptimized
                                     className="object-contain"
                                 />
                             </div>
@@ -284,6 +285,7 @@ export default function AboutPage() {
                                         src={value.icon}
                                         alt={value.title}
                                         fill
+                                        unoptimized
                                         className="object-contain"
                                     />
                                 </div>
