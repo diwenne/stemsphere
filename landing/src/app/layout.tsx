@@ -13,6 +13,10 @@ const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 export const metadata: Metadata = {
   title: "Stemsphere",
   description: "Empowering the next generation of STEM leaders.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

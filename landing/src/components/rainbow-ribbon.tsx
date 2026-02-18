@@ -100,6 +100,7 @@ export function RainbowRibbon() {
       "M -200 8500",
       "C 200 8550, 500 8600, 800 8620",
       "L 1400 8650",
+      "L 2000 20000", // extend indefinitely down
     ].join(" ");
   }
 
@@ -110,15 +111,7 @@ export function RainbowRibbon() {
   }
 
   return (
-    <motion.div
-      animate={{ 
-        y: [0, -15, 0],
-      }}
-      transition={{ 
-        duration: 5, 
-        repeat: Infinity, 
-        ease: "easeInOut" 
-      }}
+    <div
       style={{
         position: "absolute",
         top: yOffset,
@@ -139,8 +132,19 @@ export function RainbowRibbon() {
           left: 0,
           width: "100%",
           height: "100%",
+          overflow: "visible",
         }}
       >
+        <motion.g
+          animate={{ 
+            y: [0, -15, 0],
+          }}
+          transition={{ 
+            duration: 5, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        >
         {/* 3D Shadow layer */}
         {colors.map((_, i) => {
           const sw = getStrokeWidth(i);
@@ -196,7 +200,8 @@ export function RainbowRibbon() {
           strokeLinecap="butt"
           strokeLinejoin="round"
         />
+        </motion.g>
       </svg>
-    </motion.div>
+    </div>
   );
 }
