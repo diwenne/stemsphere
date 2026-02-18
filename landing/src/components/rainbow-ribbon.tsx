@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export function RainbowRibbon() {
   const viewWidth = 1600;
   const viewHeight = 9000;
@@ -108,7 +110,15 @@ export function RainbowRibbon() {
   }
 
   return (
-    <div
+    <motion.div
+      animate={{ 
+        y: [0, -15, 0],
+      }}
+      transition={{ 
+        duration: 5, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
       style={{
         position: "absolute",
         top: yOffset,
@@ -187,6 +197,6 @@ export function RainbowRibbon() {
           strokeLinejoin="round"
         />
       </svg>
-    </div>
+    </motion.div>
   );
 }
