@@ -13,7 +13,7 @@ const stats = [
     },
     {
         key: "workshops",
-        value: 12,
+        value: 20,
         suffix: "",
         label: "Workshops Hosted",
         color: "#FF8C00",
@@ -21,35 +21,19 @@ const stats = [
     },
     {
         key: "chapters",
-        value: 3,
+        value: 7,
         suffix: "",
         label: "Chapters Founded",
         color: "#10B981",
         bgColor: "#ECFDF5",
     },
     {
-        key: "hours",
-        value: 165,
-        suffix: "+",
-        label: "Hours of Content",
-        color: "#3B82F6",
-        bgColor: "#EFF6FF",
-    },
-    {
-        key: "partners",
-        value: 1,
-        suffix: "",
-        label: "School Partners",
-        color: "#8B5CF6",
-        bgColor: "#F5F3FF",
-    },
-    {
-        key: "pursue",
+        key: "projects",
         value: 90,
         suffix: "%",
-        label: "Pursue STEM",
-        color: "#EC4899",
-        bgColor: "#FDF2F8",
+        label: "Project Completion",
+        color: "#3B82F6",
+        bgColor: "#EFF6FF",
     },
 ];
 
@@ -76,6 +60,9 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
     // Slight random rotations for playfulness
     const rotations = [-3, 2, -2, 3, -1, 2];
     const rotation = rotations[index % rotations.length];
+    
+    // Stagger layout for "scattered" feel
+    const marginTop = index % 2 === 0 ? "0px" : "40px";
 
     return (
         <motion.div
@@ -90,21 +77,22 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
                 damping: 15,
             }}
             whileHover={{
-                scale: 1.08,
+                scale: 1.05,
                 rotate: 0,
                 transition: { duration: 0.2 },
             }}
-            className="flex flex-col items-center justify-center p-6 rounded-3xl cursor-default"
+            className="flex flex-col items-center justify-center p-10 rounded-[3rem] cursor-default aspect-square"
             style={{
                 backgroundColor: stat.bgColor,
-                border: `3px dashed ${stat.color}40`,
-                boxShadow: `0 4px 20px ${stat.color}15`,
+                border: `4px dashed ${stat.color}40`,
+                boxShadow: `0 8px 30px ${stat.color}20`,
+                marginTop: marginTop,
             }}
         >
 
             {/* Big bouncy number */}
             <span
-                className="text-4xl md:text-5xl font-extrabold"
+                className="text-6xl md:text-7xl font-extrabold mb-2"
                 style={{ color: stat.color }}
             >
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
@@ -112,10 +100,10 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
             {/* Label */}
             <span
-                className="text-sm md:text-base font-bold text-center mt-1"
+                className="text-lg md:text-xl font-bold text-center mt-2"
                 style={{
                     color: stat.color,
-                    opacity: 0.8,
+                    opacity: 0.9,
                 }}
             >
                 {stat.label}
@@ -126,7 +114,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
 
 export function ImpactSection() {
     return (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 py-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-10 max-w-4xl mx-auto items-start">
             {stats.map((stat, index) => (
                 <StatBubble key={stat.key} stat={stat} index={index} />
             ))}
