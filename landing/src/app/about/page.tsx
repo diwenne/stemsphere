@@ -2,7 +2,7 @@
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Globe, Handshake, Lightbulb, Rocket, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+
 import { cn } from "@/lib/utils";
 
 const teamMembers = [
@@ -121,18 +121,6 @@ const values = [
 export default function AboutPage() {
     return (
         <div className="relative min-h-screen bg-slate-50 dark:bg-black pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-            <AnimatedGridPattern
-                numSquares={30}
-                maxOpacity={0.15}
-                duration={3}
-                repeatDelay={1}
-                className={cn(
-                    "z-0",
-                    "[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,white,transparent)]",
-                    "fill-emerald-500/30 stroke-emerald-500/30",
-                    "dark:fill-emerald-500/20 dark:stroke-emerald-500/20"
-                )}
-            />
             <div className="relative z-10 max-w-7xl mx-auto space-y-24">
 
                 {/* Header */}
