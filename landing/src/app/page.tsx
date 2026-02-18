@@ -36,7 +36,7 @@ function FloatingElement({ item }: { item: typeof decorations[0] }) {
         repeatType: "reverse",
         ease: "easeInOut",
       }}
-      className={`absolute opacity-30 ${item.color} drop-shadow-lg`}
+      className={`absolute opacity-60 ${item.color} drop-shadow-lg`}
       style={{
         top: item.top,
         left: item.left,
