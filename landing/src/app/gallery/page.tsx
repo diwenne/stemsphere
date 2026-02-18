@@ -1,7 +1,7 @@
 "use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { MasonryGallery } from "@/components/masonry-gallery";
-
-import { cn } from "@/lib/utils";
 
 const images = [
     "/images/gallery/gallery-1.jpg",
@@ -40,20 +40,39 @@ const images = [
 
 export default function GalleryPage() {
     return (
-        <div className="relative min-h-screen bg-slate-50 dark:bg-neutral-950 pt-32 pb-20 px-4 overflow-hidden">
+        <div className="relative min-h-screen bg-[#FEFCF9] dark:bg-neutral-950 pt-32 pb-20 px-4 overflow-hidden">
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12"
+                >
+                    {/* Cartoon Camera Icon */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 200, damping: 12 }}
+                        className="w-32 h-32 mx-auto mb-6 relative"
+                    >
+                        <Image
+                            src="/icons/camera-snap.png"
+                            alt="Gallery"
+                            fill
+                            className="object-contain"
+                        />
+                    </motion.div>
+
+                    <h1 className="text-4xl font-bold tracking-tight text-neutral-800 dark:text-white sm:text-5xl mb-4">
                         Gallery
                     </h1>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
                         A glimpse into our workshops, events, and the amazing students we work with.
                     </p>
-                </div>
+                </motion.div>
 
                 <MasonryGallery images={images} />
             </div>
         </div>
     );
 }
-
