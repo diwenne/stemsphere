@@ -320,13 +320,13 @@ export default function AboutPage() {
                 <div id="team" className="space-y-12">
                     <div className="text-center space-y-4">
                         <span className="text-emerald-500 font-semibold tracking-wide uppercase text-sm">
-                            Our Team
+                            Executive Team
                         </span>
                         <h2 className="text-3xl font-bold text-neutral-800 dark:text-white">
                             Meet the Leaders
                         </h2>
                         <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
-                            A dedicated group of students working together to drive our mission forward.
+                            A dedicated group of students working together to realize the our mission.
                         </p>
                     </div>
 
@@ -370,7 +370,7 @@ export default function AboutPage() {
                             Chapter Presidents
                         </h2>
                         <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
-                            Meet the leaders who bring Stemsphere to their local communities.
+                            Stemsphere communities around the world.
                         </p>
                     </div>
 
