@@ -65,7 +65,7 @@ const chapterPresidents = [
     {
         id: 1,
         name: "Cristal Tao",
-        chapter: "Seattle",
+        chapter: "Seattle, USA",
         image: "/assets/cristaltao.png",
         bio: "",
         tags: [],
@@ -74,7 +74,7 @@ const chapterPresidents = [
     {
         id: 2,
         name: "Jiayu Liu",
-        chapter: "Wuhan",
+        chapter: "Wuhan, China",
         image: "/assets/jiayuliu.png",
         bio: "",
         tags: [],
@@ -83,7 +83,7 @@ const chapterPresidents = [
     {
         id: 3,
         name: "Samuel Sai",
-        chapter: "Singapore",
+        chapter: "Singapore, Singapore",
         image: "/assets/samuelsai.png",
         bio: "",
         tags: [],
@@ -92,7 +92,7 @@ const chapterPresidents = [
     {
         id: 4,
         name: "Elsa Wu",
-        chapter: "Miami",
+        chapter: "Miami, USA",
         image: "/assets/elsawu.png",
         bio: "",
         tags: [],
@@ -101,7 +101,7 @@ const chapterPresidents = [
     {
         id: 5,
         name: "Kevin Chen",
-        chapter: "Kansas",
+        chapter: "Kansas, USA",
         image: "/assets/kevinchen.png",
         bio: "",
         tags: [],
@@ -109,8 +109,17 @@ const chapterPresidents = [
     },
     {
         id: 6,
+        name: "Henrik Huang",
+        chapter: "Honolulu, USA",
+        image: "/assets/henrikhuang.png",
+        bio: "",
+        tags: [],
+        linkedin: ""
+    },
+    {
+        id: 7,
         name: "Timmy Jin",
-        chapter: "Meadowridge",
+        chapter: "Meadowridge, Canada",
         image: "/assets/timmy.jpeg",
         bio: "",
         tags: [],
