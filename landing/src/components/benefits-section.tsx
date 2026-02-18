@@ -65,7 +65,7 @@ function SketchyCard({
                 transition: { duration: 0.2 },
             }}
             className={cn(
-                "rounded-[2.5rem] p-12 cursor-default flex flex-col items-center text-center max-w-2xl",
+                "rounded-[2.5rem] p-12 cursor-default flex flex-col items-center text-center max-w-[85%] md:max-w-2xl",
                 className
             )}
             style={{

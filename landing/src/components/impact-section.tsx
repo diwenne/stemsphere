@@ -81,7 +81,7 @@ function StatBubble({ stat, index }: { stat: typeof stats[0]; index: number }) {
                 rotate: 0,
                 transition: { duration: 0.2 },
             }}
-            className="flex flex-col items-center justify-center p-8 rounded-[2.5rem] cursor-default aspect-square"
+            className="flex flex-col items-center justify-center p-5 md:p-8 rounded-[2.5rem] cursor-default aspect-square w-[85%] md:w-full mx-auto"
             style={{
                 backgroundColor: stat.bgColor,
                 border: `4px dashed ${stat.color}40`,

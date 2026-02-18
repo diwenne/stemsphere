@@ -133,6 +133,7 @@ export function RainbowRibbon() {
           width: "100%",
           height: "100%",
           overflow: "visible",
+          minWidth: "1500px", // Force desktop scale on mobile to keep ribbon thick
         }}
       >
         <motion.g
