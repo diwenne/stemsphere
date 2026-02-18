@@ -79,8 +79,8 @@ export default function Home() {
             <p className="text-center text-neutral-500 mb-10 max-w-2xl mx-auto">Making a measurable difference in STEM education.</p>
             <ImpactSection />
           </section>
-          <section id="benefits" className="py-20">
-            <h2 className="text-3xl font-extrabold text-center mb-10 text-neutral-800 dark:text-neutral-200">
+          <section id="benefits" className="py-20 flex flex-col items-center">
+            <h2 className="text-3xl font-extrabold text-center mb-10 text-neutral-800 dark:text-neutral-200 bg-white/60 dark:bg-black/40 backdrop-blur-md py-3 px-8 rounded-full border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm z-20 relative w-fit mx-auto">
               Why Join Stemsphere?
             </h2>
             <BenefitsSection />
