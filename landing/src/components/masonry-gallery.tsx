@@ -25,13 +25,12 @@ export const MasonryGallery = ({
                         transform: "translateZ(0)",
                     }}
                 >
-                    <Image
+                    {/* Next.js Image component forces a specific aspect ratio based on width/height props. 
+                        For a true masonry layout with unknown mixed aspect ratios, a standard img tag works best. */}
+                    <img
                         src={src}
                         alt={`Gallery image ${index + 1}`}
-                        width={600}
-                        height={800}
                         className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
-                        style={{ objectFit: "contain" }}
                         loading="lazy"
                     />
                 </div>

@@ -20,12 +20,21 @@ const exploreItems = [
   { name: "The Team", href: "/about#team", external: false, description: "Meet the people behind Stemsphere" },
 ];
 
+const programsItems = [
+  { name: "Toothpick Towers", href: "/programs/toothpick-towers", description: "Structural engineering challenge" },
+  { name: "Python Programming", href: "/programs/python-programming", description: "Introduction to coding" },
+  { name: "Egg Drop", href: "/programs/egg-drop", description: "Physics and design testing" },
+  { name: "Bridge Building", href: "/programs/bridge-building", description: "Civil engineering concepts" },
+];
+
 const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [exploreOpen, setExploreOpen] = React.useState(false);
+  const [programsOpen, setProgramsOpen] = React.useState(false);
   const pathname = usePathname();
   const exploreRef = React.useRef<HTMLDivElement>(null);
+  const programsRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +49,9 @@ const Header = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (exploreRef.current && !exploreRef.current.contains(event.target as Node)) {
         setExploreOpen(false);
+      }
+      if (programsRef.current && !programsRef.current.contains(event.target as Node)) {
+        setProgramsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -136,6 +148,38 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Programs Dropdown */}
+              <div className="relative" ref={programsRef}>
+                <button
+                  onClick={() => setProgramsOpen(!programsOpen)}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-emerald-500 flex items-center gap-1",
+                    pathname === "/" && !isScrolled
+                      ? "text-white/90 hover:text-white"
+                      : "text-slate-600 dark:text-slate-300"
+                  )}
+                >
+                  Programs
+                  <ChevronDown size={14} className={cn("transition-transform", programsOpen && "rotate-180")} />
+                </button>
+
+                {programsOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-xl p-2 z-50">
+                    {programsItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-4 py-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                        onClick={() => setProgramsOpen(false)}
+                      >
+                        <span className="block text-sm font-medium text-slate-900 dark:text-white">{item.name}</span>
+                        <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.description}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Right Side Actions */}
@@ -143,11 +187,6 @@ const Header = () => {
               <div className="hidden sm:block">
                 <ModeToggle isHeroIdle={pathname === "/" && !isScrolled} />
               </div>
-              <Link href="/donate" className="hidden sm:block">
-                <Button variant="solid" className="rounded-full">
-                  Donate
-                </Button>
-              </Link>
 
               {/* Mobile Menu Toggle */}
               <button
@@ -194,15 +233,25 @@ const Header = () => {
                 ))}
               </div>
 
+              {/* Programs Section in Mobile */}
+              <div className="border-t border-neutral-100 dark:border-neutral-800 pt-4 mt-2">
+                <span className="text-xs uppercase tracking-wider text-slate-400 px-4 mb-2 block">Programs</span>
+                {programsItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-lg font-medium py-2 px-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-slate-600 dark:text-slate-300 block"
+                    onClick={() => setMenuState(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
               <div className="flex items-center justify-between px-4 pt-4 border-t border-neutral-100 dark:border-neutral-800">
                 <span className="text-sm text-slate-500">Theme</span>
                 <ModeToggle />
               </div>
-              <Link href="/donate" onClick={() => setMenuState(false)} className="w-full">
-                <Button variant="solid" className="w-full rounded-full">
-                  Donate
-                </Button>
-              </Link>
             </div>
           )}
         </div>

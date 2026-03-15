@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/hero-section";
 import { BenefitsSection } from "@/components/benefits-section";
 import { ImpactSection } from "@/components/impact-section";
 import { RecentBlogsSection } from "@/components/recent-blogs-section";
+import { ProgramsPreviewSection } from "@/components/programs-preview-section";
 import { motion } from "framer-motion";
 import { Star, Sparkles, Cloud, Zap, Triangle, Hexagon, Circle } from "lucide-react";
 
@@ -85,9 +86,12 @@ export default function Home() {
             </h2>
             <BenefitsSection />
           </section>
-          <section id="blog" className="py-20">
-            <RecentBlogsSection />
+          <section id="programs" className="py-20 relative z-20">
+            <ProgramsPreviewSection />
           </section>
+          {/* <section id="blog" className="py-20">
+            <RecentBlogsSection />
+          </section> */}
         </div>
       </div>
     </main>
