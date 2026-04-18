@@ -125,6 +125,15 @@ const chapterPresidents = [
         tags: [],
         linkedin: "https://linkedin.com/in/timmy-jin-24bb51363"
     },
+    {
+        id: 8,
+        name: "Qinglang (Leo) Lei",
+        chapter: "Lee's Summit, USA",
+        image: "/assets/leolei.jpg",
+        bio: "",
+        tags: [],
+        linkedin: ""
+    },
 ];
 
 const missionVision = [
