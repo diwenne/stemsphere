@@ -66,6 +66,7 @@ const chapterPresidents = [
         id: 1,
         name: "Cristal Tao",
         chapter: "Seattle, USA",
+        role: "Chapter President",
         image: "/assets/cristaltao.png",
         bio: "",
         tags: [],
@@ -75,6 +76,7 @@ const chapterPresidents = [
         id: 2,
         name: "Jiayu Liu",
         chapter: "Wuhan, China",
+        role: "Chapter President",
         image: "/assets/jiayuliu.png",
         bio: "",
         tags: [],
@@ -84,6 +86,7 @@ const chapterPresidents = [
         id: 3,
         name: "Samuel Sai",
         chapter: "Singapore, Singapore",
+        role: "Chapter President",
         image: "/assets/samuelsai.png",
         bio: "",
         tags: [],
@@ -93,6 +96,7 @@ const chapterPresidents = [
         id: 4,
         name: "Elsa Wu",
         chapter: "Miami, USA",
+        role: "Chapter President",
         image: "/assets/elsawu.png",
         bio: "",
         tags: [],
@@ -102,6 +106,7 @@ const chapterPresidents = [
         id: 5,
         name: "Kevin Chen",
         chapter: "Kansas, USA",
+        role: "Chapter President",
         image: "/assets/kevinchen.png",
         bio: "",
         tags: [],
@@ -111,6 +116,7 @@ const chapterPresidents = [
         id: 6,
         name: "Henrik Huang",
         chapter: "Honolulu, USA",
+        role: "Chapter President",
         image: "/assets/henrikhuang.png",
         bio: "",
         tags: [],
@@ -118,17 +124,29 @@ const chapterPresidents = [
     },
     {
         id: 7,
+        name: "Andy",
+        chapter: "Meadowridge, Canada",
+        role: "Chapter President",
+        image: "/assets/andy.jpg",
+        bio: "",
+        tags: [],
+        linkedin: ""
+    },
+    {
+        id: 8,
         name: "Timmy Jin",
         chapter: "Meadowridge, Canada",
+        role: "Chapter Vice President",
         image: "/assets/timmy.jpeg",
         bio: "",
         tags: [],
         linkedin: "https://linkedin.com/in/timmy-jin-24bb51363"
     },
     {
-        id: 8,
+        id: 9,
         name: "Qinglang (Leo) Lei",
         chapter: "Lee's Summit, USA",
+        role: "Chapter President",
         image: "/assets/leolei.jpg",
         bio: "",
         tags: [],
@@ -401,6 +419,7 @@ export default function AboutPage() {
                                 </div>
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-neutral-800 dark:text-white mb-1">{president.name}</h3>
+                                    <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-1">{president.role}</p>
                                     <p className="text-amber-500 font-medium text-sm mb-4 flex items-center gap-1">
                                         <MapPin className="w-4 h-4" />
                                         {president.chapter}
