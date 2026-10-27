@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const stats = [
     {
         key: "students",
-        value: 220,
+        value: 400,
         suffix: "+",
         label: "Students Reached",
         color: "#FF6B6B",
@@ -13,7 +13,7 @@ const stats = [
     },
     {
         key: "workshops",
-        value: 20,
+        value: 29,
         suffix: "",
         label: "Workshops Hosted",
         color: "#FF8C00",
@@ -21,9 +21,9 @@ const stats = [
     },
     {
         key: "chapters",
-        value: 7,
+        value: 10,
         suffix: "",
-        label: "Chapters Founded",
+        label: "Branches Founded",
         color: "#10B981",
         bgColor: "#ECFDF5",
     },
